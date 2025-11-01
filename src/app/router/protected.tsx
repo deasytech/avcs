@@ -19,7 +19,7 @@ const protectedRoutes: RouteObject = {
       children: [
         {
           index: true,
-          element: <Navigate to="/dashboards/sales" />,
+          element: <Navigate to="/dashboards/home" />,
         },
         {
           path: "/components",

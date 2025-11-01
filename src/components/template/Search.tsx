@@ -108,7 +108,7 @@ const popular: PopularSearchItem[] = [
     Icon: CurrencyDollarIcon,
     title: "Sales",
     color: "success",
-    to: "/dashboards/sales",
+    to: "/dashboards/home",
   },
 ];
 
