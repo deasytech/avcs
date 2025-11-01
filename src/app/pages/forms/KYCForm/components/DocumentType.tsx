@@ -42,7 +42,7 @@ const DocumentType = forwardRef<HTMLElement, DocumentTypeProps>(
     return (
       <RadioGroup
         ref={ref}
-        value={documentTypes.find((doc) => doc.key === value) || null}
+        value={documentTypes.find((doc) => doc.key === value)}
         onChange={(val: DocumentType) => onChange(val.key)}
         name={name}
       >
@@ -69,21 +69,19 @@ const DocumentType = forwardRef<HTMLElement, DocumentTypeProps>(
                     <div className="min-w-0 text-sm">
                       <Label
                         as="p"
-                        className={`truncate font-medium ${
-                          checked
+                        className={`truncate font-medium ${checked
                             ? "text-white"
                             : "dark:text-dark-50 text-gray-900"
-                        }`}
+                          }`}
                       >
                         {type.label}
                       </Label>
                       <Description
                         as="div"
-                        className={`mt-0.5 truncate text-xs ${
-                          checked
+                        className={`mt-0.5 truncate text-xs ${checked
                             ? "text-primary-100"
                             : "dark:text-dark-200 text-gray-500"
-                        }`}
+                          }`}
                       >
                         {type.description}
                       </Description>

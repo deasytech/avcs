@@ -30,7 +30,7 @@ export function StyledError() {
         data={people}
         displayField="name"
         value={selected}
-        onChange={setSelected}
+        onChange={(value) => setSelected(value as Person[])}
         placeholder="Please Select User"
         label="Select User"
         searchFields={["name"]}
