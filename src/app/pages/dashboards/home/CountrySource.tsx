@@ -9,73 +9,99 @@ import { CSSProperties } from "react";
 // Local Imports
 import { Badge, Box, Card } from "@/components/ui";
 import { formatNumber } from "@/utils/formatNumber";
+import transactionsData from "@/data/transactions.json";
+import sectorsData from "@/data/sectors.json";
 
 // ----------------------------------------------------------------------
 
-interface CountrySource {
+interface SectorSource {
   uid: number;
-  flag: string;
+  icon: string;
   name: string;
-  view: number;
-  viewImpression: number;
-  sales: number;
-  salesImpression: number;
+  transactions: number;
+  transactionImpression: number;
+  revenue: number;
+  revenueImpression: number;
 }
 
-const countries: CountrySource[] = [
-  {
-    uid: 1,
-    flag: "/images/flags/svg/rounded/spain.svg",
-    name: "Spain",
-    view: 2369,
-    viewImpression: 1,
-    sales: 36516,
-    salesImpression: -1,
-  },
-  {
-    uid: 2,
-    flag: "/images/flags/svg/rounded/australia.svg",
-    name: "Australia",
-    view: 8646,
-    viewImpression: 1,
-    sales: 94113,
-    salesImpression: 1,
-  },
-  {
-    uid: 3,
-    flag: "/images/flags/svg/rounded/italy.svg",
-    name: "Italy",
-    view: 1934,
-    viewImpression: -1,
-    sales: 21691,
-    salesImpression: -1,
-  },
-  {
-    uid: 4,
-    flag: "/images/flags/svg/rounded/japan.svg",
-    name: "Japan",
-    view: 794,
-    viewImpression: -1,
-    sales: 5691,
-    salesImpression: 1,
-  },
-  {
-    uid: 5,
-    flag: "/images/flags/svg/rounded/russia.svg",
-    name: "Russia",
-    view: 426,
-    viewImpression: 1,
-    sales: 3259,
-    salesImpression: -1,
-  },
-];
+// Helper function to parse Naira amount to number
+const parseNairaAmount = (nairaString: string): number => {
+  return parseFloat(nairaString.replace(/[₦,]/g, ''));
+};
+
+// Calculate sector analytics
+const calculateSectorData = (): SectorSource[] => {
+  const sectorStats: { [key: string]: { transactions: number; revenue: number } } = {};
+
+  // Initialize stats for each sector
+  sectorsData.forEach(sector => {
+    sectorStats[sector.name] = { transactions: 0, revenue: 0 };
+  });
+
+  // Process all transactions
+  transactionsData.forEach(transaction => {
+    const sector = sectorsData.find(s => s.id === transaction.sector_id);
+    if (sector) {
+      const amount = parseNairaAmount(transaction.transaction_amount);
+      sectorStats[sector.name].transactions += 1;
+      sectorStats[sector.name].revenue += amount;
+    }
+  });
+
+  // Map to sector source format with icons and impressions
+  const sectorMapping = [
+    {
+      id: 1,
+      name: 'Banking',
+      icon: '🏦',
+      transactionImpression: 1,
+      revenueImpression: 1
+    },
+    {
+      id: 2,
+      name: 'Telecoms',
+      icon: '📡',
+      transactionImpression: 1,
+      revenueImpression: 1
+    },
+    {
+      id: 3,
+      name: 'Power',
+      icon: '⚡',
+      transactionImpression: -1,
+      revenueImpression: 1
+    },
+    {
+      id: 4,
+      name: 'Hotel',
+      icon: '🏨',
+      transactionImpression: 1,
+      revenueImpression: -1
+    }
+  ];
+
+  return sectorMapping.map(sector => ({
+    uid: sector.id,
+    icon: sector.icon,
+    name: sector.name,
+    transactions: sectorStats[sector.name]?.transactions || 0,
+    transactionImpression: sector.transactionImpression,
+    revenue: sectorStats[sector.name]?.revenue || 0,
+    revenueImpression: sector.revenueImpression
+  }));
+};
+
+const sectors = calculateSectorData();
 
 export function CountrySource() {
+  // Calculate total sectors and percentage change
+  const totalSectors = sectors.length;
+
   return (
     <Card className="pb-4">
       <div className="flex h-14 min-w-0 items-center justify-between px-4 py-3 sm:px-5">
         <h2 className="dark:text-dark-100 min-w-0 font-medium tracking-wide text-gray-800">
-          Country Source
+          Sector Performance
         </h2>
         <a
           href="##"
@@ -87,37 +113,37 @@ export function CountrySource() {
 
       <div className="-mt-2 px-4 sm:px-5">
         <p>
-          <span className="dark:text-dark-100 text-2xl text-gray-800">93</span>
+          <span className="dark:text-dark-100 text-2xl text-gray-800">{totalSectors}</span>
           <span className="text-success dark:text-success-lighter text-xs">
             {" "}
-            +1.3%
+            +2.1%
           </span>
         </p>
-        <p className="text-xs-plus">Country in this month</p>
+        <p className="text-xs-plus">Active sectors this month</p>
       </div>
 
       <div
         className="custom-scrollbar mt-3 flex gap-2 overflow-x-auto px-4 whitespace-nowrap sm:px-5"
         style={{ "--margin-scroll": "1.25rem" } as CSSProperties}
       >
-        {countries.map((country) => (
+        {sectors.map((sector) => (
           <Box
-            key={country.uid}
+            key={sector.uid}
             className="border-gray-150 dark:border-dark-600 inline-flex shrink-0 items-center gap-4 rounded-lg border p-2"
           >
             <div className="flex items-center gap-2">
-              <img className="size-6" src={country.flag} alt={country.name} />
-              <span>{country.name}</span>
+              <span className="text-xl">{sector.icon}</span>
+              <span>{sector.name}</span>
             </div>
             <div className="flex gap-1.5">
               <Badge
                 className="h-5 gap-1 rounded-full font-bold"
-                color={country.viewImpression === 1 ? "success" : "error"}
+                color={sector.transactionImpression === 1 ? "success" : "error"}
                 variant="soft"
               >
                 <EyeIcon className="size-3.5" />
-                <span>{formatNumber(country.view)}</span>
-                {country.viewImpression === 1 ? (
+                <span>{formatNumber(sector.transactions)}</span>
+                {sector.transactionImpression === 1 ? (
                   <ArrowTrendingUpIcon className="size-3.5" />
                 ) : (
                   <ArrowTrendingDownIcon className="size-3.5" />
@@ -125,11 +151,11 @@ export function CountrySource() {
               </Badge>
               <Badge
                 className="h-5 gap-1 rounded-full font-bold"
-                color={country.salesImpression === 1 ? "success" : "error"}
+                color={sector.revenueImpression === 1 ? "success" : "error"}
                 variant="soft"
               >
-                <span>{formatNumber(country.sales)}</span>
-                {country.salesImpression === 1 ? (
+                <span>₦{formatNumber(sector.revenue)}</span>
+                {sector.revenueImpression === 1 ? (
                   <ArrowTrendingUpIcon className="size-3.5" />
                 ) : (
                   <ArrowTrendingDownIcon className="size-3.5" />

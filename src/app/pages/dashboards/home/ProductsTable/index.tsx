@@ -20,8 +20,8 @@ import { SelectedRowsActions } from "@/components/shared/table/SelectedRowsActio
 import { useBoxSize, useDidUpdate } from "@/hooks";
 import { useSkipper } from "@/utils/react-table/useSkipper";
 import { MenuAction } from "./MenuActions";
-import { columns } from "./columns";
-import { Product, productsList } from "./fakeData";
+import { transactionColumns } from "./transactionColumns";
+import { TransactionRow, transactionsList } from "./transactionsData";
 import { PaginationSection } from "./PaginationSection";
 import { getUserAgentBrowser } from "@/utils/dom/getUserAgentBrowser";
 
@@ -35,14 +35,14 @@ export function ProductsTable() {
   const theadRef = useRef<HTMLTableSectionElement>(null);
   const { height: theadHeight } = useBoxSize({ ref: theadRef });
 
-  const [products, setProducts] = useState<Product[]>([...productsList]);
+  const [transactions, setTransactions] = useState<TransactionRow[]>([...transactionsList]);
 
   const [globalFilter, setGlobalFilter] = useState("");
   const [sorting, setSorting] = useState<SortingState>([]);
 
   const table = useReactTable({
-    data: products,
-    columns,
+    data: transactions,
+    columns: transactionColumns,
     state: {
       globalFilter,
       sorting,
@@ -54,16 +54,16 @@ export function ProductsTable() {
       deleteRow: (row) => {
         // Skip page index reset until after next rerender
         skipAutoResetPageIndex();
-        setProducts((old) =>
-          old.filter((oldRow) => oldRow.product_id !== row.original.product_id),
+        setTransactions((old) =>
+          old.filter((oldRow) => oldRow.transaction_id !== row.original.transaction_id),
         );
       },
       deleteRows: (rows) => {
         // Skip page index reset until after next rerender
         skipAutoResetPageIndex();
-        const rowIds = rows.map((row) => row.original.product_id);
-        setProducts((old) =>
-          old.filter((row) => !rowIds.includes(row.product_id)),
+        const rowIds = rows.map((row) => row.original.transaction_id);
+        setTransactions((old) =>
+          old.filter((row) => !rowIds.includes(row.transaction_id)),
         );
       },
     },
@@ -81,13 +81,13 @@ export function ProductsTable() {
     autoResetPageIndex,
   });
 
-  useDidUpdate(() => table.resetRowSelection(), [products]);
+  useDidUpdate(() => table.resetRowSelection(), [transactions]);
 
   return (
     <div className="col-span-12 flex flex-col lg:col-span-8 xl:col-span-9">
       <div className="table-toolbar flex items-center justify-between">
         <h2 className="dark:text-dark-100 truncate text-base font-medium tracking-wide text-gray-800">
-          Products Table
+          Transactions Table
         </h2>
         <div className="flex">
           <CollapsibleSearch
@@ -118,9 +118,9 @@ export function ProductsTable() {
                             {header.isPlaceholder
                               ? null
                               : flexRender(
-                                  header.column.columnDef.header,
-                                  header.getContext(),
-                                )}
+                                header.column.columnDef.header,
+                                header.getContext(),
+                              )}
                           </span>
                           <TableSortIcon sorted={header.column.getIsSorted()} />
                         </div>
@@ -143,8 +143,8 @@ export function ProductsTable() {
                     className={clsx(
                       "dark:border-b-dark-500 relative border-y border-transparent border-b-gray-200",
                       row.getIsSelected() &&
-                        !isSafari &&
-                        "row-selected after:bg-primary-500/10 ltr:after:border-l-primary-500 rtl:after:border-r-primary-500 after:pointer-events-none after:absolute after:inset-0 after:z-2 after:h-full after:w-full after:border-3 after:border-transparent",
+                      !isSafari &&
+                      "row-selected after:bg-primary-500/10 ltr:after:border-l-primary-500 rtl:after:border-r-primary-500 after:pointer-events-none after:absolute after:inset-0 after:z-2 after:h-full after:w-full after:border-3 after:border-transparent",
                     )}
                   >
                     {row.getVisibleCells().map((cell) => {
@@ -165,7 +165,7 @@ export function ProductsTable() {
         </div>
         {table.getCoreRowModel().rows.length && (
           <div className="p-4 sm:px-5">
-            <PaginationSection table={table} />
+            <PaginationSection table={table as unknown as any} />
           </div>
         )}{" "}
         <SelectedRowsActions table={table} height={theadHeight} />

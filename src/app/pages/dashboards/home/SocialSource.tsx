@@ -10,7 +10,7 @@ import { EllipsisHorizontalIcon } from "@heroicons/react/20/solid";
 import {
   ArrowTrendingDownIcon,
   ArrowTrendingUpIcon,
-  EyeIcon,
+  BuildingOfficeIcon,
 } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import { Fragment } from "react";
@@ -18,133 +18,108 @@ import { Fragment } from "react";
 // Local Imports
 import { Button, Card } from "@/components/ui";
 import { formatNumber } from "@/utils/formatNumber";
+import sectorsData from "@/data/sectors.json";
+import businessesData from "@/data/businesses.json";
+import transactionsData from "@/data/transactions.json";
 
 // ----------------------------------------------------------------------
 
-interface ChannelSource {
+interface SectorSource {
   uid: string;
-  logo: string;
   name: string;
-  views: number;
-  viewImpression: number;
-  sales: number;
-  salesImpression: number;
+  businesses: number;
+  transactionVolume: number;
+  revenue: number;
+  growth: number;
+  trend: number;
 }
 
-const channels: ChannelSource[] = [
-  {
-    uid: "1",
-    logo: "/images/logos/instagram-round.svg",
-    name: "Instagram",
-    views: 34358,
-    viewImpression: 1,
-    sales: 5166,
-    salesImpression: -1,
-  },
-  {
-    uid: "2",
-    logo: "/images/logos/facebook-round.svg",
-    name: "Facebook",
-    views: 24616,
-    viewImpression: 1,
-    sales: 4319,
-    salesImpression: 1,
-  },
-  {
-    uid: "3",
-    logo: "/images/logos/tik_tok-round.svg",
-    name: "Tik Tok",
-    views: 17363,
-    viewImpression: -1,
-    sales: 3466,
-    salesImpression: -1,
-  },
-  {
-    uid: "4",
-    logo: "/images/logos/twitter-round.svg",
-    views: 49318,
-    name: "Twitter",
-    viewImpression: -1,
-    sales: 1261,
-    salesImpression: 1,
-  },
-  {
-    uid: "5",
-    logo: "/images/logos/pinterest-round.svg",
-    name: "Pinterest",
-    views: 6917,
-    viewImpression: 1,
-    sales: 926,
-    salesImpression: 1,
-  },
-  {
-    uid: "6",
-    logo: "/images/logos/discord-round.svg",
-    name: "Discord",
-    views: 639,
-    viewImpression: 1,
-    sales: 517,
-    salesImpression: 1,
-  },
-  {
-    uid: "7",
-    logo: "/images/logos/youtube-round.svg",
-    name: "Youtube",
-    views: 391,
-    viewImpression: -1,
-    sales: 268,
-    salesImpression: 1,
-  },
-];
+// Calculate sector metrics from data
+const calculateSectorMetrics = (): SectorSource[] => {
+  const sectorMetrics = sectorsData.map(sector => {
+    const sectorBusinesses = businessesData.filter(b => b.sector_id === sector.id);
+    const sectorTransactions = transactionsData.filter(t => t.sector_id === sector.id);
+
+    // Calculate total transaction volume (number of transactions)
+    const transactionVolume = sectorTransactions.length;
+
+    // Calculate total revenue from transaction amounts
+    const revenue = sectorTransactions.reduce((total, transaction) => {
+      // Remove ₦ symbol and convert to number
+      const amount = parseFloat(transaction.transaction_amount.replace(/[₦,]/g, ''));
+      return total + amount;
+    }, 0);
+
+    // Calculate growth percentage (mock data for demonstration)
+    const growth = Math.floor(Math.random() * 20) - 5; // Random between -5% and 15%
+    const trend = growth >= 0 ? 1 : -1;
+
+    return {
+      uid: sector.id.toString(),
+      name: sector.name,
+      businesses: sectorBusinesses.length,
+      transactionVolume,
+      revenue,
+      growth,
+      trend
+    };
+  });
+
+  return sectorMetrics;
+};
+
+const sectors: SectorSource[] = calculateSectorMetrics();
 
 export function SocialSource() {
+  // Calculate total metrics for header
+  const totalBusinesses = sectors.reduce((sum, sector) => sum + sector.businesses, 0);
+  const avgGrowth = sectors.reduce((sum, sector) => sum + sector.growth, 0) / sectors.length;
+
   return (
     <Card className="pb-2">
       <div className="flex h-14 min-w-0 items-center justify-between px-4 py-3 sm:px-5">
         <h2 className="dark:text-dark-100 truncate font-medium tracking-wide text-gray-800">
-          Social Source
+          Sector Overview
         </h2>
         <ActionMenu />
       </div>
       <div className="px-4 sm:px-5">
         <p>
           <span className="dark:text-dark-100 text-2xl text-gray-800">
-            135K
+            {formatNumber(totalBusinesses)}
           </span>
-          <span className="text-success dark:text-success-lighter text-xs">
-            +3.1%
+          <span className={`text-xs ${avgGrowth >= 0 ? 'text-success dark:text-success-lighter' : 'text-error dark:text-error-lighter'}`}>
+            {avgGrowth >= 0 ? '+' : ''}{avgGrowth.toFixed(1)}%
           </span>
         </p>
-        <p className="text-xs-plus">View in this month</p>
+        <p className="text-xs-plus">Total businesses across all sectors</p>
       </div>
       <div className="mt-2 w-full overflow-x-auto px-4 sm:px-5">
         <table className="w-full">
           <tbody>
-            {channels.map((channel) => (
-              <tr key={channel.uid}>
+            {sectors.map((sector) => (
+              <tr key={sector.uid}>
                 <td className="w-full">
                   <div className="flex items-center gap-2 py-2">
-                    <img
-                      className="size-6"
-                      src={channel.logo}
-                      alt={channel.name}
-                    />
+                    <div className="size-6 rounded bg-gray-100 dark:bg-dark-600 flex items-center justify-center">
+                      <BuildingOfficeIcon className="size-4 text-gray-600 dark:text-dark-200" />
+                    </div>
                     <a
                       href="##"
-                      className="truncate transition-opacity hover:opacity-80"
+                      className="truncate transition-opacity hover:opacity-80 font-medium"
                     >
-                      {channel.name}
+                      {sector.name}
                     </a>
                   </div>
                 </td>
                 <td>
                   <div className="flex justify-end">
                     <div className="flex items-center gap-1 py-2 font-medium">
-                      <EyeIcon className="size-3" />
                       <span className="text-xs-plus">
-                        {formatNumber(channel.views)}
+                        {formatNumber(sector.transactionVolume)}
                       </span>
-                      {channel.viewImpression === 1 ? (
+                      <span className="text-xs text-gray-500 dark:text-dark-400">txns</span>
+                      {sector.trend === 1 ? (
                         <ArrowTrendingUpIcon className="this:success text-this dark:text-this-lighter size-3" />
                       ) : (
                         <ArrowTrendingDownIcon className="this:error text-this dark:text-this-lighter size-3" />
@@ -156,9 +131,9 @@ export function SocialSource() {
                 <td>
                   <div className="flex items-center justify-start gap-1 py-2 font-medium">
                     <span className="text-xs-plus">
-                      ${formatNumber(channel.sales)}
+                      ₦{formatNumber(Math.floor(sector.revenue / 1000000))}M
                     </span>
-                    {channel.salesImpression === 1 ? (
+                    {sector.trend === 1 ? (
                       <ArrowTrendingUpIcon className="this:success text-this dark:text-this-lighter size-3" />
                     ) : (
                       <ArrowTrendingDownIcon className="this:error text-this dark:text-this-lighter size-3" />
@@ -204,7 +179,7 @@ function ActionMenu() {
                 className={clsx(
                   "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
                   focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
+                  "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
                 )}
               >
                 <span>Action</span>
@@ -217,7 +192,7 @@ function ActionMenu() {
                 className={clsx(
                   "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
                   focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
+                  "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
                 )}
               >
                 <span>Another action</span>
@@ -230,7 +205,7 @@ function ActionMenu() {
                 className={clsx(
                   "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
                   focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
+                  "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
                 )}
               >
                 <span>Other action</span>
@@ -246,7 +221,7 @@ function ActionMenu() {
                 className={clsx(
                   "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
                   focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
+                  "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
                 )}
               >
                 <span>Separated action</span>

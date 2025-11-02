@@ -1,17 +1,37 @@
 // Import Dependencies
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
-import { ArrowDownCircleIcon } from "@heroicons/react/24/outline";
 
 // Local Imports
-import { Box, Button } from "@/components/ui";
+import { Box } from "@/components/ui";
+import transactionsData from "@/data/transactions.json";
 
 // ----------------------------------------------------------------------
 
+// Helper function to parse Naira amount to number
+const parseNairaAmount = (nairaString: string): number => {
+  return parseFloat(nairaString.replace(/[₦,]/g, ''));
+};
+
+// Helper function to round to 2 decimal places
+const roundToTwoDecimals = (num: number): number => {
+  return Math.round(num * 100) / 100;
+};
+
+// Calculate total balance from all transactions
+const calculateTotalBalance = () => {
+  const rawTotal = transactionsData.reduce((total, transaction) => {
+    return total + parseNairaAmount(transaction.transaction_amount);
+  }, 0);
+  return roundToTwoDecimals(rawTotal);
+};
+
+const totalBalance = calculateTotalBalance();
+
 const series = [
   {
-    name: "Earning",
-    data: [0, 20, 50, 10],
+    name: "Balance",
+    data: [0, totalBalance * 0.3, totalBalance * 0.8, totalBalance],
   },
 ];
 
@@ -40,6 +60,12 @@ const chartConfig: ApexOptions = {
   },
   tooltip: {
     shared: true,
+    y: {
+      formatter: function (val: number) {
+        const roundedVal = roundToTwoDecimals(val);
+        return '₦' + roundedVal.toLocaleString();
+      }
+    }
   },
   legend: {
     show: false,
@@ -67,19 +93,10 @@ export function CurrentBalance() {
         <Chart type="line" height="70" series={series} options={chartConfig} />
       </div>
       <p className="mt-8 text-3xl font-semibold">
-        <span className="text-white/80">$</span>
-        <span className="text-white">31.313</span>
+        <span className="text-white/80">₦</span>
+        <span className="text-white">{totalBalance.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</span>
       </p>
-      <p className="font-medium tracking-wide text-white/80">Current Balance</p>
-      <div className="mt-5">
-        <Button
-          unstyled
-          className="w-full gap-2 rounded-full border border-white/30 px-5 py-2 text-white hover:bg-white/30 focus:bg-white/30 active:bg-white/25"
-        >
-          <ArrowDownCircleIcon className="size-4.5 shrink-0" />
-          <span>Get Statement</span>
-        </Button>
-      </div>
+      <p className="font-medium tracking-wide text-white/80">Total Transaction Volume</p>
     </Box>
   );
 }

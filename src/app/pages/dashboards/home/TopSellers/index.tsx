@@ -13,56 +13,101 @@ import { register } from "swiper/element/bundle";
 
 // Local Imports
 import { Button, Card } from "@/components/ui";
-import { SellerCard, type Seller } from "./SellerCard";
+import { SellerCard } from "./SellerCard";
 import { useLocaleContext } from "@/app/contexts/locale/context";
+import sectorsData from "@/data/sectors.json";
+import businessesData from "@/data/businesses.json";
+import transactionsData from "@/data/transactions.json";
 
 // ----------------------------------------------------------------------
 
 register();
 
-const sellers: Seller[] = [
-  {
-    id: "1",
-    avatar: "/images/avatar/avatar-20.jpg",
-    name: "Travis Fuller",
-    sales: "2 348",
-    impression: 4.3,
-    chartData: [20, 420, 102, 540, 275, 614],
-  },
-  {
-    id: "2",
-    avatar: "/images/avatar/avatar-5.jpg",
-    name: "Konnor Guzman",
-    sales: "6 052",
-    impression: -2.33,
-    chartData: [54, 77, 43, 69, 12],
-  },
-  {
-    id: "3",
-    avatar: "/images/avatar/avatar-11.jpg",
-    name: "Katrina West",
-    sales: "2 348",
-    impression: 2.62,
-    chartData: [0, 20, 10, 30, 20, 50],
-  },
-  {
-    id: "4",
-    avatar: undefined,
-    name: "Henry Curtis",
-    sales: "4 574",
-    impression: 1.2,
-    chartData: [654, 820, 102, 540, 154, 614],
-  },
-];
+// Utility function to parse naira amount
+const parseNairaAmount = (amount: string): number => {
+  return parseFloat(amount.replace(/[₦,]/g, ''));
+};
+
+// Calculate sector performance data
+const calculateSectorPerformance = () => {
+  const sectorStats: {
+    [key: string]: {
+      totalRevenue: number;
+      transactionCount: number;
+      topBusiness: string;
+      growth: number;
+      monthlyData: number[];
+    }
+  } = {};
+
+  // Initialize stats for each sector
+  sectorsData.forEach(sector => {
+    sectorStats[sector.name] = {
+      totalRevenue: 0,
+      transactionCount: 0,
+      topBusiness: '',
+      growth: Math.random() * 10 - 2, // Random growth between -2% and 8%
+      monthlyData: Array.from({ length: 6 }, () => Math.floor(Math.random() * 1000) + 100)
+    };
+  });
+
+  // Calculate revenue and transaction counts by sector
+  transactionsData.forEach(transaction => {
+    const sector = sectorsData.find(s => s.id === transaction.sector_id);
+    if (sector) {
+      const amount = parseNairaAmount(transaction.transaction_amount);
+      sectorStats[sector.name].totalRevenue += amount;
+      sectorStats[sector.name].transactionCount += 1;
+    }
+  });
+
+  // Find top business for each sector
+  Object.keys(sectorStats).forEach(sectorName => {
+    const sector = sectorsData.find(s => s.name === sectorName);
+    if (sector) {
+      const sectorBusinesses = businessesData.filter(b => b.sector_id === sector.id);
+      if (sectorBusinesses.length > 0) {
+        // Pick the first business as the "top" business for simplicity
+        sectorStats[sectorName].topBusiness = sectorBusinesses[0].name;
+      }
+    }
+  });
+
+  return sectorStats;
+};
+
+// Get sector avatar based on sector name
+const getSectorAvatar = (sectorName: string): string | undefined => {
+  const sectorAvatars: { [key: string]: string } = {
+    'Banking': '/images/avatar/avatar-20.jpg',
+    'Telecoms': '/images/avatar/avatar-5.jpg',
+    'Power': '/images/avatar/avatar-11.jpg',
+    'Hotel': '/images/avatar/avatar-1.jpg'
+  };
+  return sectorAvatars[sectorName];
+};
 
 export function TopSellers() {
   const { direction } = useLocaleContext();
+
+  // Calculate sector performance data
+  const sectorPerformance = calculateSectorPerformance();
+
+  // Transform sector data to match Seller interface
+  const sectorSellers = Object.entries(sectorPerformance).map(([sectorName, stats], index) => ({
+    id: (index + 1).toString(),
+    avatar: getSectorAvatar(sectorName),
+    name: sectorName,
+    sales: `₦${Math.floor(stats.totalRevenue / 1000000)}M`, // Convert to millions
+    impression: stats.growth,
+    chartData: stats.monthlyData,
+  }));
 
   return (
     <Card className="pb-4">
       <div className="flex min-w-0 items-center justify-between px-4 py-3">
         <h2 className="dark:text-dark-100 min-w-0 font-medium tracking-wide text-gray-800">
-          Top Sellers
+          Top Performing Sectors
         </h2>
         <ActionMenu />
       </div>
@@ -74,7 +119,7 @@ export function TopSellers() {
         dir={direction}
         space-between="16"
       >
-        {sellers.map((seller) => (
+        {sectorSellers.map((seller) => (
           <Fragment key={seller.id}>
             {/* @ts-expect-error - Swiper web components */}
             <swiper-slide>
@@ -119,7 +164,7 @@ function ActionMenu() {
                 className={clsx(
                   "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
                   focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
+                  "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
                 )}
               >
                 <span>Action</span>
@@ -132,7 +177,7 @@ function ActionMenu() {
                 className={clsx(
                   "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
                   focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
+                  "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
                 )}
               >
                 <span>Another action</span>
@@ -145,7 +190,7 @@ function ActionMenu() {
                 className={clsx(
                   "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
                   focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
+                  "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
                 )}
               >
                 <span>Other action</span>
@@ -161,7 +206,7 @@ function ActionMenu() {
                 className={clsx(
                   "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
                   focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
+                  "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
                 )}
               >
                 <span>Separated action</span>

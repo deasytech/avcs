@@ -1,59 +1,52 @@
 // Local Imports
 import { TransactionCard, type Transaction } from "./TransactionCard";
+import transactionsData from "@/data/transactions.json";
+import businessesData from "@/data/businesses.json";
+import transactionTypesData from "@/data/transaction_types.json";
 
 // ----------------------------------------------------------------------
 
-const payments: Transaction[] = [
-  {
-    id: "1",
-    name: "Konnor Guzman",
-    avatar: "/images/avatar/avatar-20.jpg",
-    time: "Dec 21, 2021 - 08:05",
-    amount: 660.22,
-  },
-  {
-    id: "2",
-    name: "Henry Curtis",
-    avatar: "/images/avatar/avatar-18.jpg",
-    time: "Dec 19, 2021 - 11:55",
-    amount: 33.63,
-  },
-  {
-    id: "3",
-    name: "Derrick Simmons",
-    avatar: undefined,
-    time: "Dec 16, 2021 - 14:45",
-    amount: -674.63,
-  },
-  {
-    id: "4",
-    name: "Kartina West",
-    avatar: "/images/avatar/avatar-5.jpg",
-    time: "Dec 13, 2021 - 11:30",
-    amount: 547.63,
-  },
-  {
-    id: "5",
-    name: "Samantha Shelton",
-    avatar: "/images/avatar/avatar-11.jpg",
-    time: "Dec 10, 2021 - 09:41",
-    amount: 736.24,
-  },
-  {
-    id: "6",
-    name: "Joe Perkins",
-    avatar: undefined,
-    time: "Dec 06, 2021 - 11:41",
-    amount: -369.6,
-  },
-  {
-    id: "7",
-    name: "John Parker",
-    avatar: "/images/avatar/avatar-2.jpg",
-    time: "Dec 09, 2021 - 23:20",
-    amount: 231.0,
-  },
-];
+// Helper function to parse Naira amount to number
+const parseNairaAmount = (nairaString: string): number => {
+  return parseFloat(nairaString.replace(/[₦,]/g, ''));
+};
+
+// Helper function to round to 2 decimal places
+const roundToTwoDecimals = (num: number): number => {
+  return Math.round(num * 100) / 100;
+};
+
+// Helper function to format date
+const formatTransactionDate = (dateString: string): string => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+};
+
+// Transform transaction data to match Transaction interface
+const transformTransactionData = (): Transaction[] => {
+  return transactionsData.slice(0, 7).map((transaction) => {
+    const business = businessesData.find(b => b.id === transaction.business_id);
+    const transactionType = transactionTypesData.find(tt => tt.id === transaction.transaction_type_id);
+
+    const businessName = business?.name || 'Unknown Business';
+    const transactionTypeName = transactionType?.name || 'Unknown Transaction';
+
+    return {
+      id: transaction.transaction_id.toString(),
+      name: `${businessName} - ${transactionTypeName}`,
+      time: formatTransactionDate(transaction.transaction_date),
+      amount: roundToTwoDecimals(parseNairaAmount(transaction.transaction_amount)),
+    };
+  });
+};
+
+const payments: Transaction[] = transformTransactionData();
 
 export function Transactions() {
   return (

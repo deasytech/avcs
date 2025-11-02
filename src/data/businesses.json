@@ -1,29 +1,98 @@
 [
-  { "id": 1, "sector_id": 1, "name": "GTBank", "slug": "gtbank" },
-  { "id": 2, "sector_id": 1, "name": "Access Bank", "slug": "access-bank" },
-  { "id": 3, "sector_id": 1, "name": "First Bank", "slug": "first-bank" },
-  { "id": 4, "sector_id": 2, "name": "MTN", "slug": "mtn" },
-  { "id": 5, "sector_id": 2, "name": "Airtel", "slug": "airtel" },
-  { "id": 6, "sector_id": 2, "name": "Glo", "slug": "glo" },
+  {
+    "id": 1,
+    "sector_id": 1,
+    "name": "GTBank",
+    "slug": "gtbank",
+    "rating": 4.2,
+    "review_count": 1250
+  },
+  {
+    "id": 2,
+    "sector_id": 1,
+    "name": "Access Bank",
+    "slug": "access-bank",
+    "rating": 4.0,
+    "review_count": 980
+  },
+  {
+    "id": 3,
+    "sector_id": 1,
+    "name": "First Bank",
+    "slug": "first-bank",
+    "rating": 3.8,
+    "review_count": 1100
+  },
+  {
+    "id": 4,
+    "sector_id": 2,
+    "name": "MTN",
+    "slug": "mtn",
+    "rating": 4.5,
+    "review_count": 2100
+  },
+  {
+    "id": 5,
+    "sector_id": 2,
+    "name": "Airtel",
+    "slug": "airtel",
+    "rating": 4.3,
+    "review_count": 1800
+  },
+  {
+    "id": 6,
+    "sector_id": 2,
+    "name": "Glo",
+    "slug": "glo",
+    "rating": 3.9,
+    "review_count": 950
+  },
   {
     "id": 7,
     "sector_id": 3,
     "name": "Ikeja Electric",
-    "slug": "ikeja-electric"
+    "slug": "ikeja-electric",
+    "rating": 3.5,
+    "review_count": 750
   },
   {
     "id": 8,
     "sector_id": 3,
     "name": "Benin Electric",
-    "slug": "benin-electric"
+    "slug": "benin-electric",
+    "rating": 3.2,
+    "review_count": 650
   },
   {
     "id": 9,
     "sector_id": 3,
     "name": "Abuja Electric",
-    "slug": "abuja-electric"
+    "slug": "abuja-electric",
+    "rating": 3.6,
+    "review_count": 820
   },
-  { "id": 10, "sector_id": 4, "name": "Eko Hotel", "slug": "eko-hotel" },
-  { "id": 11, "sector_id": 4, "name": "Transcorp", "slug": "transcorp" },
-  { "id": 12, "sector_id": 4, "name": "Grand Hotel", "slug": "grand-hotel" }
+  {
+    "id": 10,
+    "sector_id": 4,
+    "name": "Eko Hotel",
+    "slug": "eko-hotel",
+    "rating": 4.7,
+    "review_count": 1500
+  },
+  {
+    "id": 11,
+    "sector_id": 4,
+    "name": "Transcorp",
+    "slug": "transcorp",
+    "rating": 4.4,
+    "review_count": 1200
+  },
+  {
+    "id": 12,
+    "sector_id": 4,
+    "name": "Grand Hotel",
+    "slug": "grand-hotel",
+    "rating": 4.1,
+    "review_count": 890
+  }
 ]

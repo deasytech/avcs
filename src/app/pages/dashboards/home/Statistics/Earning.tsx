@@ -4,17 +4,43 @@ import { ApexOptions } from "apexcharts";
 
 // Local Imports
 import { Card } from "@/components/ui";
+import transactionsData from "@/data/transactions.json";
 
 // ----------------------------------------------------------------------
 
+// Helper function to parse Naira amount to number
+const parseNairaAmount = (nairaString: string): number => {
+  return parseFloat(nairaString.replace(/[₦,]/g, ''));
+};
+
+// Helper function to round to 2 decimal places
+const roundToTwoDecimals = (num: number): number => {
+  return Math.round(num * 100) / 100;
+};
+
+// Calculate total earnings across all sectors
+const calculateTotalRevenue = () => {
+  const sectorTotals: { [key: number]: number } = {};
+
+  transactionsData.forEach(transaction => {
+    const amount = roundToTwoDecimals(parseNairaAmount(transaction.transaction_amount));
+    if (!sectorTotals[transaction.sector_id]) {
+      sectorTotals[transaction.sector_id] = 0;
+    }
+    sectorTotals[transaction.sector_id] += amount;
+  });
+
+  // Calculate total revenue across all sectors
+  const totalRevenue = Object.values(sectorTotals).reduce((sum, amount) => sum + amount, 0);
+  return roundToTwoDecimals(totalRevenue);
+};
+
+const totalRevenue = calculateTotalRevenue();
+
 const series = [
   {
-    name: "Earning A",
-    data: [44, 55, 41, 25, 22],
-  },
-  {
-    name: "Earning 0",
-    data: [13, 23, 20, 60, 13],
+    name: "Total Revenue",
+    data: [totalRevenue * 0.2, totalRevenue * 0.3, totalRevenue * 0.15, totalRevenue * 0.25, totalRevenue * 0.1],
   },
 ];
 
@@ -61,6 +87,15 @@ const chartConfig: ApexOptions = {
   dataLabels: {
     enabled: false,
   },
+  tooltip: {
+    enabled: true,
+    y: {
+      formatter: function (val: number) {
+        const roundedVal = roundToTwoDecimals(val);
+        return '₦' + roundedVal.toLocaleString();
+      }
+    }
+  },
   fill: {
     colors: ["#0EA5E9", "#e2e8f0"],
   },
@@ -77,13 +112,18 @@ const chartConfig: ApexOptions = {
 };
 
 export function Earning() {
+  // Format Naira amount for display
+  const formatNairaAmount = (amount: number): string => {
+    return `₦${amount.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
+  };
+
   return (
     <Card className="row-span-2 flex flex-col px-4 sm:px-5">
       <h2 className="min-w-0 pt-3 font-medium tracking-wide text-gray-800 dark:text-dark-100">
-        Earning
+        Total Revenue
       </h2>
       <p className="grow mt-1 text-xl font-semibold text-gray-800 dark:text-dark-100">
-        $16.4k
+        {formatNairaAmount(totalRevenue)}
       </p>
       <div>
         <Chart type="bar" height={120} options={chartConfig} series={series} />

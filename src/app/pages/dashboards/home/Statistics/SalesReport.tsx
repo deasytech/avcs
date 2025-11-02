@@ -16,87 +16,117 @@ import { ApexOptions } from "apexcharts";
 
 // Local Imports
 import { Button, Card } from "@/components/ui";
+import transactionsData from "@/data/transactions.json";
 
 // ----------------------------------------------------------------------
+
+// Helper function to parse Naira amount to number
+const parseNairaAmount = (nairaString: string): number => {
+  return parseFloat(nairaString.replace(/[₦,]/g, ''));
+};
+
+// Helper function to round to 2 decimal places
+const roundToTwoDecimals = (num: number): number => {
+  return Math.round(num * 100) / 100;
+};
+
+// Process transaction data for all available months
+const processTransactionData = () => {
+  // Group transactions by month
+  const monthlyData: { [key: string]: { total: number; count: number } } = {};
+
+  // Find the date range of available data
+  let earliestDate = new Date('2025-12-31');
+  let latestDate = new Date('2025-01-01');
+
+  transactionsData.forEach(transaction => {
+    const transactionDate = new Date(transaction.transaction_date);
+    const monthKey = transactionDate.toLocaleDateString('en-US', { month: 'short' });
+
+    if (!monthlyData[monthKey]) {
+      monthlyData[monthKey] = { total: 0, count: 0 };
+    }
+    monthlyData[monthKey].total += roundToTwoDecimals(parseNairaAmount(transaction.transaction_amount));
+    monthlyData[monthKey].count += 1;
+
+    // Track date range
+    if (transactionDate < earliestDate) earliestDate = transactionDate;
+    if (transactionDate > latestDate) latestDate = transactionDate;
+  });
+
+  // Get all months that have data, in chronological order
+  const monthsWithData = Object.keys(monthlyData).sort((a, b) => {
+    const monthOrder = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return monthOrder.indexOf(a) - monthOrder.indexOf(b);
+  });
+
+  // If we have less than 6 months, pad with additional months
+  const targetMonths = 6;
+  const months = monthsWithData.slice(0, targetMonths);
+
+  // If we need more months, add them
+  if (months.length < targetMonths) {
+    const allMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const startIndex = allMonths.indexOf(months[0] || 'Jan');
+
+    for (let i = 0; i < targetMonths; i++) {
+      const monthIndex = (startIndex - targetMonths + 1 + i + 12) % 12;
+      const monthName = allMonths[monthIndex];
+      if (!months.includes(monthName)) {
+        months.unshift(monthName);
+      }
+    }
+  }
+
+  // Ensure we have exactly 6 months
+  const finalMonths = months.slice(-6);
+  const totalAmounts = finalMonths.map(month => monthlyData[month]?.total || 0);
+  const transactionCounts = finalMonths.map(month => monthlyData[month]?.count || 0);
+
+  return { months: finalMonths, totalAmounts, transactionCounts };
+};
+
+const { months, totalAmounts, transactionCounts } = processTransactionData();
 
 const data = {
   yearly: {
     series: [
       {
-        name: "Sales",
-        data: [28, 45, 35, 50, 32, 55, 23, 60, 28, 45, 35, 50],
+        name: "Transaction Volume (₦)",
+        data: totalAmounts,
       },
       {
-        name: "Profit",
-        data: [14, 25, 20, 25, 12, 20, 15, 20, 14, 25, 20, 25],
+        name: "Transaction Count",
+        data: transactionCounts,
       },
     ],
-    categories: [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-    ],
+    categories: months,
   },
   monthly: {
     series: [
       {
-        name: "High",
-        data: [51, 42, 50, 41, 31, 44, 55, 42, 50, 32, 55, 23],
+        name: "Transaction Volume (₦)",
+        data: totalAmounts,
       },
       {
-        name: "Low",
-        data: [40, 30, 12, 24, 11, 32, 20, 24, 25, 12, 20, 15],
+        name: "Transaction Count",
+        data: transactionCounts,
       },
     ],
-    categories: [
-      "10 Mar",
-      "11 Mar",
-      "12 Mar",
-      "13 Mar",
-      "14 Mar",
-      "15 Mar",
-      "16 Mar",
-      "17 Mar",
-      "18 Mar",
-      "19 Mar",
-      "20 Mar",
-      "21 Mar",
-    ],
+    categories: months,
   },
   daily: {
     series: [
       {
-        name: "High",
-        data: [51, 42, 50, 41, 31, 44, 55, 42, 28, 45, 35, 50],
+        name: "Transaction Volume (₦)",
+        data: totalAmounts.slice(-7), // Last 7 days
       },
       {
-        name: "Low",
-        data: [40, 30, 12, 24, 11, 32, 20, 24, 14, 25, 20, 25],
+        name: "Transaction Count",
+        data: transactionCounts.slice(-7),
       },
     ],
-    categories: [
-      "06:00",
-      "08:00",
-      "10:00",
-      "12:00",
-      "14:00",
-      "16:00",
-      "18:00",
-      "20:00",
-      "22:00",
-      "00:00",
-      "02:00",
-      "04:00",
-    ],
+    categories: ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7"],
   },
 };
 
@@ -108,50 +138,147 @@ const chartConfig: ApexOptions = {
     toolbar: {
       show: false,
     },
+    animations: {
+      enabled: true,
+      speed: 800,
+      animateGradually: {
+        enabled: true,
+        delay: 150
+      }
+    },
+    background: 'transparent',
   },
   dataLabels: {
-    enabled: false,
+    enabled: true,
+    style: {
+      fontSize: '10px',
+      fontWeight: 'bold',
+      colors: ['#333', '#333']
+    },
+    formatter: function (val: number, opts: any) {
+      const roundedVal = roundToTwoDecimals(val);
+      if (opts.seriesIndex === 0) {
+        return '₦' + (roundedVal / 1000000).toFixed(1) + 'M';
+      } else {
+        return roundedVal.toLocaleString();
+      }
+    },
+    offsetY: -5,
   },
   plotOptions: {
     bar: {
-      borderRadius: 5,
-      barHeight: "90%",
-      columnWidth: "40%",
+      borderRadius: 8,
+      barHeight: "85%",
+      columnWidth: "45%",
+      distributed: false,
+      dataLabels: {
+        position: 'top',
+      }
     },
   },
   legend: {
-    show: false,
+    show: true,
+    position: 'top',
+    horizontalAlign: 'right',
+    fontSize: '12px',
+    fontWeight: 'bold',
+    labels: {
+      colors: ['#4C4EE7', '#0EA5E9'],
+      useSeriesColors: true
+    },
+    markers: {
+      size: 12,
+      strokeWidth: 2,
+    }
   },
   xaxis: {
     axisBorder: {
-      show: false,
+      show: true,
+      color: '#e0e0e0',
+      height: 1,
     },
     axisTicks: {
-      show: false,
+      show: true,
+      color: '#e0e0e0',
+    },
+    labels: {
+      style: {
+        fontSize: '11px',
+        fontWeight: '600',
+        colors: '#666'
+      }
     },
     tooltip: {
-      enabled: false,
+      enabled: true,
     },
   },
   grid: {
+    show: true,
+    borderColor: '#f0f0f0',
+    strokeDashArray: 3,
     padding: {
-      left: -8,
-      right: -8,
-      top: 0,
-      bottom: -6,
+      left: 0,
+      right: 0,
+      top: 10,
+      bottom: 0,
     },
+    xaxis: {
+      lines: {
+        show: true
+      }
+    },
+    yaxis: {
+      lines: {
+        show: true
+      }
+    }
   },
   yaxis: {
     axisBorder: {
-      show: false,
+      show: true,
+      color: '#e0e0e0',
     },
     axisTicks: {
-      show: false,
+      show: true,
+      color: '#e0e0e0',
     },
     labels: {
-      show: false,
+      show: true,
+      style: {
+        fontSize: '10px',
+        fontWeight: '600',
+        colors: '#666'
+      },
+      formatter: function (val: number) {
+        const roundedVal = roundToTwoDecimals(val);
+        if (roundedVal >= 1000000) {
+          return '₦' + (roundedVal / 1000000).toFixed(1) + 'M';
+        } else if (roundedVal >= 1000) {
+          return '₦' + (roundedVal / 1000).toFixed(0) + 'K';
+        } else {
+          return '₦' + roundedVal.toLocaleString();
+        }
+      }
     },
   },
+  tooltip: {
+    enabled: true,
+    shared: true,
+    intersect: false,
+    y: {
+      formatter: function (val: number, opts: any) {
+        const roundedVal = roundToTwoDecimals(val);
+        if (opts.seriesIndex === 0) {
+          return '₦' + roundedVal.toLocaleString();
+        } else {
+          return roundedVal.toLocaleString() + ' transactions';
+        }
+      }
+    },
+    style: {
+      fontSize: '12px',
+    }
+  }
 };
 
 export function SalesReport() {
@@ -164,7 +291,7 @@ export function SalesReport() {
       <div className="mt-3 flex flex-col justify-between gap-2 px-4 sm:flex-row sm:items-center sm:px-5">
         <div className="flex flex-1 items-center justify-between space-x-2 sm:flex-initial">
           <h2 className="text-sm-plus dark:text-dark-100 font-medium tracking-wide text-gray-800">
-            Sales Report
+            6 Months Transaction Report
           </h2>
           <ActionMenu />
         </div>
@@ -257,7 +384,7 @@ function ActionMenu() {
                 className={clsx(
                   "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
                   focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
+                  "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
                 )}
               >
                 <span>Action</span>
@@ -270,7 +397,7 @@ function ActionMenu() {
                 className={clsx(
                   "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
                   focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
+                  "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
                 )}
               >
                 <span>Another action</span>
@@ -283,7 +410,7 @@ function ActionMenu() {
                 className={clsx(
                   "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
                   focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
+                  "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
                 )}
               >
                 <span>Other action</span>
@@ -299,7 +426,7 @@ function ActionMenu() {
                 className={clsx(
                   "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
                   focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
+                  "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
                 )}
               >
                 <span>Separated action</span>
