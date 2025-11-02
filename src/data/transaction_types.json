@@ -1,0 +1,195 @@
+[
+  {
+    "id": 1,
+    "sector_id": 1,
+    "name": "ATM Withdrawal",
+    "slug": "atm_withdrawal",
+    "use_percent": true,
+    "number": 20,
+    "has_trigger": false,
+    "trigger_limit": 500000
+  },
+  {
+    "id": 2,
+    "sector_id": 1,
+    "name": "Cash Deposit (ATM)",
+    "slug": "cash_deposit_atm",
+    "use_percent": true,
+    "number": 20,
+    "has_trigger": false,
+    "trigger_limit": 500000
+  },
+  {
+    "id": 3,
+    "sector_id": 1,
+    "name": "Cash Deposit (Corporate)",
+    "slug": "cash_deposit_corporate",
+    "use_percent": true,
+    "number": 20,
+    "has_trigger": false,
+    "trigger_limit": 500000
+  },
+  {
+    "id": 4,
+    "sector_id": 1,
+    "name": "Cash Deposit (Individual)",
+    "slug": "cash_deposit_individual",
+    "use_percent": true,
+    "number": 20,
+    "has_trigger": false,
+    "trigger_limit": 500000
+  },
+  {
+    "id": 5,
+    "sector_id": 1,
+    "name": "Wire Transfer",
+    "slug": "wire_transfer",
+    "use_percent": true,
+    "number": 20,
+    "has_trigger": false,
+    "trigger_limit": 500000
+  },
+  {
+    "id": 6,
+    "sector_id": 1,
+    "name": "Electronic Transfer",
+    "slug": "electronic_transfer",
+    "use_percent": true,
+    "number": 20,
+    "has_trigger": false,
+    "trigger_limit": 500000
+  },
+  {
+    "id": 7,
+    "sector_id": 1,
+    "name": "SMS",
+    "slug": "sms",
+    "use_percent": true,
+    "number": 20,
+    "has_trigger": false,
+    "trigger_limit": 500000
+  },
+  {
+    "id": 8,
+    "sector_id": 1,
+    "name": "Bill Payment",
+    "slug": "bill_payment",
+    "use_percent": true,
+    "number": 20,
+    "has_trigger": false,
+    "trigger_limit": 500000
+  },
+  {
+    "id": 9,
+    "sector_id": 1,
+    "name": "Account Maintenance",
+    "slug": "account_maint",
+    "use_percent": true,
+    "number": 20,
+    "has_trigger": false,
+    "trigger_limit": 500000
+  },
+  {
+    "id": 10,
+    "sector_id": 1,
+    "name": "Card Transaction",
+    "slug": "card",
+    "use_percent": true,
+    "number": 20,
+    "has_trigger": false,
+    "trigger_limit": 500000
+  },
+
+  {
+    "id": 11,
+    "sector_id": 2,
+    "name": "Product Sale",
+    "slug": "product_sale",
+    "use_percent": true,
+    "number": 20,
+    "has_trigger": false,
+    "trigger_limit": 500000
+  },
+  {
+    "id": 12,
+    "sector_id": 2,
+    "name": "Other Sale",
+    "slug": "other_sale",
+    "use_percent": true,
+    "number": 20,
+    "has_trigger": false,
+    "trigger_limit": 500000
+  },
+  {
+    "id": 13,
+    "sector_id": 2,
+    "name": "Service",
+    "slug": "services",
+    "use_percent": true,
+    "number": 20,
+    "has_trigger": false,
+    "trigger_limit": 500000
+  },
+
+  {
+    "id": 14,
+    "sector_id": 3,
+    "name": "Product Sale",
+    "slug": "product_sale",
+    "use_percent": true,
+    "number": 20,
+    "has_trigger": false,
+    "trigger_limit": 500000
+  },
+  {
+    "id": 15,
+    "sector_id": 3,
+    "name": "Other Sale",
+    "slug": "other_sale",
+    "use_percent": true,
+    "number": 20,
+    "has_trigger": false,
+    "trigger_limit": 500000
+  },
+  {
+    "id": 16,
+    "sector_id": 3,
+    "name": "Service",
+    "slug": "services",
+    "use_percent": true,
+    "number": 20,
+    "has_trigger": false,
+    "trigger_limit": 500000
+  },
+
+  {
+    "id": 17,
+    "sector_id": 4,
+    "name": "Product Sale",
+    "slug": "product_sale",
+    "use_percent": true,
+    "number": 20,
+    "has_trigger": false,
+    "trigger_limit": 500000
+  },
+  {
+    "id": 18,
+    "sector_id": 4,
+    "name": "Other Sale",
+    "slug": "other_sale",
+    "use_percent": true,
+    "number": 20,
+    "has_trigger": false,
+    "trigger_limit": 500000
+  },
+  {
+    "id": 19,
+    "sector_id": 4,
+    "name": "Service",
+    "slug": "services",
+    "use_percent": true,
+    "number": 20,
+    "has_trigger": false,
+    "trigger_limit": 500000
+  }
+]

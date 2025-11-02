@@ -1,0 +1,164 @@
+{
+  "banking": [
+    {
+      "id": 1,
+      "transaction_id": 874915203,
+      "sector": { "id": 1, "name": "Banking", "slug": "banking" },
+      "business": {
+        "id": 1,
+        "sector_id": 1,
+        "name": "GTBank",
+        "slug": "gtbank"
+      },
+      "branch": {
+        "id": 1,
+        "business_id": 1,
+        "sector_id": 1,
+        "name": "GTBank Victoria Island Branch",
+        "slug": "gtbank-victoria-island-branch"
+      },
+      "transaction_type": {
+        "id": 1,
+        "sector_id": 1,
+        "name": "ATM Withdrawal",
+        "slug": "atm_withdrawal",
+        "use_percent": true,
+        "number": 20,
+        "has_trigger": false,
+        "trigger_limit": 500000
+      },
+      "transaction_date": "2025-02-15T10:23:12Z",
+      "transaction_amount": 5890.84,
+      "transaction_amount_chargeable": 58.91,
+      "transaction_amount_vat": 4.42
+    },
+    {
+      "id": 2,
+      "transaction_id": 240581999,
+      "sector": { "id": 1, "name": "Banking", "slug": "banking" },
+      "business": {
+        "id": 2,
+        "sector_id": 1,
+        "name": "Access Bank",
+        "slug": "access-bank"
+      },
+      "branch": {
+        "id": 3,
+        "business_id": 2,
+        "sector_id": 1,
+        "name": "Access Bank Marina Branch",
+        "slug": "access-bank-marina-branch"
+      },
+      "transaction_type": {
+        "id": 2,
+        "sector_id": 1,
+        "name": "Cash Deposit (ATM)",
+        "slug": "cash_deposit_atm",
+        "use_percent": true,
+        "number": 20,
+        "has_trigger": false,
+        "trigger_limit": 500000
+      },
+      "transaction_date": "2025-03-01T14:05:31Z",
+      "transaction_amount": 420150.25,
+      "transaction_amount_chargeable": 4201.5,
+      "transaction_amount_vat": 315.11
+    },
+    {
+      "id": 3,
+      "transaction_id": 391207443,
+      "sector": { "id": 1, "name": "Banking", "slug": "banking" },
+      "business": {
+        "id": 3,
+        "sector_id": 1,
+        "name": "First Bank",
+        "slug": "first-bank"
+      },
+      "branch": {
+        "id": 4,
+        "business_id": 3,
+        "sector_id": 1,
+        "name": "First Bank Lekki Branch",
+        "slug": "first-bank-lekki-branch"
+      },
+      "transaction_type": {
+        "id": 5,
+        "sector_id": 1,
+        "name": "Wire Transfer",
+        "slug": "wire_transfer",
+        "use_percent": true,
+        "number": 20,
+        "has_trigger": false,
+        "trigger_limit": 500000
+      },
+      "transaction_date": "2025-05-20T08:12:05Z",
+      "transaction_amount": 750000.0,
+      "transaction_amount_chargeable": 7500.0,
+      "transaction_amount_vat": 562.5
+    },
+    {
+      "id": 4,
+      "transaction_id": 765023181,
+      "sector": { "id": 1, "name": "Banking", "slug": "banking" },
+      "business": {
+        "id": 1,
+        "sector_id": 1,
+        "name": "GTBank",
+        "slug": "gtbank"
+      },
+      "branch": {
+        "id": 2,
+        "business_id": 1,
+        "sector_id": 1,
+        "name": "GTBank Ikeja Branch",
+        "slug": "gtbank-ikeja-branch"
+      },
+      "transaction_type": {
+        "id": 4,
+        "sector_id": 1,
+        "name": "Cash Deposit (Individual)",
+        "slug": "cash_deposit_individual",
+        "use_percent": true,
+        "number": 20,
+        "has_trigger": false,
+        "trigger_limit": 500000
+      },
+      "transaction_date": "2025-01-10T11:45:09Z",
+      "transaction_amount": 145320.78,
+      "transaction_amount_chargeable": 1453.21,
+      "transaction_amount_vat": 108.99
+    },
+    {
+      "id": 5,
+      "transaction_id": 908343221,
+      "sector": { "id": 1, "name": "Banking", "slug": "banking" },
+      "business": {
+        "id": 2,
+        "sector_id": 1,
+        "name": "Access Bank",
+        "slug": "access-bank"
+      },
+      "branch": {
+        "id": 3,
+        "business_id": 2,
+        "sector_id": 1,
+        "name": "Access Bank Marina Branch",
+        "slug": "access-bank-marina-branch"
+      },
+      "transaction_type": {
+        "id": 8,
+        "sector_id": 1,
+        "name": "Bill Payment",
+        "slug": "bill_payment",
+        "use_percent": true,
+        "number": 20,
+        "has_trigger": false,
+        "trigger_limit": 500000
+      },
+      "transaction_date": "2025-06-27T16:09:02Z",
+      "transaction_amount": 89456.1,
+      "transaction_amount_chargeable": 89.46,
+      "transaction_amount_vat": 6.71
+    }
+  ]
+}

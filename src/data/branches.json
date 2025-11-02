@@ -1,0 +1,103 @@
+[
+  {
+    "id": 1,
+    "business_id": 1,
+    "sector_id": 1,
+    "name": "GTBank Victoria Island Branch",
+    "slug": "gtbank-victoria-island-branch"
+  },
+  {
+    "id": 2,
+    "business_id": 1,
+    "sector_id": 1,
+    "name": "GTBank Ikeja Branch",
+    "slug": "gtbank-ikeja-branch"
+  },
+  {
+    "id": 3,
+    "business_id": 2,
+    "sector_id": 1,
+    "name": "Access Bank Marina Branch",
+    "slug": "access-bank-marina-branch"
+  },
+  {
+    "id": 4,
+    "business_id": 3,
+    "sector_id": 1,
+    "name": "First Bank Lekki Branch",
+    "slug": "first-bank-lekki-branch"
+  },
+
+  {
+    "id": 5,
+    "business_id": 4,
+    "sector_id": 2,
+    "name": "MTN Ikeja Service Center",
+    "slug": "mtn-ikeja-service-center"
+  },
+  {
+    "id": 6,
+    "business_id": 4,
+    "sector_id": 2,
+    "name": "MTN Abuja Service Center",
+    "slug": "mtn-abuja-service-center"
+  },
+  {
+    "id": 7,
+    "business_id": 5,
+    "sector_id": 2,
+    "name": "Airtel Lagos Headquarters",
+    "slug": "airtel-lagos-headquarters"
+  },
+  {
+    "id": 8,
+    "business_id": 6,
+    "sector_id": 2,
+    "name": "Glo Ibadan Office",
+    "slug": "glo-ibadan-office"
+  },
+
+  {
+    "id": 9,
+    "business_id": 7,
+    "sector_id": 3,
+    "name": "Ikeja Electric Mainland Office",
+    "slug": "ikeja-electric-mainland-office"
+  },
+  {
+    "id": 10,
+    "business_id": 8,
+    "sector_id": 3,
+    "name": "Benin Electric Central Office",
+    "slug": "benin-electric-central-office"
+  },
+  {
+    "id": 11,
+    "business_id": 9,
+    "sector_id": 3,
+    "name": "Abuja Electric Maitama Branch",
+    "slug": "abuja-electric-maitama-branch"
+  },
+
+  {
+    "id": 12,
+    "business_id": 10,
+    "sector_id": 4,
+    "name": "Eko Hotel VI Branch",
+    "slug": "eko-hotel-vi-branch"
+  },
+  {
+    "id": 13,
+    "business_id": 11,
+    "sector_id": 4,
+    "name": "Transcorp Hilton Abuja",
+    "slug": "transcorp-hilton-abuja"
+  },
+  {
+    "id": 14,
+    "business_id": 12,
+    "sector_id": 4,
+    "name": "Grand Hotel Asaba",
+    "slug": "grand-hotel-asaba"
+  }
+]

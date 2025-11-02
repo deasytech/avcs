@@ -1,0 +1,6 @@
+[
+  { "id": 1, "name": "Banking", "slug": "banking" },
+  { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+  { "id": 3, "name": "Power", "slug": "power" },
+  { "id": 4, "name": "Hotel", "slug": "hotel" }
+]
