@@ -4,7 +4,7 @@ import { CSSProperties } from "react";
 // Local Imports
 import { Card } from "@/components/ui";
 import { SellerCard } from "./SellerCard";
-import { usePowerData } from "./useBankingData";
+import { useHotelsData } from "./useBankingData";
 
 // ----------------------------------------------------------------------
 
@@ -20,9 +20,9 @@ export interface Seller {
 // Avatar mapping based on business branding colors
 const getBusinessAvatar = (businessName: string): string => {
   const avatarMap: Record<string, string> = {
-    "PHCN": "/images/avatar/avatar-1.jpg", // Blue theme
-    "Eko Electric": "/images/avatar/avatar-2.jpg",   // Orange theme
-    "Ikeja Electric": "/images/avatar/avatar-3.jpg",   // Red theme
+    "Hilton": "/images/avatar/avatar-1.jpg", // Blue theme
+    "Marriott": "/images/avatar/avatar-2.jpg",   // Orange theme
+    "Sheraton": "/images/avatar/avatar-3.jpg",   // Red theme
   };
   return avatarMap[businessName] || "/images/avatar/avatar-1.jpg";
 };
@@ -49,9 +49,9 @@ const formatSalesAmount = (amount: number): string => {
 };
 
 export function TopSellers() {
-  const powerData = usePowerData();
+  const hotelsData = useHotelsData();
 
-  const sellers: Seller[] = powerData.map((business) => ({
+  const sellers: Seller[] = hotelsData.map((business) => ({
     uid: business.id.toString(),
     avatar: getBusinessAvatar(business.name),
     name: business.name,
@@ -64,7 +64,7 @@ export function TopSellers() {
     <Card className="col-span-12 pb-2 lg:col-span-5 xl:col-span-6">
       <div className="flex min-w-0 items-center justify-between px-4 py-3 sm:px-5">
         <div className="dark:text-dark-100 truncate font-medium tracking-wide text-gray-800">
-          Top 3 Performing Power Companies
+          Top 3 Performing Hotels
         </div>
       </div>
       <div

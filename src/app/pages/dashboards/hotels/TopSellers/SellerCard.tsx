@@ -76,7 +76,7 @@ export function SellerCard({
             {name}
           </p>
           <p className="text-xs-plus dark:text-dark-300 text-gray-400">
-            Power Company
+            Hotel Chain
           </p>
         </div>
       </div>

@@ -1,29 +1,33 @@
 // Local Imports
 import { Page } from "@/components/shared/Page";
+import OrdersTable from "./OrdersTable";
 import { Overview } from "./Overview";
-import { Statistics } from "./Statistics";
-import { Projects } from "./Projects";
-import { CustomerSatisfaction } from "./CustomerSatisfaction";
+import { Budget } from "./Budget";
+import { Income } from "./Income";
+import { Expense } from "./Expense";
 import { TopSellers } from "./TopSellers";
-import { UsersActivity } from "./UsersActivity";
-import { BandwidthReport } from "./BandwidthReport";
+import { SocialTraffic } from "./SocialTraffic";
+import { TopCountries } from "./TopCountries";
 
 // ----------------------------------------------------------------------
 
-export default function CRMAnalytics() {
+export default function BankingDashboard() {
   return (
-    <Page title="CRM Analytics Dashboard">
-      <div className="overflow-hidden pb-8">
-        <div className="transition-content mt-4 grid grid-cols-12 gap-4 px-(--margin-x) sm:mt-5 sm:gap-5 lg:mt-6 lg:gap-6">
+    <Page title="Banking Dashboard">
+      <div className="transition-content mt-5 px-(--margin-x) pb-8 lg:mt-6">
+        <div className="grid grid-cols-12 gap-4 sm:gap-5 lg:gap-6">
           <Overview />
-          <Statistics />
-          <Projects />
-          <CustomerSatisfaction />
-        </div>
-        <TopSellers />
-        <div className="transition-content mt-4 grid grid-cols-1 gap-4 px-(--margin-x) sm:mt-5 sm:grid-cols-2 sm:gap-5 lg:mt-6 lg:gap-6">
-          <BandwidthReport />
-          <UsersActivity />
+          <div className="col-span-12 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-5 lg:col-span-4 lg:grid-cols-2 lg:gap-6">
+            <Budget />
+            <Income />
+            <Expense />
+          </div>
+          <TopSellers />
+          <div className="col-span-12 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:col-span-7 lg:gap-6 xl:col-span-6">
+            <SocialTraffic />
+            <TopCountries />
+          </div>
+          <OrdersTable />
         </div>
       </div>
     </Page>

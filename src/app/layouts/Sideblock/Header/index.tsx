@@ -12,10 +12,10 @@ import { useLocation } from "react-router";
 function getPageTitle(pathname: string): string {
   const routeTitles: Record<string, string> = {
     '/dashboards/home': 'Home',
-    '/dashboards/sector/banks': 'Banks',
-    '/dashboards/sector/hotels': 'Hotels',
-    '/dashboards/sector/power': 'Power',
-    '/dashboards/sector/telecoms': 'Telecoms',
+    '/dashboards/sector/banks': 'Data for Banks',
+    '/dashboards/sector/hotels': 'Data for Hotels',
+    '/dashboards/sector/power': 'Data for Power',
+    '/dashboards/sector/telecoms': 'Data for Telecoms',
     '/dashboards/regions': 'Regions',
     '/dashboards/businesses': 'Businesses',
     '/dashboards/branches': 'Branches',
@@ -44,7 +44,7 @@ export function Header() {
       <div className="flex items-center gap-2 sm:flex-1">
         {pageTitle && (
           <div className="flex-1">
-            <h1 className="text-xl font-semibold text-gray-900 dark:text-dark-100">
+            <h1 className="text-2xl font-semibold text-gray-900 dark:text-dark-100">
               {pageTitle}
             </h1>
           </div>
