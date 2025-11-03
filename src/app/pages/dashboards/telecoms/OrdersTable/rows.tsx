@@ -84,6 +84,7 @@ export function TotalCell({ getValue }: { getValue: Getter<any> }) {
   );
 }
 
+
 export function ProfitCell({
   getValue,
   row,
@@ -101,6 +102,14 @@ export function ProfitCell({
         {percentage.toFixed(2)}%
       </Badge>
     </div>
+  );
+}
+
+export function VatCell({ getValue }: { getValue: Getter<any> }) {
+  return (
+    <p className="text-sm-plus dark:text-dark-100 font-medium text-gray-800">
+      ₦{getValue().toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+    </p>
   );
 }
 

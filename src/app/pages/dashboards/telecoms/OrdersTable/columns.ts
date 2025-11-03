@@ -6,12 +6,14 @@ import {
   SelectCell,
   SelectHeader,
 } from "@/components/shared/table/SelectCheckbox";
+
 import {
   CustomerCell,
   DateCell,
   OrderIdCell,
   ProfitCell,
   TotalCell,
+  VatCell,
 } from "./rows";
 import { Order } from "./data";
 
@@ -52,11 +54,19 @@ export const columns: ColumnDef<Order>[] = [
     header: "Amount (₦)",
     cell: TotalCell,
   },
+
   {
     id: "profit",
     accessorKey: "profit",
     label: "Charge",
     header: "Charge (₦)",
     cell: ProfitCell,
+  },
+  {
+    id: "vat",
+    accessorKey: "tax",
+    label: "VAT",
+    header: "VAT (₦)",
+    cell: VatCell,
   },
 ];

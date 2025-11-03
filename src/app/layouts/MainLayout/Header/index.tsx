@@ -1,12 +1,11 @@
+
 // Import Dependencies
 import clsx from "clsx";
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import SearchIcon from "@/assets/dualicons/search.svg?react";
+import { useLocation } from "react-router";
+
 
 // Local Imports
 import { useThemeContext } from "@/app/contexts/theme/context";
-import { Search } from "@/components/template/Search";
-import { Button } from "@/components/ui";
 import { Notifications } from "@/components/template/Notifications";
 import { RightSidebar } from "@/components/template/RightSidebar";
 import { LanguageSelector } from "@/components/template/LanguageSelector";
@@ -14,28 +13,27 @@ import { SidebarToggleBtn } from "@/components/shared/SidebarToggleBtn";
 
 // ----------------------------------------------------------------------
 
-function SlashIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="22"
-      height="20"
-      aria-hidden="true"
-      {...props}
-    >
-      <path
-        fill="none"
-        stroke="currentColor"
-        d="M3.5.5h12c1.7 0 3 1.3 3 3v13c0 1.7-1.3 3-3 3h-12c-1.7 0-3-1.3-3-3v-13c0-1.7 1.3-3 3-3z"
-        opacity="0.4"
-      />
-      <path fill="currentColor" d="M11.8 6L8 15.1h-.9L10.8 6h1z" />
-    </svg>
-  );
+
+function getPageTitle(pathname: string): string {
+  const routeTitles: Record<string, string> = {
+    '/dashboards/home': 'Home',
+    '/dashboards/sector/banks': 'Banks',
+    '/dashboards/sector/hotels': 'Hotels',
+    '/dashboards/sector/power': 'Power',
+    '/dashboards/sector/telecoms': 'Telecoms',
+    '/dashboards/regions': 'Regions',
+    '/dashboards/businesses': 'Businesses',
+    '/dashboards/branches': 'Branches',
+    '/tables/reports': 'General Reports',
+  };
+
+  return routeTitles[pathname] || '';
 }
 
 export function Header() {
   const { cardSkin } = useThemeContext();
+  const location = useLocation();
+  const pageTitle = getPageTitle(location.pathname);
 
   return (
     <header
@@ -45,35 +43,14 @@ export function Header() {
       )}
     >
       <SidebarToggleBtn />
+      {pageTitle && (
+        <div className="flex-1 text-center">
+          <h1 className="text-xl font-semibold text-gray-900 dark:text-dark-100">
+            {pageTitle}
+          </h1>
+        </div>
+      )}
       <div className="flex items-center gap-2 ltr:-mr-1.5 rtl:-ml-1.5">
-        <Search
-          renderButton={(open) => (
-            <>
-              <Button
-                onClick={open}
-                unstyled
-                className="h-8 w-64 justify-between gap-2 rounded-full border border-gray-200 px-3 text-xs-plus hover:border-gray-400 dark:border-dark-500 dark:hover:border-dark-400 max-sm:hidden"
-              >
-                <div className="flex items-center gap-2">
-                  <MagnifyingGlassIcon className="size-4" />
-                  <span className="text-gray-400 dark:text-dark-300">
-                    Search here...
-                  </span>
-                </div>
-                <SlashIcon />
-              </Button>
-
-              <Button
-                onClick={open}
-                variant="flat"
-                isIcon
-                className="relative size-9 rounded-full sm:hidden"
-              >
-                <SearchIcon className="size-6 text-gray-900 dark:text-dark-100" />
-              </Button>
-            </>
-          )}
-        />
         <Notifications />
         <RightSidebar />
         <LanguageSelector />
