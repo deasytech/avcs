@@ -16,7 +16,6 @@ import { Fragment, useRef, useState } from "react";
 
 // Local Imports
 import { TableSortIcon } from "@/components/shared/table/TableSortIcon";
-import { ColumnFilter } from "@/components/shared/table/ColumnFilter";
 import { PaginationSection } from "@/components/shared/table/PaginationSection";
 import { Card, Table, THead, TBody, Th, Tr, Td } from "@/components/ui";
 import {
@@ -257,9 +256,6 @@ export default function OrdersDatatableV2() {
                             header.getContext(),
                           )
                         )}
-                        {header.column.getCanFilter() ? (
-                          <ColumnFilter column={header.column} />
-                        ) : null}
                       </Th>
                     ))}
                   </Tr>

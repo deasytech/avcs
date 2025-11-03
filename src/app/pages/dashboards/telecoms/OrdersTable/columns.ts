@@ -37,8 +37,6 @@ export const columns: ColumnDef<Order>[] = [
     label: "Transaction Date",
     header: "Date",
     cell: DateCell,
-    filterColumn: "dateRange",
-    filterFn: "inNumberRange",
   },
   {
     id: "customer",
@@ -52,8 +50,6 @@ export const columns: ColumnDef<Order>[] = [
     accessorKey: "total",
     label: "Amount",
     header: "Amount (₦)",
-    filterColumn: "numberRange",
-    filterFn: "inNumberRange",
     cell: TotalCell,
   },
   {
@@ -62,7 +58,5 @@ export const columns: ColumnDef<Order>[] = [
     label: "Charge",
     header: "Charge (₦)",
     cell: ProfitCell,
-    filterColumn: "numberRange",
-    filterFn: "inNumberRange",
   },
 ];

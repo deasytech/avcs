@@ -140,7 +140,7 @@ export function Income() {
     <Card className="overflow-hidden">
       <div className="flex min-w-0 items-center justify-between px-4 pt-3 sm:px-5">
         <h2 className="dark:text-dark-100 truncate font-medium tracking-wide text-gray-800">
-          VAT Income Trend - Telecoms
+          VAT Income Trend
         </h2>
       </div>
       <div className="px-4 sm:px-5">

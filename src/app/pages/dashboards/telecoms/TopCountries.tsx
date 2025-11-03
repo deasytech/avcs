@@ -82,7 +82,7 @@ export function TopCountries() {
     <Card className="px-4 pb-5 sm:px-5">
       <div className="flex h-14 min-w-0 items-center justify-between py-3">
         <h2 className="dark:text-dark-100 truncate font-medium tracking-wide text-gray-800">
-          Telecoms Transaction Volume
+          Transaction Volume
         </h2>
       </div>
       <div>
