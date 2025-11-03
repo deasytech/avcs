@@ -1,17 +1,5 @@
-// Import Dependencies
-import { Fragment } from "react";
-import {
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
-  Transition,
-} from "@headlessui/react";
-import { EllipsisHorizontalIcon } from "@heroicons/react/20/solid";
-import clsx from "clsx";
-
 // Local Imports
-import { Button, Card } from "@/components/ui";
+import { Card } from "@/components/ui";
 import { WalletCard } from "./WalletCard";
 
 // ----------------------------------------------------------------------
@@ -27,46 +15,71 @@ export interface Wallet {
   chartData: number[];
 }
 
+// Dynamic amount calculation based on transaction data
+const calculateBankTotal = (businessId: number): string => {
+  // Sample transaction amounts for each bank (in Naira)
+  const bankTransactions = {
+    1: [95900.04, 7153943.03, 4087.93, 1912.50, 414538.76, 3506.04, 4643.18, 7014732.40, 2687.80, 413609.68, 686246.46, 451582.06, 596342.61, 2687.80, 1962.31, 43537.79, 633261.05, 535537.79, 155414.93, 593069.46], // GTBank
+    2: [3749785.70, 4097302.27, 9562935.14, 93180.28, 2944191.69, 502270.83, 4892.61, 1204.25, 934404.94, 2519952.95, 1285679.71, 2707627.22, 967188.29, 240600.03, 370001.65, 653282.33, 441911.47, 472341.95, 618422.26, 149722.83], // Access Bank
+    3: [39151.54, 1510784.11, 606.33, 74569.40, 572613.99, 962829.96, 116992.92, 495949.95, 824159.45, 30972.31, 858214.93, 447737.17, 892026.41, 495949.95, 714399.21, 442996.99, 572613.99, 962829.96, 240689.73, 967188.29], // First Bank
+    4: [35019.68, 90625.61, 281672.02, 93279.65, 86315.83, 32887.48, 48371.05, 13605.42, 318723.91, 463261.50, 71874.31, 50038.74, 84325.06, 394168.05, 21433.12, 294647.51, 120872.74, 35214.72, 37797.44, 18744.91] // Zenith Bank (using business_id 4 data)
+  };
+
+  const transactions = bankTransactions[businessId as keyof typeof bankTransactions] || [];
+  const total = transactions.reduce((sum, amount) => sum + amount, 0);
+
+  // Format as Naira with appropriate scale
+  if (total >= 1000000000) {
+    return `₦${(total / 1000000000).toFixed(1)}B`;
+  } else if (total >= 1000000) {
+    return `₦${(total / 1000000).toFixed(1)}M`;
+  } else if (total >= 1000) {
+    return `₦${(total / 1000).toFixed(1)}K`;
+  } else {
+    return `₦${total.toFixed(0)}`;
+  }
+};
+
 const wallets: Wallet[] = [
   {
     uid: "1",
-    wallet: "Bitcoin",
-    abbr: "BTC",
-    image: "/images/logos/bitcoin.svg",
-    impession: 4.3,
-    amount: "$31,566.11",
-    color: "#F7931A",
-    chartData: [20, 420, 102, 540, 275, 614],
+    wallet: "GTBank",
+    abbr: "GTB",
+    image: "/src/assets/nav-icons/bank-build.svg",
+    impession: 4.2,
+    amount: calculateBankTotal(1),
+    color: "#E04403",
+    chartData: [120, 420, 302, 540, 375, 614],
   },
   {
     uid: "2",
-    wallet: "Ethereum",
-    abbr: "ETH",
-    image: "/images/logos/ethereum.svg",
-    impession: -6.53,
-    amount: "$7,668.56",
-    color: "#627EEA",
-    chartData: [54, 77, 43, 69, 12],
+    wallet: "Access Bank",
+    abbr: "ACCESS",
+    image: "/src/assets/nav-icons/bank-build.svg",
+    impession: 4.0,
+    amount: calculateBankTotal(2),
+    color: "#D32F2F",
+    chartData: [254, 377, 243, 369, 212],
   },
   {
     uid: "3",
-    wallet: "Solana",
-    abbr: "SOL",
-    image: "/images/logos/solana.svg",
-    impession: 3.6,
-    amount: "$1,956.11",
-    color: "#3AC5BC",
-    chartData: [654, 820, 102, 540, 154, 614],
+    wallet: "First Bank",
+    abbr: "FBN",
+    image: "/src/assets/nav-icons/bank-build.svg",
+    impession: 3.8,
+    amount: calculateBankTotal(3),
+    color: "#1976D2",
+    chartData: [454, 620, 302, 740, 354, 614],
   },
   {
     uid: "4",
-    wallet: "Litecoin",
-    abbr: "LTC",
-    image: "/images/logos/litecoin.svg",
-    impession: 7.86,
-    amount: "$487.76",
-    color: "#4073C3",
-    chartData: [0, 20, 10, 30, 20, 50],
+    wallet: "Zenith Bank",
+    abbr: "ZENITH",
+    image: "/src/assets/nav-icons/bank-build.svg",
+    impession: 4.1,
+    amount: calculateBankTotal(4),
+    color: "#388E3C",
+    chartData: [100, 220, 180, 330, 280, 450],
   },
 ];
 
@@ -75,9 +88,8 @@ export function Watchlist() {
     <Card>
       <div className="flex items-center justify-between px-4 py-3 sm:px-5">
         <h2 className="dark:text-dark-100 truncate font-medium tracking-wide text-gray-800">
-          Watchlist
+          Banking Sector Monitor
         </h2>
-        <ActionMenu />
       </div>
 
       <div
@@ -89,90 +101,5 @@ export function Watchlist() {
         ))}
       </div>
     </Card>
-  );
-}
-
-function ActionMenu() {
-  return (
-    <Menu
-      as="div"
-      className="relative inline-block text-left ltr:-mr-1.5 rtl:-ml-1.5"
-    >
-      <MenuButton
-        as={Button}
-        isIcon
-        variant="flat"
-        className="size-8 rounded-full"
-      >
-        <EllipsisHorizontalIcon className="size-5" />
-      </MenuButton>
-      <Transition
-        as={Fragment}
-        enter="transition ease-out"
-        enterFrom="opacity-0 translate-y-2"
-        enterTo="opacity-100 translate-y-0"
-        leave="transition ease-in"
-        leaveFrom="opacity-100 translate-y-0"
-        leaveTo="opacity-0 translate-y-2"
-      >
-        <MenuItems className="dark:border-dark-500 dark:bg-dark-700 dark:text-dark-200 absolute z-100 mt-1.5 min-w-[10rem] rounded-lg border border-gray-300 bg-white py-1 text-gray-600 shadow-lg shadow-gray-200/50 outline-hidden focus-visible:outline-hidden ltr:right-0 rtl:left-0 dark:shadow-none">
-          <MenuItem>
-            {({ focus }) => (
-              <button
-                className={clsx(
-                  "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
-                  focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
-                )}
-              >
-                <span>Action</span>
-              </button>
-            )}
-          </MenuItem>
-          <MenuItem>
-            {({ focus }) => (
-              <button
-                className={clsx(
-                  "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
-                  focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
-                )}
-              >
-                <span>Another action</span>
-              </button>
-            )}
-          </MenuItem>
-          <MenuItem>
-            {({ focus }) => (
-              <button
-                className={clsx(
-                  "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
-                  focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
-                )}
-              >
-                <span>Other action</span>
-              </button>
-            )}
-          </MenuItem>
-
-          <hr className="border-gray-150 dark:border-dark-500 mx-3 my-1.5 h-px" />
-
-          <MenuItem>
-            {({ focus }) => (
-              <button
-                className={clsx(
-                  "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
-                  focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
-                )}
-              >
-                <span>Separated action</span>
-              </button>
-            )}
-          </MenuItem>
-        </MenuItems>
-      </Transition>
-    </Menu>
   );
 }

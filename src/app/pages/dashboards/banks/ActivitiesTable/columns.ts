@@ -13,11 +13,11 @@ import {
   AmountCell,
   TransactionDateCell,
 } from "./rows";
-import { CryptoActivity } from "./fakeData";
+import { BankingTransactionActivity } from "./bankingTransactionData";
 
 // ----------------------------------------------------------------------
 
-const columnHelper = createColumnHelper<CryptoActivity>();
+const columnHelper = createColumnHelper<BankingTransactionActivity>();
 
 export const columns = [
   columnHelper.display({

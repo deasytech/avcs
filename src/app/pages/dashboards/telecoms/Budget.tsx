@@ -1,30 +1,74 @@
 // Import Dependencies
-import {
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
-  Transition,
-} from "@headlessui/react";
-import { EllipsisHorizontalIcon } from "@heroicons/react/20/solid";
-import clsx from "clsx";
 import Chart from "react-apexcharts";
-import { Fragment } from "react";
 import { ApexOptions } from "apexcharts";
 
 // Local Imports
-import { Button, Card } from "@/components/ui";
+import { Card } from "@/components/ui";
+import transactionsData from "@/data/transactions.json";
 
 // ----------------------------------------------------------------------
 
+// Filter transactions for Telecoms sector (sector_id: 2)
+const telecomsTransactions = transactionsData.filter(
+  (transaction) => transaction.sector_id === 2
+);
+
+// Calculate totals for chargeable and VAT amounts
+const totalChargeable = telecomsTransactions.reduce((sum, transaction) => {
+  const chargeableAmount = parseFloat(
+    transaction.transaction_amount_chargeable.replace("₦", "").replace(",", "")
+  );
+  return sum + chargeableAmount;
+}, 0);
+
+const totalVAT = telecomsTransactions.reduce((sum, transaction) => {
+  const vatAmount = parseFloat(
+    transaction.transaction_amount_vat.replace("₦", "").replace(",", "")
+  );
+  return sum + vatAmount;
+}, 0);
+
+// Format currency
+const formatCurrency = (amount: number) => {
+  return new Intl.NumberFormat("en-NG", {
+    style: "currency",
+    currency: "NGN",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(amount);
+};
+
+// Create series data for chart (using monthly breakdown)
+const monthlyData = telecomsTransactions.reduce((acc, transaction) => {
+  const date = new Date(transaction.transaction_date);
+  const month = date.toLocaleString("default", { month: "short" });
+
+  if (!acc[month]) {
+    acc[month] = { chargeable: 0, vat: 0 };
+  }
+
+  const chargeableAmount = parseFloat(
+    transaction.transaction_amount_chargeable.replace("₦", "").replace(",", "")
+  );
+  const vatAmount = parseFloat(
+    transaction.transaction_amount_vat.replace("₦", "").replace(",", "")
+  );
+
+  acc[month].chargeable += chargeableAmount;
+  acc[month].vat += vatAmount;
+
+  return acc;
+}, {} as Record<string, { chargeable: number; vat: number }>);
+
+const months = Object.keys(monthlyData).sort();
 const series = [
   {
-    name: "Start",
-    data: [44, 55, 41, 25, 22, 56],
+    name: "Chargeable",
+    data: months.map(month => monthlyData[month].chargeable),
   },
   {
-    name: "End",
-    data: [13, 23, 20, 60, 13, 16],
+    name: "VAT",
+    data: months.map(month => monthlyData[month].vat),
   },
 ];
 
@@ -92,25 +136,24 @@ export function Budget() {
     <Card className="col-span-2 px-4 pb-5 sm:px-5">
       <div className="flex min-w-0 items-center justify-between py-3">
         <h2 className="dark:text-dark-100 truncate font-medium tracking-wide text-gray-800">
-          Budget
+          Total Revenue
         </h2>
-        <ActionMenu />
       </div>
       <div className="flex grow gap-5">
         <div className="flex w-1/2 flex-col">
           <div className="grow">
             <p className="dark:text-dark-100 text-2xl font-semibold text-gray-800">
-              $67.4k
+              {formatCurrency(totalVAT)}
             </p>
             <a
               href="##"
               className="text-tiny text-primary-600 hover:text-primary-600/70 focus:text-primary-600/70 dark:text-primary-400 dark:hover:text-primary-400 dark:focus:text-primary-400/70 border-b border-dotted border-current pb-0.5 font-medium uppercase outline-hidden transition-colors duration-300"
             >
-              Yearly Budget
+              Telecoms VAT Revenue
             </a>
           </div>
           <p className="mt-2 line-clamp-3 text-xs leading-normal">
-            You have spent about 25% of your annual budget.
+            Total chargeable: {formatCurrency(totalChargeable)}. Represent VAT from chargeable transaction volume for Telecoms sector.
           </p>
         </div>
         <div className="ax-transparent-gridline flex w-1/2 items-end">
@@ -125,90 +168,5 @@ export function Budget() {
         </div>
       </div>
     </Card>
-  );
-}
-
-function ActionMenu() {
-  return (
-    <Menu
-      as="div"
-      className="relative inline-block text-left ltr:-mr-1.5 rtl:-ml-1.5"
-    >
-      <MenuButton
-        as={Button}
-        variant="flat"
-        isIcon
-        className="size-8 rounded-full"
-      >
-        <EllipsisHorizontalIcon className="size-5" />
-      </MenuButton>
-      <Transition
-        as={Fragment}
-        enter="transition ease-out"
-        enterFrom="opacity-0 translate-y-2"
-        enterTo="opacity-100 translate-y-0"
-        leave="transition ease-in"
-        leaveFrom="opacity-100 translate-y-0"
-        leaveTo="opacity-0 translate-y-2"
-      >
-        <MenuItems className="dark:border-dark-500 dark:bg-dark-700 absolute z-100 mt-1.5 min-w-[10rem] rounded-lg border border-gray-300 bg-white py-1 shadow-lg shadow-gray-200/50 outline-hidden focus-visible:outline-hidden ltr:right-0 rtl:left-0 dark:shadow-none">
-          <MenuItem>
-            {({ focus }) => (
-              <button
-                className={clsx(
-                  "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
-                  focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
-                )}
-              >
-                <span>Action</span>
-              </button>
-            )}
-          </MenuItem>
-          <MenuItem>
-            {({ focus }) => (
-              <button
-                className={clsx(
-                  "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
-                  focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
-                )}
-              >
-                <span>Another action</span>
-              </button>
-            )}
-          </MenuItem>
-          <MenuItem>
-            {({ focus }) => (
-              <button
-                className={clsx(
-                  "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
-                  focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
-                )}
-              >
-                <span>Other action</span>
-              </button>
-            )}
-          </MenuItem>
-
-          <hr className="border-gray-150 dark:border-dark-500 mx-3 my-1.5 h-px" />
-
-          <MenuItem>
-            {({ focus }) => (
-              <button
-                className={clsx(
-                  "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
-                  focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
-                )}
-              >
-                <span>Separated action</span>
-              </button>
-            )}
-          </MenuItem>
-        </MenuItems>
-      </Transition>
-    </Menu>
   );
 }

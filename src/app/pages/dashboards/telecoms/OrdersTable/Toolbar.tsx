@@ -6,7 +6,6 @@ import { Table } from "@tanstack/react-table";
 import { TableConfig } from "./TableConfig";
 import { Order } from "./data";
 import { CollapsibleSearch } from "@/components/shared/CollapsibleSearch";
-import { MenuActions } from "./MenuActions";
 
 // ----------------------------------------------------------------------
 
@@ -21,7 +20,7 @@ export function Toolbar({ table }: { table: Table<Order> }) {
       )}
     >
       <h2 className="dark:text-dark-100 truncate text-base font-medium tracking-wide text-gray-800">
-        Orders Table
+        Recent Transactions
       </h2>
       <div
         className={clsx("flex", isFullScreenEnabled && "ltr:-mr-2 rtl:-ml-2")}
@@ -32,7 +31,6 @@ export function Toolbar({ table }: { table: Table<Order> }) {
           onChange={(e) => table.setGlobalFilter(e.target.value)}
         />
         <TableConfig table={table} />
-        <MenuActions />
       </div>
     </div>
   );

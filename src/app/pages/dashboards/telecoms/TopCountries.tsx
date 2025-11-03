@@ -1,116 +1,125 @@
 // Local Imports
 import { ArrowDownIcon, ArrowUpIcon } from "@heroicons/react/24/outline";
 import { Card } from "@/components/ui";
+import transactionsData from "@/data/transactions.json";
+import businessesData from "@/data/businesses.json";
 
 // ----------------------------------------------------------------------
 
-type Country = {
-  uid: string;
-  flag: string;
+type BusinessStats = {
+  id: number;
   name: string;
-  sales: string;
-  impression: number;
+  transactionCount: number;
+  totalAmount: number;
+  rating: number;
+  trend: number;
 };
 
-const countries: Country[] = [
-  {
-    uid: "1",
-    flag: "/images/flags/svg/rounded/australia.svg",
-    name: "Australia",
-    sales: "$6.41k",
-    impression: 2,
-  },
-  {
-    uid: "2",
-    flag: "/images/flags/svg/rounded/brazil.svg",
-    name: "Brazil",
-    sales: "$2.33k",
-    impression: 1,
-  },
-  {
-    uid: "3",
-    flag: "/images/flags/svg/rounded/china.svg",
-    name: "China",
-    sales: "$7.23k",
-    impression: 1,
-  },
-  {
-    uid: "4",
-    flag: "/images/flags/svg/rounded/india.svg",
-    name: "India",
-    sales: "$975",
-    impression: -1,
-  },
-  {
-    uid: "5",
-    flag: "/images/flags/svg/rounded/italy.svg",
-    name: "Italy",
-    sales: "$699",
-    impression: 1,
-  },
-  {
-    uid: "6",
-    flag: "/images/flags/svg/rounded/japan.svg",
-    name: "Japan",
-    sales: "$624",
-    impression: 1,
-  },
-  {
-    uid: "7",
-    flag: "/images/flags/svg/rounded/russia.svg",
-    name: "Russia",
-    sales: "$579",
-    impression: -1,
-  },
-  {
-    uid: "8",
-    flag: "/images/flags/svg/rounded/spain.svg",
-    name: "Spain",
-    sales: "$501",
-    impression: 1,
-  },
-];
-
 export function TopCountries() {
+  // Get telecoms businesses (sector_id: 2)
+  const telecomsBusinesses = businessesData.filter(
+    (business) => business.sector_id === 2
+  );
+
+  // Calculate stats for each telecoms business
+  const businessStats: BusinessStats[] = telecomsBusinesses.map((business) => {
+    const businessTransactions = transactionsData.filter(
+      (transaction) => transaction.business_id === business.id && transaction.sector_id === 2
+    );
+
+    const transactionCount = businessTransactions.length;
+
+    // Calculate total transaction amount (remove currency symbols and convert to number)
+    const totalAmount = businessTransactions.reduce((sum, transaction) => {
+      const amountStr = transaction.transaction_amount.replace(/[₦,]/g, '');
+      return sum + parseFloat(amountStr);
+    }, 0);
+
+    // Calculate trend based on recent transactions (last 3 months vs previous 3 months)
+    const now = new Date();
+    const threeMonthsAgo = new Date(now.getTime() - 90 * 24 * 60 * 60 * 1000);
+    const sixMonthsAgo = new Date(now.getTime() - 180 * 24 * 60 * 60 * 1000);
+
+    const recentTransactions = businessTransactions.filter(t => new Date(t.transaction_date) >= threeMonthsAgo);
+    const previousTransactions = businessTransactions.filter(t =>
+      new Date(t.transaction_date) >= sixMonthsAgo && new Date(t.transaction_date) < threeMonthsAgo
+    );
+
+    const recentCount = recentTransactions.length;
+    const previousCount = previousTransactions.length;
+    const trend = previousCount > 0 ? ((recentCount - previousCount) / previousCount) * 100 : 0;
+
+    return {
+      id: business.id,
+      name: business.name,
+      transactionCount,
+      totalAmount,
+      rating: business.rating,
+      trend: Math.round(trend)
+    };
+  });
+
+  // Sort by transaction count (highest first)
+  const sortedBusinessStats = businessStats.sort((a, b) => b.transactionCount - a.transactionCount);
+
+  // Count total telecoms transactions
+  const telecomsTransactionCount = transactionsData.filter(
+    (transaction) => transaction.sector_id === 2
+  ).length;
+
+  // Format currency
+  const formatCurrency = (amount: number) => {
+    if (amount >= 1000000) {
+      return `₦${(amount / 1000000).toFixed(1)}M`;
+    } else if (amount >= 1000) {
+      return `₦${(amount / 1000).toFixed(1)}K`;
+    } else {
+      return `₦${amount.toFixed(0)}`;
+    }
+  };
+
   return (
     <Card className="px-4 pb-5 sm:px-5">
       <div className="flex h-14 min-w-0 items-center justify-between py-3">
         <h2 className="dark:text-dark-100 truncate font-medium tracking-wide text-gray-800">
-          Top Countries
+          Telecoms Transaction Volume
         </h2>
-        <a
-          href="##"
-          className="text-xs-plus text-primary-600 hover:text-primary-600/70 focus:text-primary-600/70 dark:text-primary-400 dark:hover:text-primary-400/70 dark:focus:text-primary-400/70 border-b border-dotted border-current pb-0.5 font-medium outline-hidden transition-colors duration-300"
-        >
-          View All
-        </a>
       </div>
       <div>
         <p>
-          <span className="dark:text-dark-100 text-2xl text-gray-800">64</span>
+          <span className="dark:text-dark-100 text-2xl text-gray-800">{telecomsTransactionCount}</span>
         </p>
-        <p className="text-xs-plus">Countries</p>
+        <p className="text-xs-plus">Total Transactions</p>
       </div>
       <div className="mt-5 space-y-4">
-        {countries.map((country) => (
+        {sortedBusinessStats.map((business) => (
           <div
-            key={country.uid}
+            key={business.id}
             className="flex items-center justify-between gap-2"
           >
             <div className="flex min-w-0 items-center gap-2">
-              <img className="size-6" src={country.flag} alt={country.name} />
+              <div className="size-6 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
+                <span className="text-xs font-medium text-blue-600 dark:text-blue-300">
+                  {business.name.charAt(0)}
+                </span>
+              </div>
               <a
                 href="##"
                 className="truncate transition-opacity hover:opacity-80"
               >
-                {country.name}
+                {business.name}
               </a>
             </div>
             <div className="flex items-center gap-2">
-              <p className="text-sm-plus dark:text-dark-100 text-gray-800">
-                {country.sales}
-              </p>
-              {country.impression > 0 ? (
+              <div className="text-right">
+                <p className="text-sm-plus dark:text-dark-100 text-gray-800 font-medium">
+                  {business.transactionCount}
+                </p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  {formatCurrency(business.totalAmount)}
+                </p>
+              </div>
+              {business.trend > 0 ? (
                 <ArrowUpIcon className="this:success text-this dark:text-this-lighter size-4" />
               ) : (
                 <ArrowDownIcon className="this:error text-this dark:text-this-lighter size-4" />

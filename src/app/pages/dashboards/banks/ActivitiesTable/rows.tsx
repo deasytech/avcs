@@ -13,30 +13,38 @@ import { Getter, Row } from "@tanstack/react-table";
 import { useLocaleContext } from "@/app/contexts/locale/context";
 import { Avatar } from "@/components/ui";
 import { ColorType } from "@/constants/app";
-import { CryptoActivity } from "./fakeData";
+import { BankingTransactionActivity } from "./bankingTransactionData";
 
 // ----------------------------------------------------------------------
 
-type ActivityType = "utility-payment" | "property-coverage" | "personal";
+type ActivityType = "atm_withdrawal" | "cash_deposit_atm" | "cash_deposit_corporate" | "cash_deposit_individual" | "wire_transfer" | "electronic_transfer" | "sms" | "bill_payment" | "account_maint" | "card" | "unknown";
 
 const activityColor: Record<ActivityType, ColorType> = {
-  "utility-payment": "info",
-  "property-coverage": "primary",
-  personal: "warning",
+  "atm_withdrawal": "info",
+  "cash_deposit_atm": "success",
+  "cash_deposit_corporate": "success",
+  "cash_deposit_individual": "success",
+  "wire_transfer": "primary",
+  "electronic_transfer": "primary",
+  "sms": "warning",
+  "bill_payment": "error",
+  "account_maint": "warning",
+  "card": "info",
+  "unknown": "neutral",
 };
 
 function getActivityIcon(type: ActivityType) {
-  if (type === "utility-payment") return ShieldExclamationIcon;
-  if (type === "property-coverage") return BoltIcon;
-  if (type === "personal") return UserIcon;
-  return ArrowsRightLeftIcon;
+  if (type === "bill_payment" || type === "account_maint") return ShieldExclamationIcon;
+  if (type === "sms") return BoltIcon;
+  if (type === "atm_withdrawal" || type === "card") return ArrowsRightLeftIcon;
+  return UserIcon;
 }
 
 export function ActivityCell({
   row,
   getValue,
 }: {
-  row: Row<CryptoActivity>;
+  row: Row<BankingTransactionActivity>;
   getValue: Getter<any>;
 }) {
   const Icon = getActivityIcon(row.original.activity_type.key as ActivityType);
@@ -68,7 +76,7 @@ export function ActivityCell({
 export function AccountNameCell({ getValue }: { getValue: Getter<any> }) {
   return (
     <span className="dark:text-dark-100 font-medium text-gray-800">
-      {getValue()} Wallet
+      {getValue()}
     </span>
   );
 }
@@ -83,13 +91,17 @@ export function TransactionDateCell({ getValue }: { getValue: Getter<any> }) {
 }
 
 export function AmountCell({
-  row,
   getValue,
 }: {
-  row: Row<CryptoActivity>;
   getValue: Getter<any>;
 }) {
   const val = getValue();
+  const formattedAmount = new Intl.NumberFormat('en-NG', {
+    style: 'currency',
+    currency: 'NGN',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(Math.abs(val));
 
   return (
     <span
@@ -100,7 +112,7 @@ export function AmountCell({
           : "text-error dark:text-error-light",
       )}
     >
-      {val} {row.original.account_name}
+      {val > 0 ? '+' : ''}{formattedAmount}
     </span>
   );
 }

@@ -20,9 +20,8 @@ import { Card, Table, THead, TBody, Th, Tr, Td } from "@/components/ui";
 import { useBoxSize, useDidUpdate } from "@/hooks";
 import { fuzzyFilter } from "@/utils/react-table/fuzzyFilter";
 import { useSkipper } from "@/utils/react-table/useSkipper";
-import { MenuAction } from "./MenuActions";
 import { columns } from "./columns";
-import { activityList, CryptoActivity } from "./fakeData";
+import { bankingTransactionActivities, BankingTransactionActivity } from "./bankingTransactionData";
 import { getUserAgentBrowser } from "@/utils/dom/getUserAgentBrowser";
 
 // ----------------------------------------------------------------------
@@ -35,8 +34,8 @@ export function ActivitiesTable() {
   const theadRef = useRef<HTMLTableSectionElement>(null);
   const { height: theadHeight } = useBoxSize({ ref: theadRef });
 
-  const [activities, setActivities] = useState<CryptoActivity[]>([
-    ...activityList,
+  const [activities, setActivities] = useState<BankingTransactionActivity[]>([
+    ...bankingTransactionActivities,
   ]);
 
   const [globalFilter, setGlobalFilter] = useState("");
@@ -91,7 +90,7 @@ export function ActivitiesTable() {
     <div>
       <div className="table-toolbar flex items-center justify-between">
         <h2 className="dark:text-dark-100 truncate text-base font-medium tracking-wide text-gray-800">
-          Crypto Activity Table
+          Banking Activity Table
         </h2>
         <div className="flex">
           <CollapsibleSearch
@@ -99,7 +98,6 @@ export function ActivitiesTable() {
             value={globalFilter ?? ""}
             onChange={(e) => setGlobalFilter(e.target.value)}
           />
-          <MenuAction />
         </div>
       </div>
       <Card className="relative mt-3">
@@ -122,9 +120,9 @@ export function ActivitiesTable() {
                             {header.isPlaceholder
                               ? null
                               : flexRender(
-                                  header.column.columnDef.header,
-                                  header.getContext(),
-                                )}
+                                header.column.columnDef.header,
+                                header.getContext(),
+                              )}
                           </span>
                           <TableSortIcon sorted={header.column.getIsSorted()} />
                         </div>
@@ -147,8 +145,8 @@ export function ActivitiesTable() {
                     className={clsx(
                       "dark:border-b-dark-500 relative border-y border-transparent border-b-gray-200",
                       row.getIsSelected() &&
-                        !isSafari &&
-                        "row-selected after:bg-primary-500/10 ltr:after:border-l-primary-500 rtl:after:border-r-primary-500 after:pointer-events-none after:absolute after:inset-0 after:z-2 after:h-full after:w-full after:border-3 after:border-transparent",
+                      !isSafari &&
+                      "row-selected after:bg-primary-500/10 ltr:after:border-l-primary-500 rtl:after:border-r-primary-500 after:pointer-events-none after:absolute after:inset-0 after:z-2 after:h-full after:w-full after:border-3 after:border-transparent",
                     )}
                   >
                     {row.getVisibleCells().map((cell) => {

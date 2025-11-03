@@ -2,21 +2,18 @@
 import { ColumnDef } from "@tanstack/react-table";
 
 // Local Imports
-import { RowActions } from "./RowActions";
 import {
   SelectCell,
   SelectHeader,
 } from "@/components/shared/table/SelectCheckbox";
 import {
-  AddressCell,
   CustomerCell,
   DateCell,
   OrderIdCell,
-  OrderStatusCell,
   ProfitCell,
   TotalCell,
 } from "./rows";
-import { Order, orderStatusOptions } from "./data";
+import { Order } from "./data";
 
 // ----------------------------------------------------------------------
 
@@ -30,14 +27,14 @@ export const columns: ColumnDef<Order>[] = [
   {
     id: "order_id",
     accessorKey: "order_id",
-    label: "Order ID",
-    header: "Order",
+    label: "Transaction ID",
+    header: "Transaction ID",
     cell: OrderIdCell,
   },
   {
     id: "created_at",
     accessorKey: "created_at",
-    label: "Order Date",
+    label: "Transaction Date",
     header: "Date",
     cell: DateCell,
     filterColumn: "dateRange",
@@ -46,15 +43,15 @@ export const columns: ColumnDef<Order>[] = [
   {
     id: "customer",
     accessorFn: (row) => row.customer.name,
-    label: "Customer",
-    header: "Customer",
+    label: "Business/Branch",
+    header: "Business/Branch",
     cell: CustomerCell,
   },
   {
     id: "total",
     accessorKey: "total",
-    label: "Total",
-    header: "Total",
+    label: "Amount",
+    header: "Amount (₦)",
     filterColumn: "numberRange",
     filterFn: "inNumberRange",
     cell: TotalCell,
@@ -62,30 +59,10 @@ export const columns: ColumnDef<Order>[] = [
   {
     id: "profit",
     accessorKey: "profit",
-    label: "Profit",
-    header: "Profit",
+    label: "Charge",
+    header: "Charge (₦)",
     cell: ProfitCell,
     filterColumn: "numberRange",
     filterFn: "inNumberRange",
   },
-  {
-    id: "order_status",
-    accessorKey: "order_status",
-    label: "Order Status",
-    header: "Order Status",
-    cell: OrderStatusCell,
-    filterColumn: "select",
-    filterFn: "arrIncludesSome",
-    options: orderStatusOptions,
-  },
-
-  {
-    id: "address",
-    accessorFn: (row) =>
-      `${row.shipping_address?.street}, ${row.shipping_address?.line}`,
-    label: "Address",
-    header: "Address",
-    cell: AddressCell,
-  },
-  { id: "actions", label: "Row Actions", header: "Actions", cell: RowActions },
 ];

@@ -79,7 +79,7 @@ export function CustomerCell({
 export function TotalCell({ getValue }: { getValue: Getter<any> }) {
   return (
     <p className="text-sm-plus dark:text-dark-100 font-medium text-gray-800">
-      ${getValue().toFixed(1)}
+      ₦{getValue().toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
     </p>
   );
 }
@@ -91,13 +91,14 @@ export function ProfitCell({
   getValue: Getter<any>;
   row: Row<Order>;
 }) {
+  const percentage = (row.original.profit / row.original.total) * 100;
   return (
     <div className="flex items-center gap-2">
       <p className="dark:text-dark-100 text-gray-800">
-        ${getValue().toFixed(1)}
+        ₦{getValue().toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
       </p>
       <Badge className="rounded-full" color="success" variant="soft">
-        {((row.original.profit / row.original.total) * 100).toFixed(0)}%
+        {percentage.toFixed(2)}%
       </Badge>
     </div>
   );

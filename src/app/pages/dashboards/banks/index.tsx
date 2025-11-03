@@ -11,7 +11,7 @@ import { TransactionsChart } from "./TransactionsChart";
 
 export default function Crypto1() {
   return (
-    <Page title="Cryptocurrency Dashboard V1">
+    <Page title="Banking Dashboard">
       <div className="transition-content mt-5 grid grid-cols-12 gap-4 px-(--margin-x) pb-8 sm:gap-5 lg:mt-6 lg:gap-6">
         <div className="col-span-12 space-y-4 sm:space-y-5 lg:col-span-8 lg:space-y-6">
           <Balance />

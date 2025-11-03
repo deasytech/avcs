@@ -1,67 +1,146 @@
 // Import Dependencies
 import {
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
   Radio,
   RadioGroup,
-  Transition,
 } from "@headlessui/react";
-import { EllipsisHorizontalIcon } from "@heroicons/react/20/solid";
 import {
   ArrowPathIcon,
   CheckBadgeIcon,
   ClockIcon,
   CurrencyDollarIcon,
 } from "@heroicons/react/24/outline";
-import clsx from "clsx";
-import { Fragment, useState } from "react";
+import { Fragment, useState, useMemo } from "react";
 import ReactApexChart from "react-apexcharts";
 
 // Local Imports
 import { Button, Card } from "@/components/ui";
+import transactionsData from "@/data/transactions.json";
 
 // ----------------------------------------------------------------------
+
+// Helper function to parse Naira amount string to number
+const parseNairaAmount = (amountStr: string): number => {
+  return parseFloat(amountStr.replace(/[₦,]/g, ''));
+};
+
+// Process transaction data for telecoms sector (sector_id: 2)
+const processTransactionData = () => {
+  const monthlyData: { [key: string]: { chargeable: number; vat: number; volume: number } } = {};
+  const yearlyData: { [key: string]: { chargeable: number; vat: number; volume: number } } = {};
+
+  // Filter transactions for telecoms sector only
+  const telecomsTransactions = transactionsData.filter(transaction => transaction.sector_id === 2);
+
+  telecomsTransactions.forEach(transaction => {
+    const date = new Date(transaction.transaction_date);
+    const monthKey = date.toLocaleString('default', { month: 'short' });
+    const yearKey = date.getFullYear().toString();
+
+    const chargeable = parseNairaAmount(transaction.transaction_amount_chargeable);
+    const vat = parseNairaAmount(transaction.transaction_amount_vat);
+
+    // Monthly data
+    if (!monthlyData[monthKey]) {
+      monthlyData[monthKey] = { chargeable: 0, vat: 0, volume: 0 };
+    }
+    monthlyData[monthKey].chargeable += chargeable;
+    monthlyData[monthKey].vat += vat;
+    monthlyData[monthKey].volume += 1; // Count of transactions
+
+    // Yearly data
+    if (!yearlyData[yearKey]) {
+      yearlyData[yearKey] = { chargeable: 0, vat: 0, volume: 0 };
+    }
+    yearlyData[yearKey].chargeable += chargeable;
+    yearlyData[yearKey].vat += vat;
+    yearlyData[yearKey].volume += 1; // Count of transactions
+  });
+
+  // Get sorted months and years
+  const sortedMonths = Object.keys(monthlyData).sort((a, b) => {
+    const monthOrder = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return monthOrder.indexOf(a) - monthOrder.indexOf(b);
+  });
+
+  const sortedYears = Object.keys(yearlyData).sort();
+
+  return {
+    monthly: {
+      categories: sortedMonths,
+      chargeable: sortedMonths.map(month => Math.round(monthlyData[month].chargeable)),
+      vat: sortedMonths.map(month => Math.round(monthlyData[month].vat)),
+      volume: sortedMonths.map(month => monthlyData[month].volume), // Keep as count
+    },
+    yearly: {
+      categories: sortedYears,
+      chargeable: sortedYears.map(year => Math.round(yearlyData[year].chargeable)),
+      vat: sortedYears.map(year => Math.round(yearlyData[year].vat)),
+      volume: sortedYears.map(year => yearlyData[year].volume), // Keep as count
+    },
+  };
+};
+
+const processedData = processTransactionData();
 
 const data = {
   yearly: {
     series: [
       {
-        name: "Orders",
-        data: [28, 45, 35, 50, 32, 55, 23, 60, 28],
+        name: "Chargeable",
+        data: processedData.yearly.chargeable,
       },
       {
-        name: "Completed Orders",
-        data: [14, 25, 20, 25, 12, 20, 15, 20, 14],
+        name: "VAT",
+        data: processedData.yearly.vat,
       },
       {
-        name: "Refunded Orders",
-        data: [4, 5, 6, 5, 2, 5, 3, 6, 3],
+        name: "Volume",
+        data: processedData.yearly.volume,
       },
     ],
-    categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"],
+    categories: processedData.yearly.categories,
   },
   monthly: {
     series: [
       {
-        name: "Orders",
-        data: [28, 45, 35, 50, 32, 55, 23, 60, 28, 42],
+        name: "Chargeable",
+        data: processedData.monthly.chargeable,
       },
       {
-        name: "Completed Orders",
-        data: [14, 25, 20, 25, 12, 20, 15, 20, 14, 21],
+        name: "VAT",
+        data: processedData.monthly.vat,
       },
       {
-        name: "Refunded Orders",
-        data: [4, 5, 6, 5, 2, 5, 3, 6, 3, 5],
+        name: "Volume",
+        data: processedData.monthly.volume,
       },
     ],
-    categories: [1, 4, 7, 10, 13, 16, 19, 22, 25, 28],
+    categories: processedData.monthly.categories,
   },
 };
 
 type DataRange = keyof typeof data;
+
+// Calculate overview metrics for telecoms sector (sector_id: 2)
+const calculateOverviewMetrics = () => {
+  // Filter transactions for telecoms sector only
+  const telecomsTransactions = transactionsData.filter(transaction => transaction.sector_id === 2);
+
+  const allTransactions = telecomsTransactions.reduce((sum, transaction) =>
+    sum + parseNairaAmount(transaction.transaction_amount), 0);
+  const totalChargeable = telecomsTransactions.reduce((sum, transaction) =>
+    sum + parseNairaAmount(transaction.transaction_amount_chargeable), 0);
+  const totalVat = telecomsTransactions.reduce((sum, transaction) =>
+    sum + parseNairaAmount(transaction.transaction_amount_vat), 0);
+  const totalVolume = telecomsTransactions.length; // Count of transactions
+
+  return {
+    allTransactions: Math.round(allTransactions),
+    vatChargeable: Math.round(totalChargeable),
+    vatIncome: Math.round(totalVat),
+    totalVolume: totalVolume,
+  };
+};
 
 const chartConfig = {
   colors: ["#4C4EE7", "#26E7A6", "#FF9800"],
@@ -143,14 +222,15 @@ export function Overview() {
   const chartOptions = JSON.parse(JSON.stringify(chartConfig));
   chartOptions.xaxis.categories = data[focusRange].categories;
 
+  const metrics = useMemo(() => calculateOverviewMetrics(), []);
+
   return (
     <Card className="col-span-12 lg:col-span-8">
       <div className="flex flex-col justify-between px-4 pt-3 sm:flex-row sm:items-center sm:px-5">
         <div className="flex flex-1 items-center justify-between space-x-2 sm:flex-initial">
           <h2 className="text-sm-plus dark:text-dark-100 font-medium tracking-wide text-gray-800">
-            Order Overview
+            Overview
           </h2>
-          <ActionMenu />
         </div>
         <RadioGroup
           name="options"
@@ -187,38 +267,38 @@ export function Overview() {
         <div className="dark:bg-surface-3 rounded-lg bg-gray-100 p-3 2xl:p-4">
           <div className="flex justify-between space-x-1">
             <p className="dark:text-dark-100 text-xl font-semibold text-gray-800">
-              $67.6k
+              ₦{metrics.allTransactions.toLocaleString()}
             </p>
             <CurrencyDollarIcon className="this:secondary text-this dark:text-this-light size-5" />
           </div>
-          <p className="text-xs-plus mt-1">Income</p>
+          <p className="text-xs-plus mt-1">All Transactions</p>
         </div>
         <div className="dark:bg-surface-3 rounded-lg bg-gray-100 p-3 2xl:p-4">
           <div className="flex justify-between space-x-1">
             <p className="dark:text-dark-100 text-xl font-semibold text-gray-800">
-              7.6k
+              ₦{metrics.vatChargeable.toLocaleString()}
             </p>
             <CheckBadgeIcon className="this:success text-this dark:text-this-light size-5" />
           </div>
-          <p className="text-xs-plus mt-1">Completed</p>
+          <p className="text-xs-plus mt-1">VAT Chargeable</p>
         </div>
         <div className="dark:bg-surface-3 rounded-lg bg-gray-100 p-3 2xl:p-4">
           <div className="flex justify-between space-x-1">
             <p className="dark:text-dark-100 text-xl font-semibold text-gray-800">
-              1.4k
+              ₦{metrics.vatIncome.toLocaleString()}
             </p>
             <ArrowPathIcon className="this:primary text-this dark:text-this-light size-5" />
           </div>
-          <p className="text-xs-plus mt-1">Processing</p>
+          <p className="text-xs-plus mt-1">VAT Income</p>
         </div>
         <div className="dark:bg-surface-3 rounded-lg bg-gray-100 p-3 2xl:p-4">
           <div className="flex justify-between space-x-1">
             <p className="dark:text-dark-100 text-xl font-semibold text-gray-800">
-              345
+              {metrics.totalVolume.toLocaleString()}
             </p>
             <ClockIcon className="this:warning text-this dark:text-this-light size-5" />
           </div>
-          <p className="text-xs-plus mt-1">Pending</p>
+          <p className="text-xs-plus mt-1">Total Volume</p>
         </div>
       </div>
 
@@ -231,90 +311,5 @@ export function Overview() {
         />
       </div>
     </Card>
-  );
-}
-
-function ActionMenu() {
-  return (
-    <Menu
-      as="div"
-      className="relative inline-block text-left ltr:-mr-1.5 rtl:-ml-1.5"
-    >
-      <MenuButton
-        as={Button}
-        variant="flat"
-        isIcon
-        className="size-8 rounded-full"
-      >
-        <EllipsisHorizontalIcon className="size-5" />
-      </MenuButton>
-      <Transition
-        as={Fragment}
-        enter="transition ease-out"
-        enterFrom="opacity-0 translate-y-2"
-        enterTo="opacity-100 translate-y-0"
-        leave="transition ease-in"
-        leaveFrom="opacity-100 translate-y-0"
-        leaveTo="opacity-0 translate-y-2"
-      >
-        <MenuItems className="dark:border-dark-500 dark:bg-dark-700 absolute z-100 mt-1.5 min-w-[10rem] rounded-lg border border-gray-300 bg-white py-1 shadow-lg shadow-gray-200/50 outline-hidden focus-visible:outline-hidden ltr:right-0 sm:ltr:left-0 rtl:left-0 sm:rtl:right-0 dark:shadow-none">
-          <MenuItem>
-            {({ focus }) => (
-              <button
-                className={clsx(
-                  "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
-                  focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
-                )}
-              >
-                <span>Action</span>
-              </button>
-            )}
-          </MenuItem>
-          <MenuItem>
-            {({ focus }) => (
-              <button
-                className={clsx(
-                  "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
-                  focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
-                )}
-              >
-                <span>Another action</span>
-              </button>
-            )}
-          </MenuItem>
-          <MenuItem>
-            {({ focus }) => (
-              <button
-                className={clsx(
-                  "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
-                  focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
-                )}
-              >
-                <span>Other action</span>
-              </button>
-            )}
-          </MenuItem>
-
-          <hr className="border-gray-150 dark:border-dark-500 mx-3 my-1.5 h-px" />
-
-          <MenuItem>
-            {({ focus }) => (
-              <button
-                className={clsx(
-                  "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
-                  focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
-                )}
-              >
-                <span>Separated action</span>
-              </button>
-            )}
-          </MenuItem>
-        </MenuItems>
-      </Transition>
-    </Menu>
   );
 }

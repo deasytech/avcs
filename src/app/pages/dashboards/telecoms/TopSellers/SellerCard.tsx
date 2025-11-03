@@ -2,16 +2,13 @@
 import {
   ArrowDownIcon,
   ArrowUpIcon,
-  ChatBubbleOvalLeftEllipsisIcon,
-  EnvelopeIcon,
-  PhoneIcon,
 } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 
 // Local Imports
-import { Avatar, Box, Button } from "@/components/ui";
+import { Box } from "@/components/ui";
 import { Seller } from ".";
 
 // ----------------------------------------------------------------------
@@ -66,7 +63,6 @@ const chartConfig: ApexOptions = {
 };
 
 export function SellerCard({
-  avatar,
   name,
   sales,
   impression,
@@ -75,23 +71,12 @@ export function SellerCard({
   return (
     <Box className="dark:bg-surface-3 w-56 shrink-0 rounded-xl bg-gray-50 p-4">
       <div className="flex flex-col items-center space-y-3 text-center">
-        <Avatar
-          size={16}
-          classNames={{
-            root: "rounded-full bg-linear-to-r from-sky-400 to-blue-600 p-0.5",
-            display: "dark:border-dark-700 border-2 border-white text-lg",
-          }}
-          name={name}
-          src={avatar}
-          initialColor="auto"
-        />
-
         <div>
           <p className="dark:text-dark-100 text-base font-medium text-gray-800">
             {name}
           </p>
           <p className="text-xs-plus dark:text-dark-300 text-gray-400">
-            Saleswoman
+            Telecom Provider
           </p>
         </div>
       </div>
@@ -130,32 +115,6 @@ export function SellerCard({
             />
           </div>
         </div>
-      </div>
-      <div className="mt-5 flex justify-center gap-2">
-        <Button
-          color="primary"
-          variant="soft"
-          isIcon
-          className="size-8 rounded-full"
-        >
-          <ChatBubbleOvalLeftEllipsisIcon className="size-4" />
-        </Button>
-        <Button
-          color="primary"
-          variant="soft"
-          isIcon
-          className="size-8 rounded-full"
-        >
-          <EnvelopeIcon className="size-4" />
-        </Button>
-        <Button
-          color="primary"
-          variant="soft"
-          isIcon
-          className="size-8 rounded-full"
-        >
-          <PhoneIcon className="size-4" />
-        </Button>
       </div>
     </Box>
   );
