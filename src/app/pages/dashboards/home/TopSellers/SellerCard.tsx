@@ -1,4 +1,4 @@
-// Local Imports
+// Import Dependencies
 import {
   ArrowDownIcon,
   ArrowUpIcon,
@@ -7,19 +7,11 @@ import clsx from "clsx";
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 
-// Import Dependencies
+// Local Imports
 import { Box } from "@/components/ui";
+import { Seller } from ".";
 
 // ----------------------------------------------------------------------
-
-export interface Seller {
-  id: string;
-  avatar?: string;
-  name: string;
-  sales: string;
-  impression: number;
-  chartData: number[];
-}
 
 const chartConfig: ApexOptions = {
   colors: ["#4467EF"],
@@ -77,16 +69,19 @@ export function SellerCard({
   chartData,
 }: Seller) {
   return (
-    <Box className="px-4">
-      <div className="flex flex-col items-center space-y-3 pt-4 text-center">
+    <Box className="dark:bg-surface-3 w-56 shrink-0 rounded-xl bg-gray-50 p-4">
+      <div className="flex flex-col items-center space-y-3 text-center">
         <div>
           <p className="dark:text-dark-100 text-base font-medium text-gray-800">
             {name}
           </p>
+          <p className="text-xs-plus dark:text-dark-300 text-gray-400">
+            Banking Institution
+          </p>
         </div>
       </div>
       <div className="mt-5">
-        <div className="dark:bg-surface-3 rounded-xl bg-slate-100 p-4">
+        <div>
           <p>Sales</p>
           <div className="mt-0.5 flex gap-2">
             <p className="dark:text-dark-100 text-xl font-semibold text-gray-800">
@@ -109,7 +104,7 @@ export function SellerCard({
           <div className="ax-transparent-gridline">
             <Chart
               type="line"
-              height="120"
+              height="100"
               options={chartConfig}
               series={[
                 {
@@ -121,7 +116,6 @@ export function SellerCard({
           </div>
         </div>
       </div>
-      <div className="h-12"></div>
     </Box>
   );
 }

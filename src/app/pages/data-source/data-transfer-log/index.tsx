@@ -20,7 +20,7 @@ import { DemoLayout } from "@/components/docs/demo/DemoLayout";
 //   { title: "Text Editor" },
 // ];
 
-const markdownPath = "forms/data-transfer-log";
+// const markdownPath = "forms/data-transfer-log";
 
 // const demos: Demo[] = [
 //   {
@@ -91,9 +91,9 @@ const markdownPath = "forms/data-transfer-log";
 export default function TextEditor() {
   return (
     <DemoLayout
-      title="Data Transfer Log"
-      // breadcrumbs={breadcrumbs}
-      markdownPath={markdownPath}
+    // title="Data Transfer Log"
+    // breadcrumbs={breadcrumbs}
+    // markdownPath={markdownPath}
     // demos={demos}
     // componentProps={componentProps}
     />

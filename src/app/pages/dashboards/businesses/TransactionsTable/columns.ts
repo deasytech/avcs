@@ -22,8 +22,8 @@ export const columns: ColumnDef<RegionalTransaction>[] = [
   {
     id: "region",
     accessorKey: "region",
-    label: "Region",
-    header: "Region",
+    label: "Transaction ID",
+    header: "Transaction ID",
     cell: RegionCell,
   },
   {

@@ -2,11 +2,6 @@
 import { createColumnHelper } from "@tanstack/react-table";
 
 // Local Imports
-import {
-  SelectCell,
-  SelectHeader,
-} from "@/components/shared/table/SelectCheckbox";
-import { TransactionRowActions } from "./TransactionRowActions";
 import { TransactionRow } from "./transactionsData";
 
 // ----------------------------------------------------------------------
@@ -19,11 +14,6 @@ const formatNairaAmount = (amount: number): string => {
 };
 
 export const transactionColumns = [
-  columnHelper.display({
-    id: "select",
-    header: SelectHeader,
-    cell: SelectCell,
-  }),
   columnHelper.accessor((row) => row.transaction_id, {
     id: "transaction_id",
     header: "Transaction ID",
@@ -68,10 +58,5 @@ export const transactionColumns = [
     id: "vat",
     header: "VAT",
     cell: (info) => formatNairaAmount(info.getValue()),
-  }),
-  columnHelper.display({
-    id: "actions",
-    header: "",
-    cell: TransactionRowActions,
   }),
 ];

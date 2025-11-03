@@ -99,7 +99,7 @@ import { DemoLayout } from "@/components/docs/demo/DemoLayout";
 export default function Datepicker() {
   return (
     <DemoLayout
-      title="API Request Log"
+      title=""
     // breadcrumbs={breadcrumbs}
     // markdownPath={markdownPath}
     // demos={demos}

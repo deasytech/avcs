@@ -3,6 +3,7 @@ import { Page } from "@/components/shared/Page";
 import { Statistics } from "./Statistics";
 import { Activity } from "./Activity";
 import { Performers } from "./Performers";
+import TransactionsTable from "./TransactionsTable";
 
 // ----------------------------------------------------------------------
 
@@ -17,6 +18,7 @@ export default function Influencer() {
             <Performers />
           </div>
         </div>
+        <TransactionsTable />
       </div>
     </Page>
   );

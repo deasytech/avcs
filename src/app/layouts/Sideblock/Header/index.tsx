@@ -7,22 +7,57 @@ import { SidebarToggleBtn } from "@/components/shared/SidebarToggleBtn";
 import { useThemeContext } from "@/app/contexts/theme/context";
 import { useLocation } from "react-router";
 
+// Sample state data import
+import states from "@/data/states.json";
+
 // ----------------------------------------------------------------------
 
 function getPageTitle(pathname: string): string {
   const routeTitles: Record<string, string> = {
     '/dashboards/home': 'Home',
-    '/dashboards/sector/banks': 'Data for Banks',
-    '/dashboards/sector/hotels': 'Data for Hotels',
-    '/dashboards/sector/power': 'Data for Power',
-    '/dashboards/sector/telecoms': 'Data for Telecoms',
     '/dashboards/regions': 'Revenue for All Regions',
     '/dashboards/businesses': 'Businesses',
-    '/dashboards/branches': 'Branches',
-    '/tables/reports': 'General Reports',
+
+    '/reports/reports': 'General Reports',
+
+    '/data-source/connect-transfer': 'Connect & Transfer',
+    '/data-source/data-transfer-log': 'Data Transfer Log',
+    '/data-source/validation-report': 'Validation Report',
+    '/data-source/api-request-log': 'API Request Log',
+    '/data-source/server-push-log': 'Server Push Log',
+    '/data-source/data-import-log': 'Data Import Log',
   };
 
-  return routeTitles[pathname] || '';
+  // Check for exact match first
+  if (routeTitles[pathname]) return routeTitles[pathname];
+
+  // Handle dynamic sector/state routes: /dashboards/sector/:sector/:state?
+  const sectorStateMatch = pathname.match(
+    /^\/dashboards\/regions\/([^/]+)(?:\/([^/]+))?$/
+  );
+
+  if (sectorStateMatch) {
+    const sectorSlug = sectorStateMatch[1]; // e.g., "banks", "hotels"
+    const stateSlug = sectorStateMatch[2]; // e.g., "lagos"
+
+    // Capitalize sector name
+    const sectorName = sectorSlug
+      .replace(/-/g, ' ')
+      .replace(/\b\w/g, (l) => l.toUpperCase());
+
+    let title = `Data for ${sectorName}`;
+
+    if (stateSlug) {
+      const state = states.find((s) => s.slug === stateSlug.toLowerCase());
+      if (state) {
+        title += ` - ${state.name}`;
+      }
+    }
+
+    return title;
+  }
+
+  return '';
 }
 
 export function Header() {
@@ -53,4 +88,4 @@ export function Header() {
       </div>
     </header>
   );
-} 
+}

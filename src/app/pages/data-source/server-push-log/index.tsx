@@ -63,7 +63,7 @@ import { DemoLayout } from "@/components/docs/demo/DemoLayout";
 export default function Autocomplete() {
   return (
     <DemoLayout
-      title="Server Push Log"
+    // title="Server Push Log"
     // breadcrumbs={breadcrumbs}
     // markdownPath={markdownPath}
     // demos={demos}

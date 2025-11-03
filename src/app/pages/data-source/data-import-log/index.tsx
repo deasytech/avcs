@@ -65,7 +65,7 @@ import { DemoLayout } from "@/components/docs/demo/DemoLayout";
 export default function FileUpload() {
   return (
     <DemoLayout
-      title="Data Import Log"
+    // title="Data Import Log"
     // breadcrumbs={breadcrumbs}
     // markdownPath={markdownPath}
     // demos={demos}

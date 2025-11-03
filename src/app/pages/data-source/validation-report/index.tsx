@@ -66,7 +66,7 @@ import { DemoLayout } from "@/components/docs/demo/DemoLayout";
 export default function Filepond() {
   return (
     <DemoLayout
-      title="Validation Report"
+    // title="Validation Report"
     // breadcrumbs={breadcrumbs}
     // markdownPath={markdownPath}
     // demos={demos}

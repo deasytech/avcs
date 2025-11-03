@@ -11,7 +11,7 @@ export function Statistics() {
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
       <Card className="flex justify-between p-4">
         <div>
-          <p className="text-xs-plus uppercase">New Followers</p>
+          <p className="text-xs-plus uppercase">All Transactions</p>
           <div className="mt-8 flex items-baseline gap-1">
             <p className="text-2xl font-semibold text-gray-800 dark:text-dark-100">
               1.3k
@@ -36,7 +36,7 @@ export function Statistics() {
 
       <Card className="flex justify-between p-4">
         <div>
-          <p className="text-xs-plus uppercase">VIEWS</p>
+          <p className="text-xs-plus uppercase">VAT Chargeable</p>
           <div className="mt-8 flex items-baseline gap-1">
             <p className="text-2xl font-semibold text-gray-800 dark:text-dark-100">
               30.6m
@@ -63,7 +63,7 @@ export function Statistics() {
 
       <Card className="flex justify-between p-4">
         <div>
-          <p className="text-xs-plus uppercase">Likes</p>
+          <p className="text-xs-plus uppercase">VAT Income</p>
           <div className="mt-8 flex items-baseline gap-1">
             <p className="text-2xl font-semibold text-gray-800 dark:text-dark-100">
               4.3M
@@ -90,7 +90,7 @@ export function Statistics() {
 
       <Card className="flex justify-between p-4">
         <div>
-          <p className="text-xs-plus uppercase">Reports</p>
+          <p className="text-xs-plus uppercase">Total Volume</p>
           <div className="mt-8 flex items-baseline gap-1">
             <p className="text-2xl font-semibold text-gray-800 dark:text-dark-100">
               236
