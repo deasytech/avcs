@@ -1,7 +1,7 @@
 import { baseNavigationObj } from "../baseNavigation";
 import { NavigationTree } from "@/@types/navigation";
 
-const ROOT_FORMS = "/forms";
+const ROOT_FORMS = "/data-source";
 
 const path = (root: string, item: string) => `${root}${item}`;
 
@@ -140,30 +140,30 @@ export const forms: NavigationTree = {
       icon: "forms.text-editor",
     },
     {
-      id: "forms.filepond",
+      id: "forms.validation-report",
       type: "item",
-      path: path(ROOT_FORMS, "/filepond"),
+      path: path(ROOT_FORMS, "/validation-report"),
       title: "Validation Report",
       icon: "forms.filepond",
     },
     {
-      id: "forms.datepicker",
+      id: "forms.api-request-log",
       type: "item",
-      path: path(ROOT_FORMS, "/datepicker"),
+      path: path(ROOT_FORMS, "/api-request-log"),
       title: "API Request Log",
       icon: "forms.datepicker",
     },
     {
-      id: "forms.autocomplete",
+      id: "forms.server-push-log",
       type: "item",
-      path: path(ROOT_FORMS, "/autocomplete"),
+      path: path(ROOT_FORMS, "/server-push-log"),
       title: "Server Push Log",
       icon: "forms.autocomplete",
     },
     {
-      id: "forms.file-upload",
+      id: "forms.data-import-log",
       type: "item",
-      path: path(ROOT_FORMS, "/file-upload"),
+      path: path(ROOT_FORMS, "/data-import-log"),
       title: "Data Import Log",
       icon: "forms.file-upload",
     },

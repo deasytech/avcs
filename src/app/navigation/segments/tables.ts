@@ -1,7 +1,7 @@
 import { baseNavigationObj } from "../baseNavigation";
 import { NavigationTree } from "@/@types/navigation";
 
-const ROOT_TABLES = "/tables";
+const ROOT_TABLES = "/reports";
 
 const path = (root: string, item: string) => `${root}${item}`;
 

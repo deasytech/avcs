@@ -16,7 +16,7 @@ function getPageTitle(pathname: string): string {
     '/dashboards/sector/hotels': 'Data for Hotels',
     '/dashboards/sector/power': 'Data for Power',
     '/dashboards/sector/telecoms': 'Data for Telecoms',
-    '/dashboards/regions': 'Regions',
+    '/dashboards/regions': 'Revenue for All Regions',
     '/dashboards/businesses': 'Businesses',
     '/dashboards/branches': 'Branches',
     '/tables/reports': 'General Reports',

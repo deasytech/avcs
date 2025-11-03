@@ -256,176 +256,176 @@ const protectedRoutes: RouteObject = {
 
 
         {
-          path: "/forms",
+          path: "/data-source",
           children: [
             {
               index: true,
-              element: <Navigate to="/forms/input" />,
+              element: <Navigate to="/data-source/input" />,
             },
             {
               path: "ekyc-form",
               lazy: async () => ({
-                Component: (await import("@/app/pages/forms/KYCForm")).default,
+                Component: (await import("@/app/pages/data-source/KYCForm")).default,
               }),
             },
             {
               path: "add-product-form",
               lazy: async () => ({
-                Component: (await import("@/app/pages/forms/add-product-form"))
+                Component: (await import("@/app/pages/data-source/add-product-form"))
                   .default,
               }),
             },
             {
               path: "new-post-form",
               lazy: async () => ({
-                Component: (await import("@/app/pages/forms/new-post-form"))
+                Component: (await import("@/app/pages/data-source/new-post-form"))
                   .default,
               }),
             },
             {
               path: "input",
               lazy: async () => ({
-                Component: (await import("@/app/pages/forms/input")).default,
+                Component: (await import("@/app/pages/data-source/input")).default,
               }),
             },
             {
               path: "input-group",
               lazy: async () => ({
-                Component: (await import("@/app/pages/forms/input-group"))
+                Component: (await import("@/app/pages/data-source/input-group"))
                   .default,
               }),
             },
             {
               path: "input-mask",
               lazy: async () => ({
-                Component: (await import("@/app/pages/forms/input-mask"))
+                Component: (await import("@/app/pages/data-source/input-mask"))
                   .default,
               }),
             },
             {
               path: "checkbox",
               lazy: async () => ({
-                Component: (await import("@/app/pages/forms/checkbox")).default,
+                Component: (await import("@/app/pages/data-source/checkbox")).default,
               }),
             },
             {
               path: "radio",
               lazy: async () => ({
-                Component: (await import("@/app/pages/forms/radio")).default,
+                Component: (await import("@/app/pages/data-source/radio")).default,
               }),
             },
             {
               path: "switch",
               lazy: async () => ({
-                Component: (await import("@/app/pages/forms/switch")).default,
+                Component: (await import("@/app/pages/data-source/switch")).default,
               }),
             },
             {
               path: "swap",
               lazy: async () => ({
-                Component: (await import("@/app/pages/forms/swap")).default,
+                Component: (await import("@/app/pages/data-source/swap")).default,
               }),
             },
             {
               path: "textarea",
               lazy: async () => ({
-                Component: (await import("@/app/pages/forms/textarea")).default,
+                Component: (await import("@/app/pages/data-source/textarea")).default,
               }),
             },
             {
               path: "select",
               lazy: async () => ({
-                Component: (await import("@/app/pages/forms/select")).default,
+                Component: (await import("@/app/pages/data-source/select")).default,
               }),
             },
             {
               path: "range",
               lazy: async () => ({
-                Component: (await import("@/app/pages/forms/range")).default,
+                Component: (await import("@/app/pages/data-source/range")).default,
               }),
             },
             {
               path: "listbox",
               lazy: async () => ({
-                Component: (await import("@/app/pages/forms/listbox")).default,
+                Component: (await import("@/app/pages/data-source/listbox")).default,
               }),
             },
             {
-              path: "autocomplete",
+              path: "server-push-log",
               lazy: async () => ({
-                Component: (await import("@/app/pages/forms/autocomplete"))
+                Component: (await import("@/app/pages/data-source/server-push-log"))
                   .default,
               }),
             },
             {
-              path: "file-upload",
+              path: "data-import-log",
               lazy: async () => ({
-                Component: (await import("@/app/pages/forms/file-upload"))
+                Component: (await import("@/app/pages/data-source/data-import-log"))
                   .default,
               }),
             },
             {
               path: "connect-transfer",
               lazy: async () => ({
-                Component: (await import("@/app/pages/forms/connect-transfer"))
+                Component: (await import("@/app/pages/data-source/connect-transfer"))
                   .default,
               }),
             },
             {
               path: "data-transfer-log",
               lazy: async () => ({
-                Component: (await import("@/app/pages/forms/data-transfer-log"))
+                Component: (await import("@/app/pages/data-source/data-transfer-log"))
                   .default,
               }),
             },
             {
-              path: "filepond",
+              path: "validation-report",
               lazy: async () => ({
-                Component: (await import("@/app/pages/forms/filepond")).default,
+                Component: (await import("@/app/pages/data-source/validation-report")).default,
               }),
             },
             {
-              path: "datepicker",
+              path: "api-request-log",
               lazy: async () => ({
-                Component: (await import("@/app/pages/forms/datepicker"))
+                Component: (await import("@/app/pages/data-source/api-request-log"))
                   .default,
               }),
             },
           ],
         },
         {
-          path: "/tables",
+          path: "/reports",
           children: [
             {
               index: true,
-              element: <Navigate to="/tables/orders-datatable-1" />,
+              element: <Navigate to="/reports/orders-datatable-1" />,
             },
             {
               path: "reports",
               lazy: async () => ({
                 Component: (
-                  await import("@/app/pages/tables/reports")
+                  await import("@/app/pages/reports/reports")
                 ).default,
               }),
             },
             {
               path: "basic-table",
               lazy: async () => ({
-                Component: (await import("@/app/pages/tables/basic-table"))
+                Component: (await import("@/app/pages/reports/basic-table"))
                   .default,
               }),
             },
             {
               path: "react-table",
               lazy: async () => ({
-                Component: (await import("@/app/pages/tables/react-table"))
+                Component: (await import("@/app/pages/reports/react-table"))
                   .default,
               }),
             },
             {
               path: "advanced-tables",
               lazy: async () => ({
-                Component: (await import("@/app/pages/tables/advanced-table"))
+                Component: (await import("@/app/pages/reports/advanced-table"))
                   .default,
               }),
             },
@@ -433,7 +433,7 @@ const protectedRoutes: RouteObject = {
               path: "orders-datatable-1",
               lazy: async () => ({
                 Component: (
-                  await import("@/app/pages/tables/orders-datatable-1")
+                  await import("@/app/pages/reports/orders-datatable-1")
                 ).default,
               }),
             },
@@ -441,14 +441,14 @@ const protectedRoutes: RouteObject = {
               path: "courses-datatable",
               lazy: async () => ({
                 Component: (
-                  await import("@/app/pages/tables/courses-datatable")
+                  await import("@/app/pages/reports/courses-datatable")
                 ).default,
               }),
             },
             {
               path: "users-datatable",
               lazy: async () => ({
-                Component: (await import("@/app/pages/tables/users-datatable"))
+                Component: (await import("@/app/pages/reports/users-datatable"))
                   .default,
               }),
             },
@@ -456,7 +456,7 @@ const protectedRoutes: RouteObject = {
               path: "projects-datatable",
               lazy: async () => ({
                 Component: (
-                  await import("@/app/pages/tables/projects-datatable")
+                  await import("@/app/pages/reports/projects-datatable")
                 ).default,
               }),
             },

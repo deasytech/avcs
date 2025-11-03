@@ -7,7 +7,7 @@ import { Page } from "@/components/shared/Page";
 import { Card } from "@/components/ui";
 import { KYCFormProvider } from "./KYCFormProvider.tsx";
 import { Stepper } from "./Stepper.tsx";
-import { UnderReview } from "./UnderReview";
+import { UnderReview } from "./UnderReview.tsx";
 import { AddressInfo } from "./steps/AddressInfo.tsx";
 import { Declaration } from "./steps/Declaration.tsx";
 import { Idenfication } from "./steps/Idenfication.tsx";

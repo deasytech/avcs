@@ -1,5 +1,4 @@
 // Local Imports
-import Logo from "@/assets/appLogo.svg?react";
 import { Progress } from "@/components/ui";
 
 // ----------------------------------------------------------------------
@@ -8,7 +7,10 @@ export function SplashScreen() {
   return (
     <>
       <div className="fixed grid h-full w-full place-content-center">
-        <Logo className="size-28" />
+        <p className="text-gray-800 dark:text-dark-50 text-3xl font-bold inline-flex flex-col leading-tight">
+          AVCS
+          <span className="text-xs">Automated VAT Collection System</span>
+        </p>
         <Progress
           color="primary"
           isIndeterminate
