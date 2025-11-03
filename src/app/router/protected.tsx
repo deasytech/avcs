@@ -777,6 +777,302 @@ const protectedRoutes: RouteObject = {
               }),
             },
             {
+              path: "regions/abia",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/adamawa",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/akwa-ibom",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/anambra",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/bauchi",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/bayelsa",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/benue",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/borno",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/cross-river",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/delta",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/ebonyi",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/edo",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/ekiti",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/enugu",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/gombe",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/imo",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/jigawa",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/kaduna",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/kano",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/katsina",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/kebbi",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/kogi",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/kwara",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/lagos",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/nasarawa",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/niger",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/ogun",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/ondo",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/osun",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/oyo",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/plateau",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/rivers",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/sokoto",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/taraba",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/yobe",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/zamfara",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
+              path: "regions/fct",
+              lazy: async () => ({
+                Component: (
+                  await import("@/app/pages/dashboards/regions")
+                ).default,
+              }),
+            },
+            {
               path: "businesses",
               lazy: async () => ({
                 Component: (await import("@/app/pages/dashboards/businesses"))
