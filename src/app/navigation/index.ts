@@ -2,7 +2,7 @@
 // import { components } from "./segments/components";
 import { dashboards } from "./segments/dashboards";
 // import { docs } from "./segments/docs";
-// import { forms } from "./segments/forms";
+import { forms } from "./segments/forms";
 // import { prototypes } from "./segments/prototypes";
 import { tables } from "./segments/tables";
 
@@ -11,7 +11,7 @@ export const navigation = [
   // apps,
   // prototypes,
   tables,
-  // forms,
+  forms,
   // components,
   // docs,
 ];

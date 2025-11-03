@@ -365,16 +365,16 @@ const protectedRoutes: RouteObject = {
               }),
             },
             {
-              path: "form-validation",
+              path: "connect-transfer",
               lazy: async () => ({
-                Component: (await import("@/app/pages/forms/form-validation"))
+                Component: (await import("@/app/pages/forms/connect-transfer"))
                   .default,
               }),
             },
             {
-              path: "text-editor",
+              path: "data-transfer-log",
               lazy: async () => ({
-                Component: (await import("@/app/pages/forms/text-editor"))
+                Component: (await import("@/app/pages/forms/data-transfer-log"))
                   .default,
               }),
             },

@@ -149,7 +149,7 @@ export function Budget() {
               href="##"
               className="text-tiny text-primary-600 hover:text-primary-600/70 focus:text-primary-600/70 dark:text-primary-400 dark:hover:text-primary-400 dark:focus:text-primary-400/70 border-b border-dotted border-current pb-0.5 font-medium uppercase outline-hidden transition-colors duration-300"
             >
-              Telecoms VAT Revenue
+              VAT Revenue
             </a>
           </div>
           <p className="mt-2 line-clamp-3 text-xs leading-normal">

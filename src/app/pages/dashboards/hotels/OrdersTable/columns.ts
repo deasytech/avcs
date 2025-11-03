@@ -60,7 +60,7 @@ export const columns: ColumnDef<Order>[] = [
     id: "profit",
     accessorKey: "profit",
     label: "Charge",
-    header: "Charge (₦)",
+    header: "VAT Chargeable (₦)",
     cell: ProfitCell,
   },
   {

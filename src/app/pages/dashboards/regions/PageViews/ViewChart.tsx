@@ -3,11 +3,11 @@ import Chart from "react-apexcharts";
 
 const series = [
   {
-    name: "Previous Period",
+    name: "Chargeable",
     data: [14, 25, 20, 25, 12, 20, 15, 20, 14, 25, 20, 25],
   },
   {
-    name: "Current Period",
+    name: "VAT Income",
     data: [28, 45, 35, 50, 32, 55, 23, 60, 28, 45, 35, 50],
   },
 ];

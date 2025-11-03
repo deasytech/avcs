@@ -10,7 +10,7 @@ export function PageViews() {
     <Card className="pb-4 overflow-hidden">
       <div className="flex min-w-0 items-center justify-between px-4 pt-3 sm:px-5">
         <h2 className="text-sm-plus font-medium tracking-wide text-gray-800 dark:text-dark-100">
-          Page Views
+          Statistics
         </h2>
         <div className="flex items-center gap-4">
           <div className="hidden cursor-pointer items-center gap-2 sm:flex">
@@ -20,7 +20,7 @@ export function PageViews() {
                 backgroundColor: "#4C4EE7",
               }}
             ></div>
-            <p>Current Period</p>
+            <p>Chargeable</p>
           </div>
           <div className="hidden cursor-pointer items-center gap-2 sm:flex">
             <div
@@ -29,7 +29,7 @@ export function PageViews() {
                 backgroundColor: "#FF9800",
               }}
             ></div>
-            <p>Previous Period</p>
+            <p>VAT Income</p>
           </div>
           <Select className="h-8 rounded-full text-xs">
             <option value="last_week">Last Week</option>

@@ -64,7 +64,7 @@ export function TopSellers() {
     <Card className="col-span-12 pb-2 lg:col-span-5 xl:col-span-6">
       <div className="flex min-w-0 items-center justify-between px-4 py-3 sm:px-5">
         <div className="dark:text-dark-100 truncate font-medium tracking-wide text-gray-800">
-          Top 3 Performing Companies
+          Top 3 Performing Telecom Companies
         </div>
       </div>
       <div

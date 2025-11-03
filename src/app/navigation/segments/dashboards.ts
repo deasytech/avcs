@@ -297,13 +297,13 @@ export const dashboards: NavigationTree = {
       title: "Businesses",
       icon: "dashboards.influencer",
     },
-    {
-      id: "dashboards.branches",
-      path: path(ROOT_DASHBOARDS, "/branches"),
-      type: "item",
-      title: "Branches",
-      icon: "dashboards.travel",
-    },
+    // {
+    //   id: "dashboards.branches",
+    //   path: path(ROOT_DASHBOARDS, "/branches"),
+    //   type: "item",
+    //   title: "Branches",
+    //   icon: "dashboards.travel",
+    // },
     // {
     //   id: "dashboards.education",
     //   path: path(ROOT_DASHBOARDS, "/education"),

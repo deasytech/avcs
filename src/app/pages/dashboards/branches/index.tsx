@@ -4,7 +4,6 @@ import { ToursTable } from "./ToursTable";
 import { Analytics } from "./Analytics";
 import { Expense } from "./Expense";
 import { Calendar } from "./Calendar";
-import { TopHotels } from "./TopHotels";
 
 // ----------------------------------------------------------------------
 
@@ -22,7 +21,6 @@ export default function Travel() {
             <Calendar />
           </div>
         </div>
-        <TopHotels />
       </div>
     </Page>
   );

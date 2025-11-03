@@ -20,7 +20,7 @@ export function Toolbar({ table }: { table: Table<Order> }) {
       )}
     >
       <h2 className="dark:text-dark-100 truncate text-base font-medium tracking-wide text-gray-800">
-        Recent Transactions
+        Recent Regional Transactions
       </h2>
       <div
         className={clsx("flex", isFullScreenEnabled && "ltr:-mr-2 rtl:-ml-2")}

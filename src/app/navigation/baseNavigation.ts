@@ -31,14 +31,13 @@ export const baseNavigationObj: Record<string, NavigationTree> = {
   //   transKey: "nav.prototypes.prototypes",
   //   icon: "prototypes",
   // },
-  // forms: {
-  //   id: "forms",
-  //   type: "item",
-  //   path: "/forms",
-  //   title: "Forms",
-  //   transKey: "nav.forms.forms",
-  //   icon: "forms",
-  // },
+  forms: {
+    id: "forms",
+    type: "item",
+    path: "/forms",
+    title: "Data Source",
+    icon: "forms",
+  },
   // components: {
   //   id: "components",
   //   type: "item",

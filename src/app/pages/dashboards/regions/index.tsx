@@ -5,9 +5,7 @@ import { useMemo } from "react";
 // Local Imports
 import { Page } from "@/components/shared/Page";
 import { PageViews } from "./PageViews";
-import { Visitors } from "./Tops/Visitors";
-import { Comments } from "./Tops/Comments";
-import { Searchs } from "./Tops/Searchs";
+import TransactionsTable from "./TransactionsTable";
 
 // Data Imports
 import statesData from "@/data/states.json";
@@ -43,11 +41,7 @@ export default function CMSAnalytics() {
             </div>
           )}
           <PageViews />
-          <div className="mt-4 grid grid-cols-1 gap-4 sm:mt-5 sm:gap-5 lg:mt-6 lg:grid-cols-3 lg:gap-6">
-            <Visitors />
-            <Comments />
-            <Searchs />
-          </div>
+          <TransactionsTable />
         </div>
       </div>
     </Page>

@@ -1,59 +1,446 @@
 [
-  { "id": 1, "name": "Abia", "slug": "abia", "region": "South East" },
-  { "id": 2, "name": "Adamawa", "slug": "adamawa", "region": "North East" },
+  {
+    "id": 1,
+    "name": "Abia",
+    "slug": "abia",
+    "region": "South East",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Adamawa",
+    "slug": "adamawa",
+    "region": "North East",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
   {
     "id": 3,
     "name": "Akwa Ibom",
     "slug": "akwa-ibom",
-    "region": "South South"
+    "region": "South South",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
   },
-  { "id": 4, "name": "Anambra", "slug": "anambra", "region": "South East" },
-  { "id": 5, "name": "Bauchi", "slug": "bauchi", "region": "North East" },
-  { "id": 6, "name": "Bayelsa", "slug": "bayelsa", "region": "South South" },
-  { "id": 7, "name": "Benue", "slug": "benue", "region": "North Central" },
-  { "id": 8, "name": "Borno", "slug": "borno", "region": "North East" },
+  {
+    "id": 4,
+    "name": "Anambra",
+    "slug": "anambra",
+    "region": "South East",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Bauchi",
+    "slug": "bauchi",
+    "region": "North East",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Bayelsa",
+    "slug": "bayelsa",
+    "region": "South South",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Benue",
+    "slug": "benue",
+    "region": "North Central",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Borno",
+    "slug": "borno",
+    "region": "North East",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
   {
     "id": 9,
     "name": "Cross River",
     "slug": "cross-river",
-    "region": "South South"
+    "region": "South South",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
   },
-  { "id": 10, "name": "Delta", "slug": "delta", "region": "South South" },
-  { "id": 11, "name": "Ebonyi", "slug": "ebonyi", "region": "South East" },
-  { "id": 12, "name": "Edo", "slug": "edo", "region": "South South" },
-  { "id": 13, "name": "Ekiti", "slug": "ekiti", "region": "South West" },
-  { "id": 14, "name": "Enugu", "slug": "enugu", "region": "South East" },
-  { "id": 15, "name": "Gombe", "slug": "gombe", "region": "North East" },
-  { "id": 16, "name": "Imo", "slug": "imo", "region": "South East" },
-  { "id": 17, "name": "Jigawa", "slug": "jigawa", "region": "North West" },
-  { "id": 18, "name": "Kaduna", "slug": "kaduna", "region": "North West" },
-  { "id": 19, "name": "Kano", "slug": "kano", "region": "North West" },
-  { "id": 20, "name": "Katsina", "slug": "katsina", "region": "North West" },
-  { "id": 21, "name": "Kebbi", "slug": "kebbi", "region": "North West" },
-  { "id": 22, "name": "Kogi", "slug": "kogi", "region": "North Central" },
-  { "id": 23, "name": "Kwara", "slug": "kwara", "region": "North Central" },
-  { "id": 24, "name": "Lagos", "slug": "lagos", "region": "South West" },
+  {
+    "id": 10,
+    "name": "Delta",
+    "slug": "delta",
+    "region": "South South",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Ebonyi",
+    "slug": "ebonyi",
+    "region": "South East",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Edo",
+    "slug": "edo",
+    "region": "South South",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Ekiti",
+    "slug": "ekiti",
+    "region": "South West",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Enugu",
+    "slug": "enugu",
+    "region": "South East",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Gombe",
+    "slug": "gombe",
+    "region": "North East",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Imo",
+    "slug": "imo",
+    "region": "South East",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Jigawa",
+    "slug": "jigawa",
+    "region": "North West",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Kaduna",
+    "slug": "kaduna",
+    "region": "North West",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Kano",
+    "slug": "kano",
+    "region": "North West",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Katsina",
+    "slug": "katsina",
+    "region": "North West",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Kebbi",
+    "slug": "kebbi",
+    "region": "North West",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Kogi",
+    "slug": "kogi",
+    "region": "North Central",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Kwara",
+    "slug": "kwara",
+    "region": "North Central",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Lagos",
+    "slug": "lagos",
+    "region": "South West",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
   {
     "id": 25,
     "name": "Nasarawa",
     "slug": "nasarawa",
-    "region": "North Central"
+    "region": "North Central",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
   },
-  { "id": 26, "name": "Niger", "slug": "niger", "region": "North Central" },
-  { "id": 27, "name": "Ogun", "slug": "ogun", "region": "South West" },
-  { "id": 28, "name": "Ondo", "slug": "ondo", "region": "South West" },
-  { "id": 29, "name": "Osun", "slug": "osun", "region": "South West" },
-  { "id": 30, "name": "Oyo", "slug": "oyo", "region": "South West" },
-  { "id": 31, "name": "Plateau", "slug": "plateau", "region": "North Central" },
-  { "id": 32, "name": "Rivers", "slug": "rivers", "region": "South South" },
-  { "id": 33, "name": "Sokoto", "slug": "sokoto", "region": "North West" },
-  { "id": 34, "name": "Taraba", "slug": "taraba", "region": "North East" },
-  { "id": 35, "name": "Yobe", "slug": "yobe", "region": "North East" },
-  { "id": 36, "name": "Zamfara", "slug": "zamfara", "region": "North West" },
+  {
+    "id": 26,
+    "name": "Niger",
+    "slug": "niger",
+    "region": "North Central",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Ogun",
+    "slug": "ogun",
+    "region": "South West",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Ondo",
+    "slug": "ondo",
+    "region": "South West",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Osun",
+    "slug": "osun",
+    "region": "South West",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Oyo",
+    "slug": "oyo",
+    "region": "South West",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Plateau",
+    "slug": "plateau",
+    "region": "North Central",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Rivers",
+    "slug": "rivers",
+    "region": "South South",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Sokoto",
+    "slug": "sokoto",
+    "region": "North West",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Taraba",
+    "slug": "taraba",
+    "region": "North East",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Yobe",
+    "slug": "yobe",
+    "region": "North East",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Zamfara",
+    "slug": "zamfara",
+    "region": "North West",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
+  },
   {
     "id": 37,
     "name": "Federal Capital Territory",
     "slug": "fct",
-    "region": "North Central"
+    "region": "North Central",
+    "sectors": [
+      { "id": 1, "name": "Banking", "slug": "banking" },
+      { "id": 2, "name": "Telecoms", "slug": "telecoms" },
+      { "id": 3, "name": "Power", "slug": "power" },
+      { "id": 4, "name": "Hotel", "slug": "hotel" }
+    ]
   }
 ]
