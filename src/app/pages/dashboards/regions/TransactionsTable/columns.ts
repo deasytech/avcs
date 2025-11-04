@@ -41,6 +41,13 @@ export const columns: ColumnDef<RegionalTransaction>[] = [
     cell: NumericCell,
   },
   {
+    id: "totalVolume",
+    accessorKey: "totalVolume",
+    label: "Transaction Amount",
+    header: "Transaction Amount (₦)",
+    cell: CurrencyCell,
+  },
+  {
     id: "vatChargeable",
     accessorKey: "vatChargeable",
     label: "VAT Chargeable",
