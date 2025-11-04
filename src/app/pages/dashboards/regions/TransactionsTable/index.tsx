@@ -37,7 +37,6 @@ import { TableSettings } from "@/components/shared/table/TableSettings";
 
 // Import data
 import transactionsData from "@/data/transactions.json";
-import statesData from "@/data/states.json";
 import businessesData from "@/data/businesses.json";
 import branchesData from "@/data/branches.json";
 
@@ -98,7 +97,6 @@ function getRegionFromBranchName(branchName: string): string {
 // Function to aggregate transactions by region
 function aggregateTransactionsByRegion(
   transactions: any[],
-  states: any[],
   businesses: any[],
   branches: any[]
 ): RegionalTransaction[] {
@@ -205,10 +203,9 @@ export default function RegionalTransactionsTable() {
   const regionalData = useMemo(() =>
     aggregateTransactionsByRegion(
       transactionsData,
-      statesData,
       businessesData,
       branchesData
-    ), [transactionsData, statesData, businessesData, branchesData]
+    ), [transactionsData, businessesData, branchesData]
   );
 
   const [data, setData] = useState<RegionalTransaction[]>(regionalData);
