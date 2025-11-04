@@ -18,10 +18,10 @@ function getPageTitle(pathname: string): string {
     '/dashboards/regions': 'Revenue for All Regions',
     '/dashboards/businesses': 'Businesses',
 
-    '/dashboards/sector/banks': 'Banks Data',
-    '/dashboards/sector/hotels': 'Hotels Data',
-    '/dashboards/sector/power': 'Power Data',
-    '/dashboards/sector/telecoms': 'Telecoms Data',
+    '/dashboards/sector/banks': 'Data for Banks',
+    '/dashboards/sector/hotels': 'Data for Hotels',
+    '/dashboards/sector/power': 'Data for Power',
+    '/dashboards/sector/telecoms': 'Data for Telecoms',
 
     '/reports/reports': 'General Reports',
 
