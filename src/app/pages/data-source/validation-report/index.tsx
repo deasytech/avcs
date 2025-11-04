@@ -65,11 +65,14 @@ import { DemoLayout } from "@/components/docs/demo/DemoLayout";
 
 export default function Filepond() {
   return (
-    <DemoLayout
-    // title="Validation Report"
-    // breadcrumbs={breadcrumbs}
-    // markdownPath={markdownPath}
-    // demos={demos}
-    />
+    <>
+      <div className="flex items-center justify-center text-xl">This function is pending deployment</div>
+      <DemoLayout
+        title="Validation Report"
+      // breadcrumbs={breadcrumbs}
+      // markdownPath={markdownPath}
+      // demos={demos}
+      />
+    </>
   );
 }

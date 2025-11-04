@@ -50,9 +50,9 @@ export function DemoLayout(props: DemoLayoutProps) {
         )}
       >
         <div className="flex items-center space-x-4 py-5 lg:py-6 rtl:space-x-reverse">
-          <h2 className="dark:text-dark-50 truncate text-xl font-medium tracking-wide text-gray-800 lg:text-2xl">
+          {/* <h2 className="dark:text-dark-50 truncate text-xl font-medium tracking-wide text-gray-800 lg:text-2xl">
             {title}
-          </h2>
+          </h2> */}
           <div className="hidden self-stretch py-1 sm:flex">
             <div className="dark:bg-dark-600 h-full w-px bg-gray-300"></div>
           </div>

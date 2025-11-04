@@ -82,7 +82,8 @@ export default function Influencer() {
               </div>
               <Button
                 onClick={openBusinessSelection}
-                variant="outlined"
+                variant="filled"
+                color="primary"
                 className="h-8 px-3 text-sm"
               >
                 Change Business

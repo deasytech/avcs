@@ -98,11 +98,14 @@ import { DemoLayout } from "@/components/docs/demo/DemoLayout";
 
 export default function Datepicker() {
   return (
-    <DemoLayout
-      title=""
-    // breadcrumbs={breadcrumbs}
-    // markdownPath={markdownPath}
-    // demos={demos}
-    />
+    <>
+      <div className="flex items-center justify-center text-xl">This function is pending deployment</div>
+      <DemoLayout
+        title="API Request Log"
+      // breadcrumbs={breadcrumbs}
+      // markdownPath={markdownPath}
+      // demos={demos}
+      />
+    </>
   );
 }

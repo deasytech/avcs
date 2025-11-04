@@ -90,12 +90,15 @@ import { DemoLayout } from "@/components/docs/demo/DemoLayout";
 
 export default function TextEditor() {
   return (
-    <DemoLayout
-    // title="Data Transfer Log"
-    // breadcrumbs={breadcrumbs}
-    // markdownPath={markdownPath}
-    // demos={demos}
-    // componentProps={componentProps}
-    />
+    <>
+      <div className="flex items-center justify-center text-xl">This function is pending deployment</div>
+      <DemoLayout
+        title="Data Transfer Log"
+      // breadcrumbs={breadcrumbs}
+      // markdownPath={markdownPath}
+      // demos={demos}
+      // componentProps={componentProps}
+      />
+    </>
   );
 }

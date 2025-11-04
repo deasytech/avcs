@@ -62,11 +62,14 @@ import { DemoLayout } from "@/components/docs/demo/DemoLayout";
 
 export default function Autocomplete() {
   return (
-    <DemoLayout
-    // title="Server Push Log"
-    // breadcrumbs={breadcrumbs}
-    // markdownPath={markdownPath}
-    // demos={demos}
-    />
+    <>
+      <div className="flex items-center justify-center text-xl">This function is pending deployment</div>
+      <DemoLayout
+        title="Server Push Log"
+      // breadcrumbs={breadcrumbs}
+      // markdownPath={markdownPath}
+      // demos={demos}
+      />
+    </>
   );
 }

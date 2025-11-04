@@ -1,5 +1,5 @@
-export const APP_NAME = "Tailux";
-export const APP_KEY = "tailux";
+export const APP_NAME = "AVCS";
+export const APP_KEY = "avcs";
 
 // Redirect Paths
 export const REDIRECT_URL_KEY = "redirect";

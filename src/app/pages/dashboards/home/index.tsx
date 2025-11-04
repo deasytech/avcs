@@ -14,7 +14,7 @@ import { TopCountries } from "./TopCountries";
 
 export default function Sales() {
   return (
-    <Page title="Sales Dashboard">
+    <Page title="Dashboard">
       <div className="transition-content overflow-hidden px-(--margin-x) pb-8">
         <Statistics />
         <div className="grid grid-cols-12 gap-4 sm:gap-5 lg:gap-6 mt-5">

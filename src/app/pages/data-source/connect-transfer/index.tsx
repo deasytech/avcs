@@ -33,7 +33,7 @@ const demos: Demo[] = [
 export default function FormValidation() {
   return (
     <DemoLayout
-      // title="Connect & Transfer"
+      title="Connect & Transfer"
       // breadcrumbs={breadcrumbs}
       // markdownPath={markdownPath}
       demos={demos}

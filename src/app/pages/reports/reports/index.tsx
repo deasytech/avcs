@@ -1,6 +1,6 @@
 // Import Dependencies
 import {
-  flexRender,
+  // flexRender,
   getCoreRowModel,
   getExpandedRowModel,
   getFacetedMinMaxValues,
@@ -11,46 +11,50 @@ import {
   SortingState,
   useReactTable,
 } from "@tanstack/react-table";
-import clsx from "clsx";
-import { Fragment, useRef, useState } from "react";
-import {
-  ArrowPathIcon,
-  CheckBadgeIcon,
-  ClockIcon,
-  CurrencyDollarIcon,
-  PlusIcon,
-  TruckIcon,
-  XCircleIcon,
-} from "@heroicons/react/20/solid";
+// import clsx from "clsx";
+import { useState } from "react";
+// import { Fragment, useRef, useState } from "react";
+// import {
+//   // ArrowPathIcon,
+//   // CheckBadgeIcon,
+//   // ClockIcon,
+//   // CurrencyDollarIcon,
+//   PlusIcon,
+//   // TruckIcon,
+//   // XCircleIcon,
+// } from "@heroicons/react/20/solid";
 
 // Local Imports
-import { TableSortIcon } from "@/components/shared/table/TableSortIcon";
-import { ColumnFilter } from "@/components/shared/table/ColumnFilter";
-import { PaginationSection } from "@/components/shared/table/PaginationSection";
-import { Button, Card, Table, THead, TBody, Th, Tr, Td } from "@/components/ui";
+// import { TableSortIcon } from "@/components/shared/table/TableSortIcon";
+// import { ColumnFilter } from "@/components/shared/table/ColumnFilter";
+// import { PaginationSection } from "@/components/shared/table/PaginationSection";
+// import { Card, Table, THead, TBody, Th, Tr, Td } from "@/components/ui";
 import {
-  useBoxSize,
+  // useBoxSize,
   useLockScrollbar,
   useLocalStorage,
   useDidUpdate,
 } from "@/hooks";
 import { fuzzyFilter } from "@/utils/react-table/fuzzyFilter";
 import { useSkipper } from "@/utils/react-table/useSkipper";
-import { SelectedRowsActions } from "./SelectedRowsActions";
-import { SubRowComponent } from "./SubRowComponent";
+// import { SelectedRowsActions } from "./SelectedRowsActions";
+// import { SubRowComponent } from "./SubRowComponent";
 import { columns } from "./columns";
 import { ordersList, type Order } from "./data";
-import { Toolbar } from "./Toolbar";
-import { useThemeContext } from "@/app/contexts/theme/context";
-import { getUserAgentBrowser } from "@/utils/dom/getUserAgentBrowser";
+// import { Toolbar } from "./Toolbar";
+// import { useThemeContext } from "@/app/contexts/theme/context";
+// import { getUserAgentBrowser } from "@/utils/dom/getUserAgentBrowser";
 import { TableSettings } from "@/components/shared/table/TableSettings";
+import { DatePicker } from "./Datepicker";
+import { SelectWithLabel } from "./SelectWithLabel";
+import { Button } from "@/components/ui";
 
 // ----------------------------------------------------------------------
 
-const isSafari = getUserAgentBrowser() === "Safari";
+// const isSafari = getUserAgentBrowser() === "Safari";
 
 export default function OrdersDatatableV2() {
-  const { cardSkin } = useThemeContext();
+  // const { cardSkin } = useThemeContext();
 
   const [autoResetPageIndex, skipAutoResetPageIndex] = useSkipper();
 
@@ -77,9 +81,9 @@ export default function OrdersDatatableV2() {
     {},
   );
 
-  const cardRef = useRef<HTMLDivElement>(null);
+  // const cardRef = useRef<HTMLDivElement>(null);
 
-  const { width: cardWidth } = useBoxSize({ ref: cardRef });
+  // const { width: cardWidth } = useBoxSize({ ref: cardRef });
 
   const table = useReactTable({
     data: orders,
@@ -153,7 +157,7 @@ export default function OrdersDatatableV2() {
 
   return (
     <div className="transition-content grid grid-cols-1 grid-rows-[auto_auto_1fr] px-(--margin-x) py-4">
-      <div className="flex items-center justify-between space-x-4">
+      {/* <div className="flex items-center justify-between space-x-4">
         <div className="min-w-0">
           <h2 className="dark:text-dark-50 truncate text-xl font-medium tracking-wide text-gray-800">
             Orders History
@@ -166,8 +170,16 @@ export default function OrdersDatatableV2() {
           <PlusIcon className="size-5" />
           <span>New Order</span>
         </Button>
+      </div> */}
+      <div className="flex items-center justify-center gap-4 h-lvh">
+        <SelectWithLabel />
+        <DatePicker />
+        <DatePicker />
+        <Button className="" color="primary" type="button">
+          Filter
+        </Button>
       </div>
-      <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:grid-cols-6 2xl:gap-6">
+      {/* <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:grid-cols-6 2xl:gap-6">
         <div className="bg-gray-150 dark:bg-dark-700 rounded-lg p-3 2xl:p-4">
           <div className="flex justify-between space-x-1">
             <p className="dark:text-dark-100 text-xl font-semibold text-gray-800">
@@ -222,12 +234,12 @@ export default function OrdersDatatableV2() {
           </div>
           <p className="text-xs-plus mt-1">Cancelled</p>
         </div>
-      </div>
-      <div
+      </div> */}
+      {/* <div
         className={clsx(
           "flex flex-col pt-4",
           tableSettings.enableFullScreen &&
-            "dark:bg-dark-900 fixed inset-0 z-61 h-full w-full bg-white pt-3",
+          "dark:bg-dark-900 fixed inset-0 z-61 h-full w-full bg-white pt-3",
         )}
       >
         <Toolbar table={table} />
@@ -255,9 +267,9 @@ export default function OrdersDatatableV2() {
                           "dark:bg-dark-800 dark:text-dark-100 bg-gray-200 font-semibold text-gray-800 uppercase first:ltr:rounded-tl-lg last:ltr:rounded-tr-lg first:rtl:rounded-tr-lg last:rtl:rounded-tl-lg",
                           header.column.getCanPin() && [
                             header.column.getIsPinned() === "left" &&
-                              "sticky z-2 ltr:left-0 rtl:right-0",
+                            "sticky z-2 ltr:left-0 rtl:right-0",
                             header.column.getIsPinned() === "right" &&
-                              "sticky z-2 ltr:right-0 rtl:left-0",
+                            "sticky z-2 ltr:right-0 rtl:left-0",
                           ],
                         )}
                       >
@@ -270,9 +282,9 @@ export default function OrdersDatatableV2() {
                               {header.isPlaceholder
                                 ? null
                                 : flexRender(
-                                    header.column.columnDef.header,
-                                    header.getContext(),
-                                  )}
+                                  header.column.columnDef.header,
+                                  header.getContext(),
+                                )}
                             </span>
                             <TableSortIcon
                               sorted={header.column.getIsSorted()}
@@ -301,11 +313,10 @@ export default function OrdersDatatableV2() {
                           "dark:border-b-dark-500 relative border-y border-transparent border-b-gray-200",
                           row.getIsExpanded() && "border-dashed",
                           row.getIsSelected() &&
-                            !isSafari &&
-                            "row-selected after:bg-primary-500/10 ltr:after:border-l-primary-500 rtl:after:border-r-primary-500 after:pointer-events-none after:absolute after:inset-0 after:z-2 after:h-full after:w-full after:border-3 after:border-transparent",
+                          !isSafari &&
+                          "row-selected after:bg-primary-500/10 ltr:after:border-l-primary-500 rtl:after:border-r-primary-500 after:pointer-events-none after:absolute after:inset-0 after:z-2 after:h-full after:w-full after:border-3 after:border-transparent",
                         )}
                       >
-                        {/* first row is a normal row */}
                         {row.getVisibleCells().map((cell) => {
                           return (
                             <Td
@@ -318,9 +329,9 @@ export default function OrdersDatatableV2() {
 
                                 cell.column.getCanPin() && [
                                   cell.column.getIsPinned() === "left" &&
-                                    "sticky z-2 ltr:left-0 rtl:right-0",
+                                  "sticky z-2 ltr:left-0 rtl:right-0",
                                   cell.column.getIsPinned() === "right" &&
-                                    "sticky z-2 ltr:right-0 rtl:left-0",
+                                  "sticky z-2 ltr:right-0 rtl:left-0",
                                 ],
                               )}
                             >
@@ -344,7 +355,6 @@ export default function OrdersDatatableV2() {
                       </Tr>
                       {row.getIsExpanded() && (
                         <tr>
-                          {/* 2nd row is a custom 1 cell row */}
                           <td
                             colSpan={row.getVisibleCells().length}
                             className="p-0"
@@ -374,7 +384,7 @@ export default function OrdersDatatableV2() {
             </div>
           )}
         </Card>
-      </div>
+      </div> */}
     </div>
   );
 }

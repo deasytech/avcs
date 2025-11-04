@@ -13,7 +13,7 @@ import { TopCountries } from "./TopCountries";
 
 export default function Orders() {
   return (
-    <Page title="Orders Dashboard">
+    <Page title="Telecoms Dashboard">
       <div className="transition-content mt-5 px-(--margin-x) pb-8 lg:mt-6">
         <div className="grid grid-cols-12 gap-4 sm:gap-5 lg:gap-6">
           <Overview />

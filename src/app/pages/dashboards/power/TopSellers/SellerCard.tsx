@@ -82,7 +82,7 @@ export function SellerCard({
       </div>
       <div className="mt-5">
         <div>
-          <p>Sales</p>
+          <p>Revenue</p>
           <div className="mt-0.5 flex gap-2">
             <p className="dark:text-dark-100 text-xl font-semibold text-gray-800">
               {sales}
