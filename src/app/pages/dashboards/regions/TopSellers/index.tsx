@@ -1,109 +1,76 @@
-// Import Dependencies
-import { CSSProperties } from "react";
-
-// Local Imports
+import { CSSProperties, useMemo } from "react";
 import { Card } from "@/components/ui";
 import { SellerCard } from "./SellerCard";
-
 import transactions from "@/data/transactions.json";
 import states from "@/data/states.json";
 
-// ----------------------------------------------------------------------
+export function TopRegions({ currentState }: { currentState: any }) {
+  const regions = useMemo(() => {
+    const stateRegionMap: Record<number, string> = {};
+    for (const state of states) {
+      stateRegionMap[state.id] = state.region;
+    }
 
-export interface RegionPerformance {
-  uid: string;
-  avatar?: string;
-  name: string; // Region name (e.g., "South West")
-  sales: string;
-  impression: number;
-  chartData: number[];
-}
+    const regionTotals: Record<string, { total: number; count: number }> = {};
 
-// Helper: parse currency string (₦39151.54 → 39151.54)
-const parseAmount = (amountStr: string): number =>
-  parseFloat(amountStr.replace(/[₦,]/g, "")) || 0;
+    for (const tx of transactions) {
+      if (currentState && tx.state_id !== currentState.id) continue;
 
-// Helper: format display sales
-const formatSalesAmount = (amount: number): string => {
-  if (amount >= 1_000_000_000) return `${(amount / 1_000_000_000).toFixed(1)}B`;
-  if (amount >= 1_000_000) return `${(amount / 1_000_000).toFixed(1)}M`;
-  if (amount >= 1_000) return `${(amount / 1_000).toFixed(0)}K`;
-  return amount.toFixed(0);
-};
+      const region = stateRegionMap[tx.state_id] || "Unknown";
+      const amount =
+        parseFloat(tx.transaction_amount.replace(/[₦,]/g, "")) || 0;
 
-// Generate chart data based on total and number of transactions
-const generateChartData = (totalAmount: number, count: number): number[] => {
-  const base = totalAmount / count;
-  const points = Math.min(count, 12);
-  return Array.from({ length: points }, () => {
-    const variation = (Math.random() - 0.5) * 0.3;
-    return Math.round(base * (1 + variation));
-  });
-};
+      if (!regionTotals[region]) regionTotals[region] = { total: 0, count: 0 };
+      regionTotals[region].total += amount;
+      regionTotals[region].count += 1;
+    }
 
-// Simple avatar per region (optional)
-const getRegionAvatar = (region: string): string => {
-  const map: Record<string, string> = {
-    "South West": "/images/avatar/avatar-1.jpg",
-    "South East": "/images/avatar/avatar-2.jpg",
-    "South South": "/images/avatar/avatar-3.jpg",
-    "North Central": "/images/avatar/avatar-4.jpg",
-    "North East": "/images/avatar/avatar-5.jpg",
-    "North West": "/images/avatar/avatar-6.jpg",
-  };
-  return map[region] || "/images/avatar/avatar-1.jpg";
-};
+    const regionsArray = Object.entries(regionTotals).map(([region, data]) => ({
+      region,
+      totalAmount: data.total,
+      count: data.count,
+    }));
 
-// Compute performance per region
-function aggregateRegions() {
-  // Build a map: state_id -> region
-  const stateRegionMap: Record<number, string> = {};
-  for (const state of states) {
-    stateRegionMap[state.id] = state.region;
-  }
+    regionsArray.sort((a, b) => b.totalAmount - a.totalAmount);
+    const top3 = regionsArray.slice(0, 3);
 
-  // Aggregate totals by region
-  const regionTotals: Record<
-    string,
-    { total: number; count: number }
-  > = {};
+    const getRegionAvatar = (region: string): string => {
+      const map: Record<string, string> = {
+        "South West": "/images/avatar/avatar-1.jpg",
+        "South East": "/images/avatar/avatar-2.jpg",
+        "South South": "/images/avatar/avatar-3.jpg",
+        "North Central": "/images/avatar/avatar-4.jpg",
+        "North East": "/images/avatar/avatar-5.jpg",
+        "North West": "/images/avatar/avatar-6.jpg",
+      };
+      return map[region] || "/images/avatar/avatar-1.jpg";
+    };
 
-  for (const tx of transactions) {
-    const region = stateRegionMap[tx.branch_id] || "Unknown"; // assuming branch_id relates to state_id
-    const amount = parseAmount(tx.transaction_amount);
+    const formatSalesAmount = (amount: number): string => {
+      if (amount >= 1_000_000_000) return `${(amount / 1_000_000_000).toFixed(1)}B`;
+      if (amount >= 1_000_000) return `${(amount / 1_000_000).toFixed(1)}M`;
+      if (amount >= 1_000) return `${(amount / 1_000).toFixed(0)}K`;
+      return amount.toFixed(0);
+    };
 
-    if (!regionTotals[region]) regionTotals[region] = { total: 0, count: 0 };
-    regionTotals[region].total += amount;
-    regionTotals[region].count += 1;
-  }
+    const generateChartData = (totalAmount: number, count: number): number[] => {
+      const base = totalAmount / count;
+      const points = Math.min(count, 12);
+      return Array.from({ length: points }, () => {
+        const variation = (Math.random() - 0.5) * 0.3;
+        return Math.round(base * (1 + variation));
+      });
+    };
 
-  // Convert to array
-  const regionsArray = Object.entries(regionTotals).map(([region, data]) => ({
-    region,
-    totalAmount: data.total,
-    count: data.count,
-  }));
-
-  // Sort descending by total
-  regionsArray.sort((a, b) => b.totalAmount - a.totalAmount);
-
-  // Take top 3
-  const top3 = regionsArray.slice(0, 3);
-
-  // Convert to UI format
-  return top3.map((r, index) => ({
-    uid: `${index + 1}`,
-    avatar: getRegionAvatar(r.region),
-    name: r.region,
-    sales: formatSalesAmount(r.totalAmount),
-    impression: Math.random() * 10, // mock “growth” %
-    chartData: generateChartData(r.totalAmount, r.count),
-  }));
-}
-
-// Main UI
-export function TopRegions() {
-  const regions = aggregateRegions();
+    return top3.map((r, index) => ({
+      uid: `${index + 1}`,
+      avatar: getRegionAvatar(r.region),
+      name: r.region,
+      sales: formatSalesAmount(r.totalAmount),
+      impression: Math.random() * 10,
+      chartData: generateChartData(r.totalAmount, r.count),
+    }));
+  }, [currentState]);
 
   return (
     <Card skin="none" className="col-span-12 pb-2 lg:col-span-5 xl:col-span-8">

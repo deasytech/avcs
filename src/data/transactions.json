@@ -8,7 +8,8 @@
     "transaction_date": "2025-06-10T18:47:03.839Z",
     "transaction_amount": "₦39151.54",
     "transaction_amount_chargeable": "₦200.94",
-    "transaction_amount_vat": "₦15.07"
+    "transaction_amount_vat": "₦15.07",
+    "state_id": 1
   },
   {
     "transaction_id": 502249891,
@@ -19,7 +20,8 @@
     "transaction_date": "2025-01-18T12:49:32.233Z",
     "transaction_amount": "₦3749785.70",
     "transaction_amount_chargeable": "₦10399.93",
-    "transaction_amount_vat": "₦779.99"
+    "transaction_amount_vat": "₦779.99",
+    "state_id": 2
   },
   {
     "transaction_id": 502270927,
@@ -30,7 +32,8 @@
     "transaction_date": "2025-03-14T03:38:48.630Z",
     "transaction_amount": "₦1510784.11",
     "transaction_amount_chargeable": "₦2660.80",
-    "transaction_amount_vat": "₦199.56"
+    "transaction_amount_vat": "₦199.56",
+    "state_id": 3
   },
   {
     "transaction_id": 502679997,
@@ -41,7 +44,8 @@
     "transaction_date": "2025-03-12T09:18:29.414Z",
     "transaction_amount": "₦7153943.03",
     "transaction_amount_chargeable": "₦28010.83",
-    "transaction_amount_vat": "₦2100.81"
+    "transaction_amount_vat": "₦2100.81",
+    "state_id": 4
   },
   {
     "transaction_id": 502150133,
@@ -52,7 +56,8 @@
     "transaction_date": "2025-03-15T11:06:34.871Z",
     "transaction_amount": "₦4087.93",
     "transaction_amount_chargeable": "₦187.78",
-    "transaction_amount_vat": "₦14.08"
+    "transaction_amount_vat": "₦14.08",
+    "state_id": 5
   },
   {
     "transaction_id": 502304693,
@@ -63,7 +68,8 @@
     "transaction_date": "2025-01-17T18:33:52.300Z",
     "transaction_amount": "₦1912.50",
     "transaction_amount_chargeable": "₦43.50",
-    "transaction_amount_vat": "₦3.26"
+    "transaction_amount_vat": "₦3.26",
+    "state_id": 6
   },
   {
     "transaction_id": 502450307,
@@ -74,7 +80,8 @@
     "transaction_date": "2025-04-21T09:16:35.654Z",
     "transaction_amount": "₦606.33",
     "transaction_amount_chargeable": "₦24.38",
-    "transaction_amount_vat": "₦1.83"
+    "transaction_amount_vat": "₦1.83",
+    "state_id": 7
   },
   {
     "transaction_id": 502414538,
@@ -85,7 +92,8 @@
     "transaction_date": "2025-02-27T17:41:21.301Z",
     "transaction_amount": "₦373360.76",
     "transaction_amount_chargeable": "₦3355.19",
-    "transaction_amount_vat": "₦251.64"
+    "transaction_amount_vat": "₦251.64",
+    "state_id": 8
   },
   {
     "transaction_id": 502250433,
@@ -96,7 +104,8 @@
     "transaction_date": "2025-06-08T09:42:32.166Z",
     "transaction_amount": "₦3506.04",
     "transaction_amount_chargeable": "₦154.84",
-    "transaction_amount_vat": "₦11.61"
+    "transaction_amount_vat": "₦11.61",
+    "state_id": 9
   },
   {
     "transaction_id": 502071378,
@@ -107,7 +116,8 @@
     "transaction_date": "2025-01-17T17:26:02.342Z",
     "transaction_amount": "₦95900.04",
     "transaction_amount_chargeable": "₦1700.43",
-    "transaction_amount_vat": "₦127.53"
+    "transaction_amount_vat": "₦127.53",
+    "state_id": 10
   },
   {
     "transaction_id": 502155518,
@@ -118,7 +128,8 @@
     "transaction_date": "2025-01-20T13:25:25.357Z",
     "transaction_amount": "₦1204.25",
     "transaction_amount_chargeable": "₦28.40",
-    "transaction_amount_vat": "₦2.13"
+    "transaction_amount_vat": "₦2.13",
+    "state_id": 11
   },
   {
     "transaction_id": 502574732,
@@ -129,7 +140,8 @@
     "transaction_date": "2025-01-25T06:46:35.485Z",
     "transaction_amount": "₦4097302.27",
     "transaction_amount_chargeable": "₦2123.08",
-    "transaction_amount_vat": "₦159.23"
+    "transaction_amount_vat": "₦159.23",
+    "state_id": 12
   },
   {
     "transaction_id": 502545955,
@@ -140,7 +152,8 @@
     "transaction_date": "2025-02-28T05:56:53.031Z",
     "transaction_amount": "₦9562935.14",
     "transaction_amount_chargeable": "₦18091.22",
-    "transaction_amount_vat": "₦1356.84"
+    "transaction_amount_vat": "₦1356.84",
+    "state_id": 13
   },
   {
     "transaction_id": 502854546,
@@ -151,7 +164,8 @@
     "transaction_date": "2025-02-26T08:31:34.583Z",
     "transaction_amount": "₦93180.28",
     "transaction_amount_chargeable": "₦579.85",
-    "transaction_amount_vat": "₦43.49"
+    "transaction_amount_vat": "₦43.49",
+    "state_id": 14
   },
   {
     "transaction_id": 502947375,
@@ -162,7 +176,8 @@
     "transaction_date": "2025-05-21T02:14:03.069Z",
     "transaction_amount": "₦6617313.42",
     "transaction_amount_chargeable": "₦28118.15",
-    "transaction_amount_vat": "₦2108.86"
+    "transaction_amount_vat": "₦2108.86",
+    "state_id": 15
   },
   {
     "transaction_id": 502270829,
@@ -173,7 +188,8 @@
     "transaction_date": "2025-02-25T22:13:31.225Z",
     "transaction_amount": "₦2944191.69",
     "transaction_amount_chargeable": "₦9593.79",
-    "transaction_amount_vat": "₦719.53"
+    "transaction_amount_vat": "₦719.53",
+    "state_id": 16
   },
   {
     "transaction_id": 502270735,
@@ -184,7 +200,8 @@
     "transaction_date": "2025-01-27T16:38:18.864Z",
     "transaction_amount": "₦627143.25",
     "transaction_amount_chargeable": "₦3560.71",
-    "transaction_amount_vat": "₦267.05"
+    "transaction_amount_vat": "₦267.05",
+    "state_id": 17
   },
   {
     "transaction_id": 502817548,
@@ -195,7 +212,8 @@
     "transaction_date": "2025-01-19T19:48:57.804Z",
     "transaction_amount": "₦4643.18",
     "transaction_amount_chargeable": "₦127.63",
-    "transaction_amount_vat": "₦9.57"
+    "transaction_amount_vat": "₦9.57",
+    "state_id": 18
   },
   {
     "transaction_id": 502829009,
@@ -206,7 +224,8 @@
     "transaction_date": "2025-01-14T19:23:57.047Z",
     "transaction_amount": "₦7014732.40",
     "transaction_amount_chargeable": "₦30935.91",
-    "transaction_amount_vat": "₦2320.19"
+    "transaction_amount_vat": "₦2320.19",
+    "state_id": 19
   },
   {
     "transaction_id": 502934404,
@@ -217,7 +236,8 @@
     "transaction_date": "2025-01-04T10:16:28.410Z",
     "transaction_amount": "₦2885.17",
     "transaction_amount_chargeable": "₦69.10",
-    "transaction_amount_vat": "₦5.18"
+    "transaction_amount_vat": "₦5.18",
+    "state_id": 20
   },
   {
     "transaction_id": 502519977,
@@ -228,7 +248,8 @@
     "transaction_date": "2025-01-14T19:07:29.984Z",
     "transaction_amount": "₦4892.61",
     "transaction_amount_chargeable": "₦91.52",
-    "transaction_amount_vat": "₦6.86"
+    "transaction_amount_vat": "₦6.86",
+    "state_id": 21
   },
   {
     "transaction_id": 502495152,
@@ -239,7 +260,8 @@
     "transaction_date": "2025-06-08T01:15:49.035Z",
     "transaction_amount": "₦3382.55",
     "transaction_amount_chargeable": "₦72.50",
-    "transaction_amount_vat": "₦5.44"
+    "transaction_amount_vat": "₦5.44",
+    "state_id": 22
   },
   {
     "transaction_id": 502071872,
@@ -250,7 +272,8 @@
     "transaction_date": "2025-05-14T11:56:27.794Z",
     "transaction_amount": "₦63680.80",
     "transaction_amount_chargeable": "₦1172.65",
-    "transaction_amount_vat": "₦87.95"
+    "transaction_amount_vat": "₦87.95",
+    "state_id": 23
   },
   {
     "transaction_id": 502442996,
@@ -261,7 +284,8 @@
     "transaction_date": "2025-03-11T14:42:40.857Z",
     "transaction_amount": "₦74569.40",
     "transaction_amount_chargeable": "₦429.11",
-    "transaction_amount_vat": "₦32.18"
+    "transaction_amount_vat": "₦32.18",
+    "state_id": 24
   },
   {
     "transaction_id": 502572613,
@@ -272,7 +296,8 @@
     "transaction_date": "2025-04-13T11:09:29.838Z",
     "transaction_amount": "₦2998.85",
     "transaction_amount_chargeable": "₦112.79",
-    "transaction_amount_vat": "₦8.46"
+    "transaction_amount_vat": "₦8.46",
+    "state_id": 25
   },
   {
     "transaction_id": 502962829,
@@ -283,7 +308,8 @@
     "transaction_date": "2025-02-08T23:50:04.005Z",
     "transaction_amount": "₦2679.15",
     "transaction_amount_chargeable": "₦58.32",
-    "transaction_amount_vat": "₦4.37"
+    "transaction_amount_vat": "₦4.37",
+    "state_id": 26
   },
   {
     "transaction_id": 502858214,
@@ -294,7 +320,8 @@
     "transaction_date": "2025-05-11T05:42:43.839Z",
     "transaction_amount": "₦66407.20",
     "transaction_amount_chargeable": "₦594.72",
-    "transaction_amount_vat": "₦44.60"
+    "transaction_amount_vat": "₦44.60",
+    "state_id": 27
   },
   {
     "transaction_id": 502447737,
@@ -305,7 +332,8 @@
     "transaction_date": "2025-02-23T10:00:19.741Z",
     "transaction_amount": "₦3391.91",
     "transaction_amount_chargeable": "₦100.66",
-    "transaction_amount_vat": "₦7.55"
+    "transaction_amount_vat": "₦7.55",
+    "state_id": 28
   },
   {
     "transaction_id": 502892026,
@@ -316,7 +344,8 @@
     "transaction_date": "2025-02-10T23:44:02.641Z",
     "transaction_amount": "₦4066.21",
     "transaction_amount_chargeable": "₦42.27",
-    "transaction_amount_vat": "₦3.17"
+    "transaction_amount_vat": "₦3.17",
+    "state_id": 29
   },
   {
     "transaction_id": 502495949,
@@ -327,7 +356,8 @@
     "transaction_date": "2025-02-03T09:11:36.323Z",
     "transaction_amount": "₦116992.92",
     "transaction_amount_chargeable": "₦488.87",
-    "transaction_amount_vat": "₦36.67"
+    "transaction_amount_vat": "₦36.67",
+    "state_id": 30
   },
   {
     "transaction_id": 502824159,
@@ -338,7 +368,8 @@
     "transaction_date": "2025-04-07T15:08:13.985Z",
     "transaction_amount": "₦1962.31",
     "transaction_amount_chargeable": "₦74.29",
-    "transaction_amount_vat": "₦5.57"
+    "transaction_amount_vat": "₦5.57",
+    "state_id": 31
   },
   {
     "transaction_id": 502030972,
@@ -349,7 +380,8 @@
     "transaction_date": "2025-01-10T07:28:00.836Z",
     "transaction_amount": "₦4352.25",
     "transaction_amount_chargeable": "₦90.12",
-    "transaction_amount_vat": "₦6.76"
+    "transaction_amount_vat": "₦6.76",
+    "state_id": 32
   },
   {
     "transaction_id": 502686246,
@@ -360,7 +392,8 @@
     "transaction_date": "2025-05-10T22:31:56.982Z",
     "transaction_amount": "₦45586.79",
     "transaction_amount_chargeable": "₦609.50",
-    "transaction_amount_vat": "₦45.71"
+    "transaction_amount_vat": "₦45.71",
+    "state_id": 33
   },
   {
     "transaction_id": 502288732,
@@ -371,7 +404,8 @@
     "transaction_date": "2025-06-06T22:46:39.343Z",
     "transaction_amount": "₦651247.84",
     "transaction_amount_chargeable": "₦5750.54",
-    "transaction_amount_vat": "₦431.29"
+    "transaction_amount_vat": "₦431.29",
+    "state_id": 34
   },
   {
     "transaction_id": 502596342,
@@ -382,7 +416,8 @@
     "transaction_date": "2025-03-27T09:56:06.259Z",
     "transaction_amount": "₦451582.06",
     "transaction_amount_chargeable": "₦3856.44",
-    "transaction_amount_vat": "₦289.23"
+    "transaction_amount_vat": "₦289.23",
+    "state_id": 35
   },
   {
     "transaction_id": 502218267,
@@ -393,7 +428,8 @@
     "transaction_date": "2025-06-27T08:09:13.098Z",
     "transaction_amount": "₦4052.35",
     "transaction_amount_chargeable": "₦194.98",
-    "transaction_amount_vat": "₦14.62"
+    "transaction_amount_vat": "₦14.62",
+    "state_id": 36
   },
   {
     "transaction_id": 502967188,
@@ -404,7 +440,8 @@
     "transaction_date": "2025-04-05T05:30:05.638Z",
     "transaction_amount": "₦413609.68",
     "transaction_amount_chargeable": "₦2605.96",
-    "transaction_amount_vat": "₦195.45"
+    "transaction_amount_vat": "₦195.45",
+    "state_id": 37
   },
   {
     "transaction_id": 502406003,
@@ -415,7 +452,8 @@
     "transaction_date": "2025-02-24T16:24:16.017Z",
     "transaction_amount": "₦7512008.35",
     "transaction_amount_chargeable": "₦12157.23",
-    "transaction_amount_vat": "₦911.79"
+    "transaction_amount_vat": "₦911.79",
+    "state_id": 4
   },
   {
     "transaction_id": 502631389,
@@ -426,7 +464,8 @@
     "transaction_date": "2025-03-15T05:23:10.004Z",
     "transaction_amount": "₦2145.80",
     "transaction_amount_chargeable": "₦38.13",
-    "transaction_amount_vat": "₦2.86"
+    "transaction_amount_vat": "₦2.86",
+    "state_id": 10
   },
   {
     "transaction_id": 502240689,
@@ -437,7 +476,8 @@
     "transaction_date": "2025-03-19T03:03:43.509Z",
     "transaction_amount": "₦4360.74",
     "transaction_amount_chargeable": "₦198.39",
-    "transaction_amount_vat": "₦14.88"
+    "transaction_amount_vat": "₦14.88",
+    "state_id": 19
   },
   {
     "transaction_id": 502370001,
@@ -448,7 +488,8 @@
     "transaction_date": "2025-05-08T00:22:10.958Z",
     "transaction_amount": "₦1285679.71",
     "transaction_amount_chargeable": "₦2156.87",
-    "transaction_amount_vat": "₦161.77"
+    "transaction_amount_vat": "₦161.77",
+    "state_id": 36
   },
   {
     "transaction_id": 502653282,
@@ -459,7 +500,8 @@
     "transaction_date": "2025-02-27T15:42:51.499Z",
     "transaction_amount": "₦2707627.22",
     "transaction_amount_chargeable": "₦12238.51",
-    "transaction_amount_vat": "₦917.89"
+    "transaction_amount_vat": "₦917.89",
+    "state_id": 15
   },
   {
     "transaction_id": 502441911,
@@ -470,7 +512,8 @@
     "transaction_date": "2025-03-07T23:28:20.498Z",
     "transaction_amount": "₦597.41",
     "transaction_amount_chargeable": "₦19.83",
-    "transaction_amount_vat": "₦1.49"
+    "transaction_amount_vat": "₦1.49",
+    "state_id": 20
   },
   {
     "transaction_id": 502472341,
@@ -481,7 +524,8 @@
     "transaction_date": "2025-06-13T09:03:45.319Z",
     "transaction_amount": "₦2687.80",
     "transaction_amount_chargeable": "₦56.35",
-    "transaction_amount_vat": "₦4.23"
+    "transaction_amount_vat": "₦4.23",
+    "state_id": 13
   },
   {
     "transaction_id": 502618422,
@@ -492,7 +536,8 @@
     "transaction_date": "2025-04-27T06:29:25.430Z",
     "transaction_amount": "₦1039.75",
     "transaction_amount_chargeable": "₦30.80",
-    "transaction_amount_vat": "₦2.31"
+    "transaction_amount_vat": "₦2.31",
+    "state_id": 29
   },
   {
     "transaction_id": 502149722,
@@ -503,7 +548,8 @@
     "transaction_date": "2025-02-18T02:10:27.919Z",
     "transaction_amount": "₦2599.34",
     "transaction_amount_chargeable": "₦77.93",
-    "transaction_amount_vat": "₦5.84"
+    "transaction_amount_vat": "₦5.84",
+    "state_id": 26
   },
   {
     "transaction_id": 502860364,
@@ -514,7 +560,8 @@
     "transaction_date": "2025-01-24T10:15:31.377Z",
     "transaction_amount": "₦60405.47",
     "transaction_amount_chargeable": "₦1044.22",
-    "transaction_amount_vat": "₦78.32"
+    "transaction_amount_vat": "₦78.32",
+    "state_id": 32
   },
   {
     "transaction_id": 502535537,
@@ -525,7 +572,8 @@
     "transaction_date": "2025-04-10T17:47:29.238Z",
     "transaction_amount": "₦633261.05",
     "transaction_amount_chargeable": "₦1628.27",
-    "transaction_amount_vat": "₦122.12"
+    "transaction_amount_vat": "₦122.12",
+    "state_id": 9
   },
   {
     "transaction_id": 502155414,
@@ -536,7 +584,8 @@
     "transaction_date": "2025-03-15T15:21:36.788Z",
     "transaction_amount": "₦986.94",
     "transaction_amount_chargeable": "₦31.78",
-    "transaction_amount_vat": "₦2.38"
+    "transaction_amount_vat": "₦2.38",
+    "state_id": 16
   },
   {
     "transaction_id": 502593069,
@@ -547,7 +596,8 @@
     "transaction_date": "2025-05-19T13:33:51.480Z",
     "transaction_amount": "₦466.45",
     "transaction_amount_chargeable": "₦8.79",
-    "transaction_amount_vat": "₦0.66"
+    "transaction_amount_vat": "₦0.66",
+    "state_id": 11
   },
   {
     "transaction_id": 502435711,
@@ -558,7 +608,8 @@
     "transaction_date": "2025-03-18T07:53:34.791Z",
     "transaction_amount": "₦35019.68",
     "transaction_amount_chargeable": "₦491.33",
-    "transaction_amount_vat": "₦36.85"
+    "transaction_amount_vat": "₦36.85",
+    "state_id": 28
   },
   {
     "transaction_id": 502215623,
@@ -569,7 +620,8 @@
     "transaction_date": "2025-04-13T10:10:03.654Z",
     "transaction_amount": "₦90625.61",
     "transaction_amount_chargeable": "₦775.58",
-    "transaction_amount_vat": "₦58.17"
+    "transaction_amount_vat": "₦58.17",
+    "state_id": 29
   },
   {
     "transaction_id": 502414431,
@@ -580,7 +632,8 @@
     "transaction_date": "2025-04-24T00:50:54.471Z",
     "transaction_amount": "₦281672.02",
     "transaction_amount_chargeable": "₦2818.49",
-    "transaction_amount_vat": "₦211.39"
+    "transaction_amount_vat": "₦211.39",
+    "state_id": 18
   },
   {
     "transaction_id": 502637167,
@@ -591,7 +644,8 @@
     "transaction_date": "2025-06-25T10:16:57.964Z",
     "transaction_amount": "₦93279.65",
     "transaction_amount_chargeable": "₦1308.94",
-    "transaction_amount_vat": "₦98.17"
+    "transaction_amount_vat": "₦98.17",
+    "state_id": 15
   },
   {
     "transaction_id": 502059705,
@@ -602,7 +656,8 @@
     "transaction_date": "2025-05-01T01:24:29.499Z",
     "transaction_amount": "₦86315.83",
     "transaction_amount_chargeable": "₦446.11",
-    "transaction_amount_vat": "₦33.46"
+    "transaction_amount_vat": "₦33.46",
+    "state_id": 2
   },
   {
     "transaction_id": 502364709,
@@ -613,7 +668,8 @@
     "transaction_date": "2025-06-09T14:51:41.263Z",
     "transaction_amount": "₦32887.48",
     "transaction_amount_chargeable": "₦615.54",
-    "transaction_amount_vat": "₦46.17"
+    "transaction_amount_vat": "₦46.17",
+    "state_id": 25
   },
   {
     "transaction_id": 502807006,
@@ -624,7 +680,8 @@
     "transaction_date": "2025-04-28T13:55:19.711Z",
     "transaction_amount": "₦48371.05",
     "transaction_amount_chargeable": "₦106.06",
-    "transaction_amount_vat": "₦7.95"
+    "transaction_amount_vat": "₦7.95",
+    "state_id": 16
   },
   {
     "transaction_id": 502157742,
@@ -635,7 +692,8 @@
     "transaction_date": "2025-06-24T05:32:12.318Z",
     "transaction_amount": "₦13605.42",
     "transaction_amount_chargeable": "₦270.13",
-    "transaction_amount_vat": "₦20.26"
+    "transaction_amount_vat": "₦20.26",
+    "state_id": 5
   },
   {
     "transaction_id": 502573976,
@@ -646,7 +704,8 @@
     "transaction_date": "2025-06-16T19:28:17.322Z",
     "transaction_amount": "₦318723.91",
     "transaction_amount_chargeable": "₦3605.87",
-    "transaction_amount_vat": "₦270.44"
+    "transaction_amount_vat": "₦270.44",
+    "state_id": 31
   },
   {
     "transaction_id": 502044076,
@@ -657,7 +716,8 @@
     "transaction_date": "2025-06-27T05:08:51.498Z",
     "transaction_amount": "₦463261.50",
     "transaction_amount_chargeable": "₦5768.63",
-    "transaction_amount_vat": "₦432.65"
+    "transaction_amount_vat": "₦432.65",
+    "state_id": 30
   },
   {
     "transaction_id": 502244017,
@@ -668,7 +728,8 @@
     "transaction_date": "2025-01-30T01:46:50.933Z",
     "transaction_amount": "₦71874.31",
     "transaction_amount_chargeable": "₦155.35",
-    "transaction_amount_vat": "₦11.65"
+    "transaction_amount_vat": "₦11.65",
+    "state_id": 7
   },
   {
     "transaction_id": 502332357,
@@ -679,7 +740,8 @@
     "transaction_date": "2025-02-11T16:11:52.739Z",
     "transaction_amount": "₦50038.74",
     "transaction_amount_chargeable": "₦813.67",
-    "transaction_amount_vat": "₦61.03"
+    "transaction_amount_vat": "₦61.03",
+    "state_id": 25
   },
   {
     "transaction_id": 502506636,
@@ -690,7 +752,8 @@
     "transaction_date": "2025-01-04T10:05:41.824Z",
     "transaction_amount": "₦84325.06",
     "transaction_amount_chargeable": "₦646.25",
-    "transaction_amount_vat": "₦48.47"
+    "transaction_amount_vat": "₦48.47",
+    "state_id": 14
   },
   {
     "transaction_id": 502230281,
@@ -701,7 +764,8 @@
     "transaction_date": "2025-02-12T08:04:24.417Z",
     "transaction_amount": "₦394168.05",
     "transaction_amount_chargeable": "₦3496.62",
-    "transaction_amount_vat": "₦262.25"
+    "transaction_amount_vat": "₦262.25",
+    "state_id": 37
   },
   {
     "transaction_id": 502730903,
@@ -712,7 +776,8 @@
     "transaction_date": "2025-03-08T05:56:06.414Z",
     "transaction_amount": "₦21433.12",
     "transaction_amount_chargeable": "₦87.88",
-    "transaction_amount_vat": "₦6.59"
+    "transaction_amount_vat": "₦6.59",
+    "state_id": 11
   },
   {
     "transaction_id": 502338782,
@@ -723,7 +788,8 @@
     "transaction_date": "2025-06-27T22:25:58.109Z",
     "transaction_amount": "₦7713.03",
     "transaction_amount_chargeable": "₦132.08",
-    "transaction_amount_vat": "₦9.91"
+    "transaction_amount_vat": "₦9.91",
+    "state_id": 36
   },
   {
     "transaction_id": 502379465,
@@ -734,7 +800,8 @@
     "transaction_date": "2025-04-03T14:53:30.119Z",
     "transaction_amount": "₦34054.25",
     "transaction_amount_chargeable": "₦556.05",
-    "transaction_amount_vat": "₦41.70"
+    "transaction_amount_vat": "₦41.70",
+    "state_id": 28
   },
   {
     "transaction_id": 502806408,
@@ -745,7 +812,8 @@
     "transaction_date": "2025-03-06T02:37:12.762Z",
     "transaction_amount": "₦68541.08",
     "transaction_amount_chargeable": "₦382.30",
-    "transaction_amount_vat": "₦28.67"
+    "transaction_amount_vat": "₦28.67",
+    "state_id": 25
   },
   {
     "transaction_id": 502940294,
@@ -756,7 +824,8 @@
     "transaction_date": "2025-03-08T22:01:06.484Z",
     "transaction_amount": "₦19679.14",
     "transaction_amount_chargeable": "₦259.46",
-    "transaction_amount_vat": "₦19.46"
+    "transaction_amount_vat": "₦19.46",
+    "state_id": 3
   },
   {
     "transaction_id": 502518089,
@@ -767,7 +836,8 @@
     "transaction_date": "2025-02-11T17:40:19.067Z",
     "transaction_amount": "₦409927.91",
     "transaction_amount_chargeable": "₦6193.39",
-    "transaction_amount_vat": "₦464.50"
+    "transaction_amount_vat": "₦464.50",
+    "state_id": 3
   },
   {
     "transaction_id": 502392994,
@@ -778,7 +848,8 @@
     "transaction_date": "2025-05-04T03:37:58.973Z",
     "transaction_amount": "₦294647.51",
     "transaction_amount_chargeable": "₦918.16",
-    "transaction_amount_vat": "₦68.86"
+    "transaction_amount_vat": "₦68.86",
+    "state_id": 29
   },
   {
     "transaction_id": 502846935,
@@ -789,7 +860,8 @@
     "transaction_date": "2025-01-14T19:58:15.997Z",
     "transaction_amount": "₦120872.74",
     "transaction_amount_chargeable": "₦695.49",
-    "transaction_amount_vat": "₦52.16"
+    "transaction_amount_vat": "₦52.16",
+    "state_id": 29
   },
   {
     "transaction_id": 502680199,
@@ -800,7 +872,8 @@
     "transaction_date": "2025-02-19T13:05:27.304Z",
     "transaction_amount": "₦21439.22",
     "transaction_amount_chargeable": "₦109.39",
-    "transaction_amount_vat": "₦8.20"
+    "transaction_amount_vat": "₦8.20",
+    "state_id": 22
   },
   {
     "transaction_id": 502902330,
@@ -811,7 +884,8 @@
     "transaction_date": "2025-03-13T01:13:10.698Z",
     "transaction_amount": "₦47028.47",
     "transaction_amount_chargeable": "₦817.52",
-    "transaction_amount_vat": "₦61.31"
+    "transaction_amount_vat": "₦61.31",
+    "state_id": 18
   },
   {
     "transaction_id": 502054031,
@@ -822,7 +896,8 @@
     "transaction_date": "2025-01-05T16:08:13.268Z",
     "transaction_amount": "₦457997.66",
     "transaction_amount_chargeable": "₦4300.04",
-    "transaction_amount_vat": "₦322.50"
+    "transaction_amount_vat": "₦322.50",
+    "state_id": 17
   },
   {
     "transaction_id": 502693116,
@@ -833,7 +908,8 @@
     "transaction_date": "2025-03-17T22:30:18.442Z",
     "transaction_amount": "₦13297.06",
     "transaction_amount_chargeable": "₦55.68",
-    "transaction_amount_vat": "₦4.18"
+    "transaction_amount_vat": "₦4.18",
+    "state_id": 2
   },
   {
     "transaction_id": 502225193,
@@ -844,7 +920,8 @@
     "transaction_date": "2025-04-12T10:04:02.481Z",
     "transaction_amount": "₦12324.82",
     "transaction_amount_chargeable": "₦166.89",
-    "transaction_amount_vat": "₦12.52"
+    "transaction_amount_vat": "₦12.52",
+    "state_id": 2
   },
   {
     "transaction_id": 502667129,
@@ -855,7 +932,8 @@
     "transaction_date": "2025-02-02T10:21:12.517Z",
     "transaction_amount": "₦36197.44",
     "transaction_amount_chargeable": "₦582.41",
-    "transaction_amount_vat": "₦43.68"
+    "transaction_amount_vat": "₦43.68",
+    "state_id": 12
   },
   {
     "transaction_id": 502973024,
@@ -866,7 +944,8 @@
     "transaction_date": "2025-06-18T07:42:00.472Z",
     "transaction_amount": "₦35214.72",
     "transaction_amount_chargeable": "₦238.68",
-    "transaction_amount_vat": "₦17.90"
+    "transaction_amount_vat": "₦17.90",
+    "state_id": 25
   },
   {
     "transaction_id": 502867200,
@@ -877,7 +956,8 @@
     "transaction_date": "2025-02-15T14:59:49.057Z",
     "transaction_amount": "₦37797.44",
     "transaction_amount_chargeable": "₦320.94",
-    "transaction_amount_vat": "₦24.07"
+    "transaction_amount_vat": "₦24.07",
+    "state_id": 24
   },
   {
     "transaction_id": 502955164,
@@ -888,7 +968,8 @@
     "transaction_date": "2025-04-12T12:46:07.984Z",
     "transaction_amount": "₦38176.71",
     "transaction_amount_chargeable": "₦403.47",
-    "transaction_amount_vat": "₦30.26"
+    "transaction_amount_vat": "₦30.26",
+    "state_id": 24
   },
   {
     "transaction_id": 502384708,
@@ -899,7 +980,8 @@
     "transaction_date": "2025-01-23T11:09:28.243Z",
     "transaction_amount": "₦414006.40",
     "transaction_amount_chargeable": "₦7862.98",
-    "transaction_amount_vat": "₦589.72"
+    "transaction_amount_vat": "₦589.72",
+    "state_id": 34
   },
   {
     "transaction_id": 502191124,
@@ -910,7 +992,8 @@
     "transaction_date": "2025-06-23T00:04:07.137Z",
     "transaction_amount": "₦40876.21",
     "transaction_amount_chargeable": "₦151.50",
-    "transaction_amount_vat": "₦11.36"
+    "transaction_amount_vat": "₦11.36",
+    "state_id": 11
   },
   {
     "transaction_id": 502934822,
@@ -921,7 +1004,8 @@
     "transaction_date": "2025-04-08T02:20:53.055Z",
     "transaction_amount": "₦35406.42",
     "transaction_amount_chargeable": "₦428.91",
-    "transaction_amount_vat": "₦32.17"
+    "transaction_amount_vat": "₦32.17",
+    "state_id": 10
   },
   {
     "transaction_id": 502923206,
@@ -932,7 +1016,8 @@
     "transaction_date": "2025-05-14T05:47:25.346Z",
     "transaction_amount": "₦30324.76",
     "transaction_amount_chargeable": "₦334.06",
-    "transaction_amount_vat": "₦25.05"
+    "transaction_amount_vat": "₦25.05",
+    "state_id": 34
   },
   {
     "transaction_id": 502095899,
@@ -943,7 +1028,8 @@
     "transaction_date": "2025-03-26T20:14:08.213Z",
     "transaction_amount": "₦115233.42",
     "transaction_amount_chargeable": "₦316.74",
-    "transaction_amount_vat": "₦23.76"
+    "transaction_amount_vat": "₦23.76",
+    "state_id": 30
   },
   {
     "transaction_id": 502861440,
@@ -954,7 +1040,8 @@
     "transaction_date": "2025-04-17T15:06:19.632Z",
     "transaction_amount": "₦1874.49",
     "transaction_amount_chargeable": "₦31.32",
-    "transaction_amount_vat": "₦2.35"
+    "transaction_amount_vat": "₦2.35",
+    "state_id": 19
   },
   {
     "transaction_id": 502748296,
@@ -965,7 +1052,8 @@
     "transaction_date": "2025-05-04T05:27:20.647Z",
     "transaction_amount": "₦22524.61",
     "transaction_amount_chargeable": "₦248.17",
-    "transaction_amount_vat": "₦18.61"
+    "transaction_amount_vat": "₦18.61",
+    "state_id": 11
   },
   {
     "transaction_id": 502880540,
@@ -976,7 +1064,8 @@
     "transaction_date": "2025-05-18T01:43:21.263Z",
     "transaction_amount": "₦92630.83",
     "transaction_amount_chargeable": "₦241.99",
-    "transaction_amount_vat": "₦18.15"
+    "transaction_amount_vat": "₦18.15",
+    "state_id": 3
   },
   {
     "transaction_id": 502290395,
@@ -987,7 +1076,8 @@
     "transaction_date": "2025-03-19T08:47:08.637Z",
     "transaction_amount": "₦62761.09",
     "transaction_amount_chargeable": "₦823.75",
-    "transaction_amount_vat": "₦61.78"
+    "transaction_amount_vat": "₦61.78",
+    "state_id": 5
   },
   {
     "transaction_id": 502694031,
@@ -998,7 +1088,8 @@
     "transaction_date": "2025-03-22T00:55:07.856Z",
     "transaction_amount": "₦17248.06",
     "transaction_amount_chargeable": "₦148.23",
-    "transaction_amount_vat": "₦11.12"
+    "transaction_amount_vat": "₦11.12",
+    "state_id": 32
   },
   {
     "transaction_id": 502089598,
@@ -1009,7 +1100,8 @@
     "transaction_date": "2025-03-28T10:15:56.653Z",
     "transaction_amount": "₦26673.84",
     "transaction_amount_chargeable": "₦429.46",
-    "transaction_amount_vat": "₦32.21"
+    "transaction_amount_vat": "₦32.21",
+    "state_id": 18
   },
   {
     "transaction_id": 502439743,
@@ -1020,7 +1112,8 @@
     "transaction_date": "2025-06-13T03:34:43.412Z",
     "transaction_amount": "₦83550.69",
     "transaction_amount_chargeable": "₦913.40",
-    "transaction_amount_vat": "₦68.50"
+    "transaction_amount_vat": "₦68.50",
+    "state_id": 35
   },
   {
     "transaction_id": 502269973,
@@ -1031,7 +1124,8 @@
     "transaction_date": "2025-01-17T04:44:29.463Z",
     "transaction_amount": "₦27052.99",
     "transaction_amount_chargeable": "₦477.04",
-    "transaction_amount_vat": "₦35.78"
+    "transaction_amount_vat": "₦35.78",
+    "state_id": 27
   },
   {
     "transaction_id": 502932452,
@@ -1042,7 +1136,8 @@
     "transaction_date": "2025-05-17T21:30:13.868Z",
     "transaction_amount": "₦197948.15",
     "transaction_amount_chargeable": "₦2704.06",
-    "transaction_amount_vat": "₦202.80"
+    "transaction_amount_vat": "₦202.80",
+    "state_id": 15
   },
   {
     "transaction_id": 502359776,
@@ -1053,7 +1148,8 @@
     "transaction_date": "2025-04-27T16:07:27.408Z",
     "transaction_amount": "₦26879.63",
     "transaction_amount_chargeable": "₦496.33",
-    "transaction_amount_vat": "₦37.22"
+    "transaction_amount_vat": "₦37.22",
+    "state_id": 10
   },
   {
     "transaction_id": 502394489,
@@ -1064,7 +1160,8 @@
     "transaction_date": "2025-04-17T03:54:54.465Z",
     "transaction_amount": "₦206446.53",
     "transaction_amount_chargeable": "₦3155.32",
-    "transaction_amount_vat": "₦236.65"
+    "transaction_amount_vat": "₦236.65",
+    "state_id": 1
   },
   {
     "transaction_id": 502313804,
@@ -1075,7 +1172,8 @@
     "transaction_date": "2025-04-30T15:17:41.444Z",
     "transaction_amount": "₦16778.80",
     "transaction_amount_chargeable": "₦312.48",
-    "transaction_amount_vat": "₦23.44"
+    "transaction_amount_vat": "₦23.44",
+    "state_id": 22
   },
   {
     "transaction_id": 502920335,
@@ -1086,7 +1184,8 @@
     "transaction_date": "2025-01-27T03:09:50.879Z",
     "transaction_amount": "₦715.54",
     "transaction_amount_chargeable": "₦5.90",
-    "transaction_amount_vat": "₦0.44"
+    "transaction_amount_vat": "₦0.44",
+    "state_id": 26
   },
   {
     "transaction_id": 502901348,
@@ -1097,7 +1196,8 @@
     "transaction_date": "2025-02-05T18:23:57.649Z",
     "transaction_amount": "₦388080.94",
     "transaction_amount_chargeable": "₦7200.77",
-    "transaction_amount_vat": "₦540.06"
+    "transaction_amount_vat": "₦540.06",
+    "state_id": 31
   },
   {
     "transaction_id": 502322462,
@@ -1108,7 +1208,8 @@
     "transaction_date": "2025-03-16T23:59:03.225Z",
     "transaction_amount": "₦51379.08",
     "transaction_amount_chargeable": "₦507.17",
-    "transaction_amount_vat": "₦38.04"
+    "transaction_amount_vat": "₦38.04",
+    "state_id": 23
   },
   {
     "transaction_id": 502534819,
@@ -1119,7 +1220,8 @@
     "transaction_date": "2025-03-05T01:49:58.232Z",
     "transaction_amount": "₦69210.44",
     "transaction_amount_chargeable": "₦854.31",
-    "transaction_amount_vat": "₦64.07"
+    "transaction_amount_vat": "₦64.07",
+    "state_id": 19
   },
   {
     "transaction_id": 502616842,
@@ -1130,7 +1232,8 @@
     "transaction_date": "2025-02-12T07:00:58.318Z",
     "transaction_amount": "₦4464085.96",
     "transaction_amount_chargeable": "₦41279.11",
-    "transaction_amount_vat": "₦3095.93"
+    "transaction_amount_vat": "₦3095.93",
+    "state_id": 1
   },
   {
     "transaction_id": 502633151,
@@ -1141,7 +1244,8 @@
     "transaction_date": "2025-05-22T08:57:41.854Z",
     "transaction_amount": "₦51300.65",
     "transaction_amount_chargeable": "₦432.76",
-    "transaction_amount_vat": "₦32.46"
+    "transaction_amount_vat": "₦32.46",
+    "state_id": 34
   },
   {
     "transaction_id": 502820087,
@@ -1152,7 +1256,8 @@
     "transaction_date": "2025-03-26T14:11:29.983Z",
     "transaction_amount": "₦52704.75",
     "transaction_amount_chargeable": "₦775.15",
-    "transaction_amount_vat": "₦58.14"
+    "transaction_amount_vat": "₦58.14",
+    "state_id": 10
   },
   {
     "transaction_id": 502615355,
@@ -1163,7 +1268,8 @@
     "transaction_date": "2025-02-22T14:05:59.179Z",
     "transaction_amount": "₦67070.40",
     "transaction_amount_chargeable": "₦172.46",
-    "transaction_amount_vat": "₦12.93"
+    "transaction_amount_vat": "₦12.93",
+    "state_id": 2
   },
   {
     "transaction_id": 502921511,
@@ -1174,7 +1280,8 @@
     "transaction_date": "2025-02-19T12:45:33.874Z",
     "transaction_amount": "₦82618.73",
     "transaction_amount_chargeable": "₦240.12",
-    "transaction_amount_vat": "₦18.01"
+    "transaction_amount_vat": "₦18.01",
+    "state_id": 28
   },
   {
     "transaction_id": 502414111,
@@ -1185,7 +1292,8 @@
     "transaction_date": "2025-05-31T14:26:47.401Z",
     "transaction_amount": "₦2251211.54",
     "transaction_amount_chargeable": "₦18713.02",
-    "transaction_amount_vat": "₦1403.48"
+    "transaction_amount_vat": "₦1403.48",
+    "state_id": 22
   },
   {
     "transaction_id": 502694274,
@@ -1196,7 +1304,8 @@
     "transaction_date": "2025-03-12T21:49:02.973Z",
     "transaction_amount": "₦4496006.99",
     "transaction_amount_chargeable": "₦35193.51",
-    "transaction_amount_vat": "₦2639.51"
+    "transaction_amount_vat": "₦2639.51",
+    "state_id": 18
   },
   {
     "transaction_id": 502100769,
@@ -1207,7 +1316,8 @@
     "transaction_date": "2025-04-02T20:06:29.735Z",
     "transaction_amount": "₦253765.91",
     "transaction_amount_chargeable": "₦1992.78",
-    "transaction_amount_vat": "₦149.46"
+    "transaction_amount_vat": "₦149.46",
+    "state_id": 8
   },
   {
     "transaction_id": 502294118,
@@ -1218,7 +1328,8 @@
     "transaction_date": "2025-03-28T07:00:15.429Z",
     "transaction_amount": "₦85972.80",
     "transaction_amount_chargeable": "₦1272.27",
-    "transaction_amount_vat": "₦95.42"
+    "transaction_amount_vat": "₦95.42",
+    "state_id": 4
   },
   {
     "transaction_id": 502528329,
@@ -1229,7 +1340,8 @@
     "transaction_date": "2025-03-20T17:19:22.034Z",
     "transaction_amount": "₦1363229.15",
     "transaction_amount_chargeable": "₦22258.97",
-    "transaction_amount_vat": "₦1669.42"
+    "transaction_amount_vat": "₦1669.42",
+    "state_id": 10
   },
   {
     "transaction_id": 502967375,
@@ -1240,7 +1352,8 @@
     "transaction_date": "2025-06-30T10:16:00.717Z",
     "transaction_amount": "₦25094.28",
     "transaction_amount_chargeable": "₦403.99",
-    "transaction_amount_vat": "₦30.30"
+    "transaction_amount_vat": "₦30.30",
+    "state_id": 28
   },
   {
     "transaction_id": 502440215,
@@ -1251,7 +1364,8 @@
     "transaction_date": "2025-06-28T23:52:16.005Z",
     "transaction_amount": "₦25884.35",
     "transaction_amount_chargeable": "₦202.40",
-    "transaction_amount_vat": "₦15.18"
+    "transaction_amount_vat": "₦15.18",
+    "state_id": 22
   },
   {
     "transaction_id": 502348672,
@@ -1262,7 +1376,8 @@
     "transaction_date": "2025-05-16T18:56:24.245Z",
     "transaction_amount": "₦92078.62",
     "transaction_amount_chargeable": "₦357.39",
-    "transaction_amount_vat": "₦26.80"
+    "transaction_amount_vat": "₦26.80",
+    "state_id": 16
   },
   {
     "transaction_id": 502811451,
@@ -1273,7 +1388,8 @@
     "transaction_date": "2025-04-25T04:19:19.036Z",
     "transaction_amount": "₦175908.14",
     "transaction_amount_chargeable": "₦1525.72",
-    "transaction_amount_vat": "₦114.43"
+    "transaction_amount_vat": "₦114.43",
+    "state_id": 15
   },
   {
     "transaction_id": 502873588,
@@ -1284,7 +1400,8 @@
     "transaction_date": "2025-06-11T14:03:55.703Z",
     "transaction_amount": "₦2310177.32",
     "transaction_amount_chargeable": "₦12186.16",
-    "transaction_amount_vat": "₦913.96"
+    "transaction_amount_vat": "₦913.96",
+    "state_id": 1
   },
   {
     "transaction_id": 502781568,
@@ -1295,7 +1412,8 @@
     "transaction_date": "2025-05-25T03:45:26.936Z",
     "transaction_amount": "₦15041.45",
     "transaction_amount_chargeable": "₦43.72",
-    "transaction_amount_vat": "₦3.28"
+    "transaction_amount_vat": "₦3.28",
+    "state_id": 7
   },
   {
     "transaction_id": 502079092,
@@ -1306,7 +1424,8 @@
     "transaction_date": "2025-05-16T03:34:14.572Z",
     "transaction_amount": "₦46160.59",
     "transaction_amount_chargeable": "₦902.56",
-    "transaction_amount_vat": "₦67.69"
+    "transaction_amount_vat": "₦67.69",
+    "state_id": 29
   },
   {
     "transaction_id": 502687632,
@@ -1317,7 +1436,8 @@
     "transaction_date": "2025-05-29T01:31:28.200Z",
     "transaction_amount": "₦62399.11",
     "transaction_amount_chargeable": "₦987.86",
-    "transaction_amount_vat": "₦74.09"
+    "transaction_amount_vat": "₦74.09",
+    "state_id": 6
   },
   {
     "transaction_id": 502020706,
@@ -1328,7 +1448,8 @@
     "transaction_date": "2025-05-04T02:42:13.931Z",
     "transaction_amount": "₦41554.32",
     "transaction_amount_chargeable": "₦184.75",
-    "transaction_amount_vat": "₦13.86"
+    "transaction_amount_vat": "₦13.86",
+    "state_id": 27
   },
   {
     "transaction_id": 502765349,
@@ -1339,7 +1460,8 @@
     "transaction_date": "2025-02-16T02:04:50.027Z",
     "transaction_amount": "₦54013.36",
     "transaction_amount_chargeable": "₦862.08",
-    "transaction_amount_vat": "₦64.66"
+    "transaction_amount_vat": "₦64.66",
+    "state_id": 15
   },
   {
     "transaction_id": 502779841,
@@ -1350,7 +1472,8 @@
     "transaction_date": "2025-06-08T19:21:27.872Z",
     "transaction_amount": "₦18886.15",
     "transaction_amount_chargeable": "₦86.60",
-    "transaction_amount_vat": "₦6.49"
+    "transaction_amount_vat": "₦6.49",
+    "state_id": 32
   },
   {
     "transaction_id": 502668664,
@@ -1361,7 +1484,8 @@
     "transaction_date": "2025-04-29T11:14:31.515Z",
     "transaction_amount": "₦51673.23",
     "transaction_amount_chargeable": "₦998.65",
-    "transaction_amount_vat": "₦74.90"
+    "transaction_amount_vat": "₦74.90",
+    "state_id": 18
   },
   {
     "transaction_id": 502162033,
@@ -1372,7 +1496,8 @@
     "transaction_date": "2025-05-23T22:31:52.332Z",
     "transaction_amount": "₦61546.76",
     "transaction_amount_chargeable": "₦300.44",
-    "transaction_amount_vat": "₦22.53"
+    "transaction_amount_vat": "₦22.53",
+    "state_id": 11
   },
   {
     "transaction_id": 502568789,
@@ -1383,7 +1508,8 @@
     "transaction_date": "2025-02-04T18:59:31.353Z",
     "transaction_amount": "₦13616.58",
     "transaction_amount_chargeable": "₦139.51",
-    "transaction_amount_vat": "₦10.46"
+    "transaction_amount_vat": "₦10.46",
+    "state_id": 1
   },
   {
     "transaction_id": 502396204,
@@ -1394,7 +1520,8 @@
     "transaction_date": "2025-06-17T10:54:41.726Z",
     "transaction_amount": "₦60933.70",
     "transaction_amount_chargeable": "₦646.22",
-    "transaction_amount_vat": "₦48.47"
+    "transaction_amount_vat": "₦48.47",
+    "state_id": 24
   },
   {
     "transaction_id": 502858845,
@@ -1405,7 +1532,8 @@
     "transaction_date": "2025-02-19T02:45:59.857Z",
     "transaction_amount": "₦29552.13",
     "transaction_amount_chargeable": "₦187.32",
-    "transaction_amount_vat": "₦14.05"
+    "transaction_amount_vat": "₦14.05",
+    "state_id": 28
   },
   {
     "transaction_id": 502065923,
@@ -1416,7 +1544,8 @@
     "transaction_date": "2025-02-10T00:07:45.655Z",
     "transaction_amount": "₦1046503.87",
     "transaction_amount_chargeable": "₦16279.25",
-    "transaction_amount_vat": "₦1220.94"
+    "transaction_amount_vat": "₦1220.94",
+    "state_id": 29
   },
   {
     "transaction_id": 502241493,
@@ -1427,7 +1556,8 @@
     "transaction_date": "2025-05-14T19:17:52.862Z",
     "transaction_amount": "₦78753.71",
     "transaction_amount_chargeable": "₦1081.65",
-    "transaction_amount_vat": "₦81.12"
+    "transaction_amount_vat": "₦81.12",
+    "state_id": 20
   },
   {
     "transaction_id": 502621611,
@@ -1438,7 +1568,8 @@
     "transaction_date": "2025-02-02T17:26:43.246Z",
     "transaction_amount": "₦38766.12",
     "transaction_amount_chargeable": "₦740.71",
-    "transaction_amount_vat": "₦55.55"
+    "transaction_amount_vat": "₦55.55",
+    "state_id": 10
   },
   {
     "transaction_id": 502858528,
@@ -1449,7 +1580,8 @@
     "transaction_date": "2025-03-26T19:37:42.607Z",
     "transaction_amount": "₦72391.34",
     "transaction_amount_chargeable": "₦1076.29",
-    "transaction_amount_vat": "₦80.72"
+    "transaction_amount_vat": "₦80.72",
+    "state_id": 22
   },
   {
     "transaction_id": 502503231,
@@ -1460,7 +1592,8 @@
     "transaction_date": "2025-06-22T17:59:51.363Z",
     "transaction_amount": "₦4580952.42",
     "transaction_amount_chargeable": "₦28940.90",
-    "transaction_amount_vat": "₦2170.57"
+    "transaction_amount_vat": "₦2170.57",
+    "state_id": 3
   },
   {
     "transaction_id": 502789464,
@@ -1471,7 +1604,8 @@
     "transaction_date": "2025-03-23T04:30:31.187Z",
     "transaction_amount": "₦47362.06",
     "transaction_amount_chargeable": "₦489.11",
-    "transaction_amount_vat": "₦36.68"
+    "transaction_amount_vat": "₦36.68",
+    "state_id": 9
   },
   {
     "transaction_id": 502811916,
@@ -1482,7 +1616,8 @@
     "transaction_date": "2025-01-21T04:02:47.643Z",
     "transaction_amount": "₦47524.88",
     "transaction_amount_chargeable": "₦510.97",
-    "transaction_amount_vat": "₦38.32"
+    "transaction_amount_vat": "₦38.32",
+    "state_id": 26
   },
   {
     "transaction_id": 502130130,
@@ -1493,7 +1628,8 @@
     "transaction_date": "2025-06-25T18:11:54.405Z",
     "transaction_amount": "₦37420.85",
     "transaction_amount_chargeable": "₦104.60",
-    "transaction_amount_vat": "₦7.85"
+    "transaction_amount_vat": "₦7.85",
+    "state_id": 10
   },
   {
     "transaction_id": 502880518,
@@ -1504,7 +1640,8 @@
     "transaction_date": "2025-02-25T13:06:48.704Z",
     "transaction_amount": "₦20127.30",
     "transaction_amount_chargeable": "₦155.68",
-    "transaction_amount_vat": "₦11.68"
+    "transaction_amount_vat": "₦11.68",
+    "state_id": 34
   },
   {
     "transaction_id": 502729438,
@@ -1515,7 +1652,8 @@
     "transaction_date": "2025-05-08T08:46:14.903Z",
     "transaction_amount": "₦1780150.11",
     "transaction_amount_chargeable": "₦29261.96",
-    "transaction_amount_vat": "₦2194.65"
+    "transaction_amount_vat": "₦2194.65",
+    "state_id": 12
   },
   {
     "transaction_id": 502516445,
@@ -1526,7 +1664,8 @@
     "transaction_date": "2025-01-09T11:25:03.344Z",
     "transaction_amount": "₦10910.19",
     "transaction_amount_chargeable": "₦21.49",
-    "transaction_amount_vat": "₦1.61"
+    "transaction_amount_vat": "₦1.61",
+    "state_id": 16
   },
   {
     "transaction_id": 502733722,
@@ -1537,7 +1676,8 @@
     "transaction_date": "2025-05-31T12:25:55.440Z",
     "transaction_amount": "₦2333.63",
     "transaction_amount_chargeable": "₦34.65",
-    "transaction_amount_vat": "₦2.60"
+    "transaction_amount_vat": "₦2.60",
+    "state_id": 6
   },
   {
     "transaction_id": 502720481,
@@ -1548,7 +1688,8 @@
     "transaction_date": "2025-03-20T09:32:15.795Z",
     "transaction_amount": "₦62145.51",
     "transaction_amount_chargeable": "₦391.92",
-    "transaction_amount_vat": "₦29.39"
+    "transaction_amount_vat": "₦29.39",
+    "state_id": 23
   },
   {
     "transaction_id": 502392600,
@@ -1559,7 +1700,8 @@
     "transaction_date": "2025-01-14T02:44:37.337Z",
     "transaction_amount": "₦572568.26",
     "transaction_amount_chargeable": "₦5702.11",
-    "transaction_amount_vat": "₦427.66"
+    "transaction_amount_vat": "₦427.66",
+    "state_id": 24
   },
   {
     "transaction_id": 502536318,
@@ -1570,7 +1712,8 @@
     "transaction_date": "2025-03-08T00:59:23.133Z",
     "transaction_amount": "₦96616.02",
     "transaction_amount_chargeable": "₦524.77",
-    "transaction_amount_vat": "₦39.36"
+    "transaction_amount_vat": "₦39.36",
+    "state_id": 12
   },
   {
     "transaction_id": 502671869,
@@ -1581,7 +1724,8 @@
     "transaction_date": "2025-04-05T19:36:30.263Z",
     "transaction_amount": "₦13137.93",
     "transaction_amount_chargeable": "₦134.47",
-    "transaction_amount_vat": "₦10.09"
+    "transaction_amount_vat": "₦10.09",
+    "state_id": 17
   },
   {
     "transaction_id": 502540410,
@@ -1592,7 +1736,8 @@
     "transaction_date": "2025-06-02T06:21:50.342Z",
     "transaction_amount": "₦18288.68",
     "transaction_amount_chargeable": "₦338.89",
-    "transaction_amount_vat": "₦25.42"
+    "transaction_amount_vat": "₦25.42",
+    "state_id": 28
   },
   {
     "transaction_id": 502725869,
@@ -1603,7 +1748,8 @@
     "transaction_date": "2025-05-28T17:05:00.559Z",
     "transaction_amount": "₦82473.51",
     "transaction_amount_chargeable": "₦145.48",
-    "transaction_amount_vat": "₦10.91"
+    "transaction_amount_vat": "₦10.91",
+    "state_id": 32
   },
   {
     "transaction_id": 502217430,
@@ -1614,7 +1760,8 @@
     "transaction_date": "2025-01-31T16:43:08.861Z",
     "transaction_amount": "₦77944.34",
     "transaction_amount_chargeable": "₦157.30",
-    "transaction_amount_vat": "₦11.80"
+    "transaction_amount_vat": "₦11.80",
+    "state_id": 10
   },
   {
     "transaction_id": 502530291,
@@ -1625,7 +1772,8 @@
     "transaction_date": "2025-06-13T11:41:58.402Z",
     "transaction_amount": "₦2360024.79",
     "transaction_amount_chargeable": "₦21236.98",
-    "transaction_amount_vat": "₦1592.77"
+    "transaction_amount_vat": "₦1592.77",
+    "state_id": 4
   },
   {
     "transaction_id": 502501955,
@@ -1636,7 +1784,8 @@
     "transaction_date": "2025-05-09T11:16:54.329Z",
     "transaction_amount": "₦93510.95",
     "transaction_amount_chargeable": "₦1284.49",
-    "transaction_amount_vat": "₦96.34"
+    "transaction_amount_vat": "₦96.34",
+    "state_id": 8
   },
   {
     "transaction_id": 502544195,
@@ -1647,7 +1796,8 @@
     "transaction_date": "2025-05-27T17:58:36.348Z",
     "transaction_amount": "₦38199.61",
     "transaction_amount_chargeable": "₦211.09",
-    "transaction_amount_vat": "₦15.83"
+    "transaction_amount_vat": "₦15.83",
+    "state_id": 30
   },
   {
     "transaction_id": 502142996,
@@ -1658,7 +1808,8 @@
     "transaction_date": "2025-03-18T06:29:46.935Z",
     "transaction_amount": "₦162563.82",
     "transaction_amount_chargeable": "₦2912.79",
-    "transaction_amount_vat": "₦218.46"
+    "transaction_amount_vat": "₦218.46",
+    "state_id": 12
   },
   {
     "transaction_id": 502284522,
@@ -1669,7 +1820,8 @@
     "transaction_date": "2025-01-02T16:11:48.837Z",
     "transaction_amount": "₦71057.75",
     "transaction_amount_chargeable": "₦303.71",
-    "transaction_amount_vat": "₦22.78"
+    "transaction_amount_vat": "₦22.78",
+    "state_id": 29
   },
   {
     "transaction_id": 502226700,
@@ -1680,7 +1832,8 @@
     "transaction_date": "2025-01-27T05:37:28.466Z",
     "transaction_amount": "₦114723.22",
     "transaction_amount_chargeable": "₦2042.59",
-    "transaction_amount_vat": "₦153.19"
+    "transaction_amount_vat": "₦153.19",
+    "state_id": 35
   },
   {
     "transaction_id": 502451626,
@@ -1691,7 +1844,8 @@
     "transaction_date": "2025-05-21T05:51:43.917Z",
     "transaction_amount": "₦399773.05",
     "transaction_amount_chargeable": "₦3501.04",
-    "transaction_amount_vat": "₦262.58"
+    "transaction_amount_vat": "₦262.58",
+    "state_id": 21
   },
   {
     "transaction_id": 502896253,
@@ -1702,7 +1856,8 @@
     "transaction_date": "2025-01-13T15:30:40.306Z",
     "transaction_amount": "₦271328.18",
     "transaction_amount_chargeable": "₦4252.19",
-    "transaction_amount_vat": "₦318.91"
+    "transaction_amount_vat": "₦318.91",
+    "state_id": 30
   },
   {
     "transaction_id": 502354002,
@@ -1713,7 +1868,8 @@
     "transaction_date": "2025-01-31T14:23:51.307Z",
     "transaction_amount": "₦322639.09",
     "transaction_amount_chargeable": "₦3722.90",
-    "transaction_amount_vat": "₦279.22"
+    "transaction_amount_vat": "₦279.22",
+    "state_id": 26
   },
   {
     "transaction_id": 502081552,
@@ -1724,7 +1880,8 @@
     "transaction_date": "2025-01-04T11:15:24.625Z",
     "transaction_amount": "₦1036921.21",
     "transaction_amount_chargeable": "₦13340.94",
-    "transaction_amount_vat": "₦1000.57"
+    "transaction_amount_vat": "₦1000.57",
+    "state_id": 36
   },
   {
     "transaction_id": 502808807,
@@ -1735,7 +1892,8 @@
     "transaction_date": "2025-06-23T07:48:37.159Z",
     "transaction_amount": "₦112886.81",
     "transaction_amount_chargeable": "₦1344.14",
-    "transaction_amount_vat": "₦100.81"
+    "transaction_amount_vat": "₦100.81",
+    "state_id": 13
   },
   {
     "transaction_id": 502264536,
@@ -1746,7 +1904,8 @@
     "transaction_date": "2025-01-06T00:29:28.509Z",
     "transaction_amount": "₦1151568.51",
     "transaction_amount_chargeable": "₦10629.20",
-    "transaction_amount_vat": "₦797.19"
+    "transaction_amount_vat": "₦797.19",
+    "state_id": 30
   },
   {
     "transaction_id": 502333823,
@@ -1757,7 +1916,8 @@
     "transaction_date": "2025-06-22T19:09:14.270Z",
     "transaction_amount": "₦88960.41",
     "transaction_amount_chargeable": "₦1115.03",
-    "transaction_amount_vat": "₦83.63"
+    "transaction_amount_vat": "₦83.63",
+    "state_id": 32
   },
   {
     "transaction_id": 502908332,
@@ -1768,7 +1928,8 @@
     "transaction_date": "2025-01-12T23:49:13.496Z",
     "transaction_amount": "₦151971.02",
     "transaction_amount_chargeable": "₦2920.90",
-    "transaction_amount_vat": "₦219.07"
+    "transaction_amount_vat": "₦219.07",
+    "state_id": 29
   },
   {
     "transaction_id": 502611339,
@@ -1779,7 +1940,8 @@
     "transaction_date": "2025-06-05T06:45:28.943Z",
     "transaction_amount": "₦93136.01",
     "transaction_amount_chargeable": "₦288.07",
-    "transaction_amount_vat": "₦21.61"
+    "transaction_amount_vat": "₦21.61",
+    "state_id": 12
   },
   {
     "transaction_id": 502050332,
@@ -1790,7 +1952,8 @@
     "transaction_date": "2025-02-09T18:31:33.411Z",
     "transaction_amount": "₦1425724.57",
     "transaction_amount_chargeable": "₦14483.30",
-    "transaction_amount_vat": "₦1086.25"
+    "transaction_amount_vat": "₦1086.25",
+    "state_id": 33
   },
   {
     "transaction_id": 502236356,
@@ -1801,7 +1964,8 @@
     "transaction_date": "2025-02-05T09:22:28.157Z",
     "transaction_amount": "₦384277.58",
     "transaction_amount_chargeable": "₦4446.01",
-    "transaction_amount_vat": "₦333.45"
+    "transaction_amount_vat": "₦333.45",
+    "state_id": 18
   },
   {
     "transaction_id": 502958815,
@@ -1812,7 +1976,8 @@
     "transaction_date": "2025-04-22T13:17:52.492Z",
     "transaction_amount": "₦42999.21",
     "transaction_amount_chargeable": "₦831.13",
-    "transaction_amount_vat": "₦62.33"
+    "transaction_amount_vat": "₦62.33",
+    "state_id": 24
   },
   {
     "transaction_id": 502273361,
@@ -1823,7 +1988,8 @@
     "transaction_date": "2025-06-25T10:12:34.295Z",
     "transaction_amount": "₦1884213.56",
     "transaction_amount_chargeable": "₦9788.54",
-    "transaction_amount_vat": "₦734.14"
+    "transaction_amount_vat": "₦734.14",
+    "state_id": 6
   },
   {
     "transaction_id": 502200637,
@@ -1834,7 +2000,8 @@
     "transaction_date": "2025-01-01T19:27:50.871Z",
     "transaction_amount": "₦1804879.15",
     "transaction_amount_chargeable": "₦34717.85",
-    "transaction_amount_vat": "₦2603.84"
+    "transaction_amount_vat": "₦2603.84",
+    "state_id": 20
   },
   {
     "transaction_id": 502709658,
@@ -1845,7 +2012,8 @@
     "transaction_date": "2025-06-18T16:59:22.037Z",
     "transaction_amount": "₦400720.06",
     "transaction_amount_chargeable": "₦5091.66",
-    "transaction_amount_vat": "₦381.87"
+    "transaction_amount_vat": "₦381.87",
+    "state_id": 24
   },
   {
     "transaction_id": 502540694,
@@ -1856,7 +2024,8 @@
     "transaction_date": "2025-05-10T21:53:32.349Z",
     "transaction_amount": "₦151080.60",
     "transaction_amount_chargeable": "₦1296.10",
-    "transaction_amount_vat": "₦97.21"
+    "transaction_amount_vat": "₦97.21",
+    "state_id": 26
   },
   {
     "transaction_id": 502312423,
@@ -1867,7 +2036,8 @@
     "transaction_date": "2025-01-21T03:57:56.981Z",
     "transaction_amount": "₦13485.58",
     "transaction_amount_chargeable": "₦66.88",
-    "transaction_amount_vat": "₦5.02"
+    "transaction_amount_vat": "₦5.02",
+    "state_id": 8
   },
   {
     "transaction_id": 502208629,
@@ -1878,7 +2048,8 @@
     "transaction_date": "2025-01-18T04:55:52.879Z",
     "transaction_amount": "₦183910.60",
     "transaction_amount_chargeable": "₦620.48",
-    "transaction_amount_vat": "₦46.54"
+    "transaction_amount_vat": "₦46.54",
+    "state_id": 3
   },
   {
     "transaction_id": 502616662,
@@ -1889,7 +2060,8 @@
     "transaction_date": "2025-03-19T12:08:42.365Z",
     "transaction_amount": "₦102237.01",
     "transaction_amount_chargeable": "₦662.74",
-    "transaction_amount_vat": "₦49.71"
+    "transaction_amount_vat": "₦49.71",
+    "state_id": 33
   },
   {
     "transaction_id": 502621054,
@@ -1900,7 +2072,8 @@
     "transaction_date": "2025-05-06T22:33:52.644Z",
     "transaction_amount": "₦203993.61",
     "transaction_amount_chargeable": "₦818.01",
-    "transaction_amount_vat": "₦61.35"
+    "transaction_amount_vat": "₦61.35",
+    "state_id": 36
   },
   {
     "transaction_id": 502431399,
@@ -1911,7 +2084,8 @@
     "transaction_date": "2025-02-25T12:44:24.448Z",
     "transaction_amount": "₦118224.40",
     "transaction_amount_chargeable": "₦883.82",
-    "transaction_amount_vat": "₦66.29"
+    "transaction_amount_vat": "₦66.29",
+    "state_id": 12
   },
   {
     "transaction_id": 502245660,
@@ -1922,7 +2096,8 @@
     "transaction_date": "2025-02-27T07:25:54.748Z",
     "transaction_amount": "₦8037.74",
     "transaction_amount_chargeable": "₦68.74",
-    "transaction_amount_vat": "₦5.16"
+    "transaction_amount_vat": "₦5.16",
+    "state_id": 23
   },
   {
     "transaction_id": 502274167,
@@ -1933,7 +2108,8 @@
     "transaction_date": "2025-04-24T05:28:53.168Z",
     "transaction_amount": "₦84832.47",
     "transaction_amount_chargeable": "₦1351.83",
-    "transaction_amount_vat": "₦101.39"
+    "transaction_amount_vat": "₦101.39",
+    "state_id": 13
   },
   {
     "transaction_id": 502513480,
@@ -1944,7 +2120,8 @@
     "transaction_date": "2025-04-01T01:13:30.569Z",
     "transaction_amount": "₦1242595.34",
     "transaction_amount_chargeable": "₦20203.05",
-    "transaction_amount_vat": "₦1515.23"
+    "transaction_amount_vat": "₦1515.23",
+    "state_id": 17
   },
   {
     "transaction_id": 502685246,
@@ -1955,7 +2132,8 @@
     "transaction_date": "2025-04-09T14:57:30.907Z",
     "transaction_amount": "₦1959033.55",
     "transaction_amount_chargeable": "₦35458.91",
-    "transaction_amount_vat": "₦2659.42"
+    "transaction_amount_vat": "₦2659.42",
+    "state_id": 17
   },
   {
     "transaction_id": 502581841,
@@ -1966,7 +2144,8 @@
     "transaction_date": "2025-06-11T15:45:39.672Z",
     "transaction_amount": "₦356748.75",
     "transaction_amount_chargeable": "₦2439.82",
-    "transaction_amount_vat": "₦182.99"
+    "transaction_amount_vat": "₦182.99",
+    "state_id": 16
   },
   {
     "transaction_id": 502571087,
@@ -1977,7 +2156,8 @@
     "transaction_date": "2025-06-07T14:56:54.892Z",
     "transaction_amount": "₦1736206.20",
     "transaction_amount_chargeable": "₦33139.56",
-    "transaction_amount_vat": "₦2485.47"
+    "transaction_amount_vat": "₦2485.47",
+    "state_id": 37
   },
   {
     "transaction_id": 502286329,
@@ -1988,7 +2168,8 @@
     "transaction_date": "2025-03-08T00:21:32.109Z",
     "transaction_amount": "₦521947.64",
     "transaction_amount_chargeable": "₦7331.66",
-    "transaction_amount_vat": "₦549.87"
+    "transaction_amount_vat": "₦549.87",
+    "state_id": 27
   },
   {
     "transaction_id": 502757320,
@@ -1999,7 +2180,8 @@
     "transaction_date": "2025-05-27T22:54:04.152Z",
     "transaction_amount": "₦19639.30",
     "transaction_amount_chargeable": "₦330.82",
-    "transaction_amount_vat": "₦24.81"
+    "transaction_amount_vat": "₦24.81",
+    "state_id": 10
   },
   {
     "transaction_id": 502383087,
@@ -2010,7 +2192,8 @@
     "transaction_date": "2025-05-06T04:36:40.574Z",
     "transaction_amount": "₦227101.73",
     "transaction_amount_chargeable": "₦3155.80",
-    "transaction_amount_vat": "₦236.69"
+    "transaction_amount_vat": "₦236.69",
+    "state_id": 11
   },
   {
     "transaction_id": 502216953,
@@ -2021,7 +2204,8 @@
     "transaction_date": "2025-04-02T07:29:54.172Z",
     "transaction_amount": "₦43044.69",
     "transaction_amount_chargeable": "₦473.67",
-    "transaction_amount_vat": "₦35.53"
+    "transaction_amount_vat": "₦35.53",
+    "state_id": 17
   },
   {
     "transaction_id": 502023512,
@@ -2032,7 +2216,8 @@
     "transaction_date": "2025-06-01T06:27:52.494Z",
     "transaction_amount": "₦156307.83",
     "transaction_amount_chargeable": "₦2741.26",
-    "transaction_amount_vat": "₦205.59"
+    "transaction_amount_vat": "₦205.59",
+    "state_id": 16
   },
   {
     "transaction_id": 502476294,
@@ -2043,7 +2228,8 @@
     "transaction_date": "2025-03-24T01:11:37.394Z",
     "transaction_amount": "₦353485.86",
     "transaction_amount_chargeable": "₦2348.46",
-    "transaction_amount_vat": "₦176.13"
+    "transaction_amount_vat": "₦176.13",
+    "state_id": 36
   },
   {
     "transaction_id": 502370511,
@@ -2054,7 +2240,8 @@
     "transaction_date": "2025-01-01T15:48:03.102Z",
     "transaction_amount": "₦735311.38",
     "transaction_amount_chargeable": "₦13483.68",
-    "transaction_amount_vat": "₦1011.28"
+    "transaction_amount_vat": "₦1011.28",
+    "state_id": 33
   },
   {
     "transaction_id": 502054830,
@@ -2065,7 +2252,8 @@
     "transaction_date": "2025-05-18T03:24:10.682Z",
     "transaction_amount": "₦1698601.98",
     "transaction_amount_chargeable": "₦30123.47",
-    "transaction_amount_vat": "₦2259.26"
+    "transaction_amount_vat": "₦2259.26",
+    "state_id": 12
   },
   {
     "transaction_id": 502108931,
@@ -2076,7 +2264,8 @@
     "transaction_date": "2025-02-02T07:39:46.026Z",
     "transaction_amount": "₦1112004.21",
     "transaction_amount_chargeable": "₦10182.94",
-    "transaction_amount_vat": "₦763.72"
+    "transaction_amount_vat": "₦763.72",
+    "state_id": 13
   },
   {
     "transaction_id": 502851772,
@@ -2087,7 +2276,8 @@
     "transaction_date": "2025-03-05T15:56:25.971Z",
     "transaction_amount": "₦380681.79",
     "transaction_amount_chargeable": "₦6770.10",
-    "transaction_amount_vat": "₦507.76"
+    "transaction_amount_vat": "₦507.76",
+    "state_id": 15
   },
   {
     "transaction_id": 502829221,
@@ -2098,7 +2288,8 @@
     "transaction_date": "2025-03-19T13:18:57.156Z",
     "transaction_amount": "₦109935.56",
     "transaction_amount_chargeable": "₦471.43",
-    "transaction_amount_vat": "₦35.36"
+    "transaction_amount_vat": "₦35.36",
+    "state_id": 9
   },
   {
     "transaction_id": 502029875,
@@ -2109,7 +2300,8 @@
     "transaction_date": "2025-05-18T13:59:20.658Z",
     "transaction_amount": "₦283182.66",
     "transaction_amount_chargeable": "₦602.70",
-    "transaction_amount_vat": "₦45.20"
+    "transaction_amount_vat": "₦45.20",
+    "state_id": 1
   },
   {
     "transaction_id": 502509702,
@@ -2120,7 +2312,8 @@
     "transaction_date": "2025-04-04T05:49:08.275Z",
     "transaction_amount": "₦197128.72",
     "transaction_amount_chargeable": "₦3599.16",
-    "transaction_amount_vat": "₦269.94"
+    "transaction_amount_vat": "₦269.94",
+    "state_id": 26
   },
   {
     "transaction_id": 502024352,
@@ -2131,7 +2324,8 @@
     "transaction_date": "2025-03-17T03:05:21.506Z",
     "transaction_amount": "₦438494.82",
     "transaction_amount_chargeable": "₦1300.67",
-    "transaction_amount_vat": "₦97.55"
+    "transaction_amount_vat": "₦97.55",
+    "state_id": 28
   },
   {
     "transaction_id": 502576292,
@@ -2142,7 +2336,8 @@
     "transaction_date": "2025-03-14T06:38:36.606Z",
     "transaction_amount": "₦215905.91",
     "transaction_amount_chargeable": "₦3727.36",
-    "transaction_amount_vat": "₦279.55"
+    "transaction_amount_vat": "₦279.55",
+    "state_id": 33
   },
   {
     "transaction_id": 502600626,
@@ -2153,7 +2348,8 @@
     "transaction_date": "2025-02-13T14:57:36.549Z",
     "transaction_amount": "₦153027.85",
     "transaction_amount_chargeable": "₦2194.62",
-    "transaction_amount_vat": "₦164.60"
+    "transaction_amount_vat": "₦164.60",
+    "state_id": 24
   },
   {
     "transaction_id": 502651997,
@@ -2164,7 +2360,8 @@
     "transaction_date": "2025-01-26T12:39:51.412Z",
     "transaction_amount": "₦491999.04",
     "transaction_amount_chargeable": "₦8205.89",
-    "transaction_amount_vat": "₦615.44"
+    "transaction_amount_vat": "₦615.44",
+    "state_id": 27
   },
   {
     "transaction_id": 502595536,
@@ -2175,7 +2372,8 @@
     "transaction_date": "2025-03-24T20:01:25.711Z",
     "transaction_amount": "₦132375.58",
     "transaction_amount_chargeable": "₦878.39",
-    "transaction_amount_vat": "₦65.88"
+    "transaction_amount_vat": "₦65.88",
+    "state_id": 19
   },
   {
     "transaction_id": 502102563,
@@ -2186,7 +2384,8 @@
     "transaction_date": "2025-01-08T21:06:14.325Z",
     "transaction_amount": "₦175031.01",
     "transaction_amount_chargeable": "₦2996.96",
-    "transaction_amount_vat": "₦224.77"
+    "transaction_amount_vat": "₦224.77",
+    "state_id": 25
   },
   {
     "transaction_id": 502844098,
@@ -2197,6 +2396,7 @@
     "transaction_date": "2025-03-02T07:43:06.233Z",
     "transaction_amount": "₦93103.16",
     "transaction_amount_chargeable": "₦988.59",
-    "transaction_amount_vat": "₦74.14"
+    "transaction_amount_vat": "₦74.14",
+    "state_id": 4
   }
 ]
