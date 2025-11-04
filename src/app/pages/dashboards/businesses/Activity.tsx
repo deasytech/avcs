@@ -8,16 +8,38 @@ import {
 } from "@headlessui/react";
 import { EllipsisHorizontalIcon } from "@heroicons/react/20/solid";
 import clsx from "clsx";
-import { Fragment } from "react";
+import { Fragment, useMemo } from "react";
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 
 // Local Imports
 import { Button } from "@/components/ui";
 
+// Types
+interface Transaction {
+  transaction_id: number;
+  sector_id: number;
+  business_id: number;
+  branch_id: number;
+  transaction_type_id: number;
+  transaction_date: string;
+  transaction_amount: string;
+  transaction_amount_chargeable: string;
+  transaction_amount_vat: string;
+}
+
+interface ActivityProps {
+  transactions: Transaction[];
+}
+
+// Helper function to parse currency string to number
+const parseCurrency = (amount: string): number => {
+  return parseFloat(amount.replace(/[₦,]/g, ''));
+};
+
 // ----------------------------------------------------------------------
 
-const chartConfig: ApexOptions = {
+const createChartConfig = (categories: string[]): ApexOptions => ({
   colors: ["#a855f7"],
 
   chart: {
@@ -41,20 +63,12 @@ const chartConfig: ApexOptions = {
   },
   xaxis: {
     type: "datetime",
-    categories: [
-      "1/11/2000",
-      "2/11/2000",
-      "3/11/2000",
-      "4/11/2000",
-      "5/11/2000",
-      "6/11/2000",
-      "7/11/2000",
-    ],
+    categories: categories,
     tickAmount: 10,
     labels: {
-      formatter: function (_value, timestamp, opts) {
-        if (timestamp) return opts.dateFormatter(new Date(timestamp), "dd MMM");
-        return "";
+      formatter: function (value) {
+        const date = new Date(value);
+        return date.toLocaleDateString("en-GB", { day: "2-digit", month: "short" });
       },
     },
   },
@@ -82,16 +96,41 @@ const chartConfig: ApexOptions = {
       right: 0,
     },
   },
-};
+});
 
-const series = [
-  {
-    name: "Sales",
-    data: [200, 100, 300, 200, 400, 300, 500],
-  },
-];
+export function Activity({ transactions }: ActivityProps) {
+  // Process transaction data for chart
+  const { chartData, categories } = useMemo(() => {
+    if (transactions.length === 0) {
+      return { chartData: [0, 0, 0, 0, 0, 0, 0], categories: [] };
+    }
 
-export function Activity() {
+    // Group transactions by date and sum amounts
+    const dailyTotals = transactions.reduce((acc, transaction) => {
+      const date = new Date(transaction.transaction_date).toISOString().split('T')[0];
+      const amount = parseCurrency(transaction.transaction_amount);
+      acc[date] = (acc[date] || 0) + amount;
+      return acc;
+    }, {} as Record<string, number>);
+
+    // Sort by date and take last 7 days
+    const sortedDates = Object.keys(dailyTotals).sort();
+    const last7Days = sortedDates.slice(-7);
+
+    const chartData = last7Days.map(date => dailyTotals[date]);
+    const categories = last7Days.map(date => new Date(date).toISOString());
+
+    return { chartData, categories };
+  }, [transactions]);
+
+  const chartConfig = createChartConfig(categories);
+  const series = [
+    {
+      name: "Transaction Volume",
+      data: chartData,
+    },
+  ];
+
   return (
     <div>
       <div className="flex h-8 min-w-0 items-center justify-between">
@@ -100,7 +139,13 @@ export function Activity() {
         </h2>
         <ActionMenu />
       </div>
-      <Chart options={chartConfig} series={series} type="line" height="270" />
+      {transactions.length === 0 ? (
+        <div className="flex h-[270px] items-center justify-center text-gray-500 dark:text-dark-300">
+          <p>No transaction data available for this business</p>
+        </div>
+      ) : (
+        <Chart options={chartConfig} series={series} type="line" height="270" />
+      )}
     </div>
   );
 }
@@ -135,7 +180,7 @@ function ActionMenu() {
                 className={clsx(
                   "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
                   focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
+                  "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
                 )}
               >
                 <span>Action</span>
@@ -148,7 +193,7 @@ function ActionMenu() {
                 className={clsx(
                   "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
                   focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
+                  "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
                 )}
               >
                 <span>Another action</span>
@@ -161,7 +206,7 @@ function ActionMenu() {
                 className={clsx(
                   "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
                   focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
+                  "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
                 )}
               >
                 <span>Other action</span>
@@ -177,7 +222,7 @@ function ActionMenu() {
                 className={clsx(
                   "flex h-9 w-full items-center px-3 tracking-wide outline-hidden transition-colors",
                   focus &&
-                    "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
+                  "dark:bg-dark-600 dark:text-dark-100 bg-gray-100 text-gray-800",
                 )}
               >
                 <span>Separated action</span>

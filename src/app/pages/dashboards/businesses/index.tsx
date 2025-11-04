@@ -12,11 +12,12 @@ import { Page } from "@/components/shared/Page";
 import { Statistics } from "./Statistics";
 import { Activity } from "./Activity";
 import { Performers } from "./Performers";
-import TransactionsTable from "./TransactionsTable";
+import { ProductsTable } from "./ProductsTable";
 import { Select } from "@/components/ui/Form/Select";
 import { Button } from "@/components/ui";
 import { useDisclosure } from "@/hooks";
 import businessesData from "@/data/businesses.json";
+import transactionsData from "@/data/transactions.json";
 
 // ----------------------------------------------------------------------
 
@@ -42,6 +43,20 @@ export default function Influencer() {
     setSelectedBusiness(null);
     openModal();
   };
+
+  // Filter transactions based on selected business
+  const filteredTransactions = selectedBusiness
+    ? transactionsData.filter(transaction => transaction.business_id === selectedBusiness.id)
+    : [];
+
+  // Debug logging
+  useEffect(() => {
+    console.log('Selected Business:', selectedBusiness);
+    console.log('Total Transactions:', transactionsData.length);
+    console.log('Filtered Transactions:', filteredTransactions.length);
+    console.log('Business ID being filtered:', selectedBusiness?.id);
+    console.log('Sample transaction business_ids:', transactionsData.slice(0, 5).map(t => t.business_id));
+  }, [selectedBusiness, filteredTransactions]);
 
   useEffect(() => {
     // Auto-select first business if none selected
@@ -76,13 +91,13 @@ export default function Influencer() {
           )}
 
           <div className="grid grid-cols-1 place-content-start gap-4 sm:gap-5 lg:gap-6">
-            <Statistics />
+            <Statistics transactions={filteredTransactions} />
             <div className="grid grid-cols-1 gap-4 sm:gap-5 lg:grid-cols-2 lg:gap-6">
-              <Activity />
-              <Performers />
+              <Activity transactions={filteredTransactions} />
+              <Performers transactions={filteredTransactions} />
             </div>
           </div>
-          <TransactionsTable />
+          <ProductsTable />
         </div>
       </Page>
 
