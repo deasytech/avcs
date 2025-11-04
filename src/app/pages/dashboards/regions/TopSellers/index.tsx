@@ -4,6 +4,15 @@ import { SellerCard } from "./SellerCard";
 import transactions from "@/data/transactions.json";
 import states from "@/data/states.json";
 
+export interface RegionPerformance {
+  uid: string;
+  avatar: string;
+  name: string;
+  sales: string;
+  impression: number;
+  chartData: number[];
+}
+
 export function TopRegions({ currentState }: { currentState: any }) {
   const regions = useMemo(() => {
     const stateRegionMap: Record<number, string> = {};
