@@ -18,6 +18,11 @@ function getPageTitle(pathname: string): string {
     '/dashboards/regions': 'Revenue for All Regions',
     '/dashboards/businesses': 'Businesses',
 
+    '/dashboards/sector/banks': 'Banks Data',
+    '/dashboards/sector/hotels': 'Hotels Data',
+    '/dashboards/sector/power': 'Power Data',
+    '/dashboards/sector/telecoms': 'Telecoms Data',
+
     '/reports/reports': 'General Reports',
 
     '/data-source/connect-transfer': 'Connect & Transfer',

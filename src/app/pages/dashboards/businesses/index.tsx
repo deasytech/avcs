@@ -91,7 +91,7 @@ export default function Influencer() {
             </div>
           )}
 
-          <div className="grid grid-cols-1 place-content-start gap-4 sm:gap-5 lg:gap-6">
+          <div className="grid grid-cols-1 place-content-start gap-4 sm:gap-5 lg:gap-6 mb-10">
             <Statistics transactions={filteredTransactions} />
             <div className="grid grid-cols-1 gap-4 sm:gap-5 lg:grid-cols-2 lg:gap-6">
               <Activity transactions={filteredTransactions} />
